@@ -12,7 +12,7 @@ var db2;
 
 //MongoDB Connection
 MongoClient.connect(url, function(err, db) {
-	console.log("Connected successfully to server - from: MongoDB.js");
+	console.log("MongoDB: Connected successfully to server");
 	db2 = db;
 });
 

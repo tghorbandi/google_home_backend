@@ -5,7 +5,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mysql = require('mysql');
-
+var socket_io  = require( "socket.io" );
 
 // ***************
 // USE ROUTES NEW
@@ -16,10 +16,30 @@ var users = require('./routes/users');
 var tests = require('./routes/testPost');
 var product = require('./routes/products');
 
-
-var socket_io = require("socket.io");
-
 var app = express();
+
+
+// Socket.io
+var io = socket_io();
+app.io = io;
+
+// socket.io events
+io.on( "connection", function( socket ){
+    console.log("SOCKET.IO: A user connected");
+
+    socket.emit('news', { hello: 'world' });
+
+    socket.on('vanuitClient', function (data) {
+      console.log(data);
+    });
+
+    socket.on('disconnect', function(){
+        console.log("SOCKET.IO: user has disconnected"); 
+    });
+
+});
+
+
 
 
 // Express init settings 
@@ -31,7 +51,7 @@ app.set('view engine', 'jade');
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
-app.use(logger('dev'));
+//app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());

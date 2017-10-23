@@ -23,17 +23,21 @@ app.set('port', port);
 var server = http.createServer(app);
 
 /**
- * Socket.io
- */
-
-var io = require('socket.io').listen(server);
-require('../controllers/socketIO')(io);
-
-/**
  * Listen on provided port, on all network interfaces.
  */
 
 server.listen(port);
+
+
+/**
+ * Socket.io
+ */
+//var io = require('socket.io')(server);
+var io = app.io
+io.attach( server );
+
+
+
 // als er een error is, laat onError functie zien
 server.on('error', onError);
 server.on('listening', onListening);

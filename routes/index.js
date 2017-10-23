@@ -1,27 +1,39 @@
 var express = require('express');
 var router = express.Router();
 var mongoDBqueries = require('../controllers/mongoDB');
-var socketIOqueries = require('../controllers/socketIO');
 
-/* GET home page. */
+var producten = ["hamer", "saw", "paint"];
+
+
+// GET home page
 router.get('/', function(req, res, next) {
 
 
-	// io.on('connection', function(socket){
- //    	console.log('A user connected');
-	// });
-
-	//  socket.on('news', function (data) {
-	//     console.log(data);  
-	//  });
+	// als er in db product hamer staat laat productName en productImage zien
 
 	mongoDBqueries.showImage(function(result){
 	   imageSrc = result;
 	   res.render('index', { title: 'Jouw product', image2: imageSrc});
 	});
 
-
-
 });
 
+/*io.on('connection', function(socket){
+    socket.emit('auth'); //will be emitted only once to each socket.
+    socket.on('userParameters',function(params){
+         socket.join(params.room);
+         socket.user = params.user;
+         console.log(socket.user+' has connected to '+params.room)
+    });
+    socket.on('disconnect', function(){
+          console.log(socket.user+' has disconnected'); //disconnecting automatically removes the socket from the room.
+    });
+});*/
+
+
 module.exports = router;
+
+
+
+
+
