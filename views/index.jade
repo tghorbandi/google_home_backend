@@ -5,15 +5,19 @@ block content
 
   br
 
-  p Draadnagels: kun je vinden in {rij 4} {schap 6}
+  //p De product {hamer} kun je in {rij 4} {schap 6} vinden.
+
+  h1
 
 
-  //p
-   //img(src="images/schap1.jpg" alt="image not found")
+  #product1 
+   h1 product1
+
+
 
   p
    img(src= image2 )
 
-  script var socket = io.connect('http://localhost:3000'); socket.on('news', function (data) { console.log(data); socket.emit('vanuitClient', { my: 'data' }); });
+  script var socket = io.connect('http://localhost:3000'); var product1; socket.on('productName', function(data){ console.log(data); $("#product1 h1").text(data.productName); }); $( "#product1" ).click(function() { console.log('clicked on product1!'); }); socket.on('noProduct', function(data){ console.log(data); });
   
 

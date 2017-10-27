@@ -5,33 +5,37 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mysql = require('mysql');
-var socket_io  = require( "socket.io" );
+var socket_io  = require('socket.io');
 
 // ***************
 // USE ROUTES NEW
 // ***************
 var index = require('./routes/index');
 var users = require('./routes/users');
-// gebruik alle functies van testPost.js
-var tests = require('./routes/testPost');
-var product = require('./routes/products');
 
 var app = express();
-
 
 // Socket.io
 var io = socket_io();
 app.io = io;
 
+var index = require('./routes/index')(io);
+var product = require('./routes/products')(io);
+var tests = require('./routes/testPost')(io);
+
 // socket.io events
 io.on( "connection", function( socket ){
     console.log("SOCKET.IO: A user connected");
 
-    socket.emit('news', { hello: 'world' });
+    // socket.emit('news', { hello: 'world' });
 
-    socket.on('vanuitClient', function (data) {
+    // socket.on('vanuitClient', function (data) {
+    //   console.log(data);
+    // });
+
+    socket.on('test', function(data){
       console.log(data);
-    });
+    })
 
     socket.on('disconnect', function(){
         console.log("SOCKET.IO: user has disconnected"); 
@@ -63,7 +67,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', index);
 app.use('/users', users);
 app.use('/testPost', tests);
-app.use ('/products', product);
+app.use('/products', product);
 
 
 // catch 404 and forward to error handler

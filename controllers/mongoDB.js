@@ -73,7 +73,7 @@ var showImage = function(callback) {
 
 /*
 **
- 	Insert file 
+ 	Insert image url path
 **
 */
 var insertImage = function(callback) {
@@ -86,6 +86,19 @@ var insertImage = function(callback) {
  	  callback(result);
  	});
 } 
+
+/*
+**
+  Insert query from google home
+**
+*/
+var insertQuery = function(callback, query) {
+  var collection = db2.collection('all_queries');
+  collection.insert({ query: query} , function(err, result) {
+    console.log("Inserted product into the collection");
+    callback(result);
+  });
+}
 
 
 /*
@@ -109,4 +122,5 @@ module.exports.findDocuments = findDocuments;
 module.exports.insertDocuments = insertDocuments;
 module.exports.showImage = showImage;
 module.exports.insertImage = insertImage;
+module.exports.insertQuery = insertQuery ;
 module.exports.insertProductName = insertProductName;
