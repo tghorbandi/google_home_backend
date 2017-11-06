@@ -6,7 +6,8 @@ var bodyParser = require('body-parser');
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
 
 var MongoClient = require('mongodb').MongoClient;
-var url = 'mongodb://localhost:27017/mydb';
+//var url = 'mongodb://localhost:27017/mydb';
+var url = 'mongodb://Tawab:Tawab@ds149535.mlab.com:49535/mydb';
 
 var db2;
 
