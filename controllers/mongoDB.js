@@ -95,11 +95,10 @@ var insertImage = function(callback) {
 var insertQuery = function(callback, query) {
   var collection = db2.collection('all_queries');
   collection.insert({ query: query} , function(err, result) {
-    console.log("Inserted product into the collection");
+    //console.log("Inserted product into the collection");
     callback(result);
   });
 }
-
 
 /*
 **
@@ -115,6 +114,20 @@ var insertProductName = function(callback, productName) {
 }
 
 
+/*
+**
+  Find product type in Database
+**
+*/
+var findProduct = function(callback, productType) {
+  var collection = db2.collection('type_hammers');
+  collection.find({type: new RegExp(productType)}).toArray(function(err, docs) {
+    //console.log('found records inside mongoDB');
+    callback(docs);
+  });
+}
+
+
 
 
 module.exports = {}
@@ -124,3 +137,4 @@ module.exports.showImage = showImage;
 module.exports.insertImage = insertImage;
 module.exports.insertQuery = insertQuery ;
 module.exports.insertProductName = insertProductName;
+module.exports.findProduct = findProduct;

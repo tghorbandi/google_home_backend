@@ -1,8 +1,29 @@
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif !important;
+/*  background: url('../images/background.png') no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;*/
 }
 
 a {
   color: #00B7FF;
+}
+
+#main-container{
+	/*border: 1px solid gray;*/
+}
+
+#buttons{
+	display: none;
+}
+
+#product1img{
+	box-shadow: 8px 8px 10px #aaa;
+}
+
+#GHimg{
+	/*float:right;*/
 }

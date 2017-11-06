@@ -10,3 +10,8 @@ html
     script(src='/javascripts/script.js')
   body
     block content
+
+      //script var socket = io.connect('localhost:3000');
+        //var socket = io.connect('http://2d77e9d2.ngrok.io');
+
+script var socket = io.connect('localhost:5000'); var product1; socket.on('productName', function(data){ console.log(data); $("#product1 h1").text(data.productName); $("#product1img").attr("src", "images/" + data.productName + ".jpg"); $("#GHimg").hide(); }); $( "#product1" ).click(function() { console.log('clicked on product1!'); }); socket.on('noProduct', function(data){ $("#product1 h1").text(data.data); $("#product1img").attr("src", "images/" + data.data + ".jpg"); $("#buttons").show(); });

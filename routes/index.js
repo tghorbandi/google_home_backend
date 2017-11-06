@@ -13,13 +13,8 @@ router.get('/', function(req, res, next) {
     // socket.on('productName', function(data){ 
     //     console.log(data); 
     //     productName = data; 
-    // }); --> KAN DIT?
+    // });
 
-	// als er in db product hamer staat laat productName en productImage zien
-	// mongoDBqueries.showImage(function(result){
-	//    imageSrc = result;
-
-	// });
 
 
     res.render('index', { 
