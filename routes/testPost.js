@@ -18,7 +18,7 @@ var inhoud;
       console.log("JSON resolvedQuery: " + productName);
 
       // Opslaan in database
-      mongoDBqueries.insertQuery(function(result){}, productName);
+      //mongoDBqueries.insertQuery(function(result){}, productName);
 
       // Get context parameter van json request
       var productType =  req.body.result.contexts[0].parameters;
