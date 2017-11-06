@@ -20,18 +20,22 @@ var inhoud;
       // Opslaan in database
       //mongoDBqueries.insertQuery(function(result){}, productName);
 
-      // Get context parameter van json request
+      //Get context parameter van json request
       var productType =  req.body.result.contexts[0].parameters;
       var productType2 = productType[Object.keys(productType)[0]];
-      console.log("productType2: " +productType2);
+      console.log("productType2: " + productType2);
 
-      // context overeenkomt met product in database
+      //context overeenkomt met product in database
       mongoDBqueries.findProduct(function(result){
           //console.log(result);
           inhoud = result;
       }, productType2);
 
+      return res.sendStatus(200);
+
+
       socket.emit('productName', { productName: productType2});
+
 
       // Als er inderdaad een overeenkomst is in de database
       if(inhoud){
