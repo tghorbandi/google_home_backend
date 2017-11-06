@@ -26,10 +26,10 @@ var inhoud;
       console.log("productType2: " + productType2);
 
       // //context overeenkomt met product in database
-      // mongoDBqueries.findProduct(function(result){
-      //     //console.log(result);
-      //     inhoud = result;
-      // }, productType2);
+      mongoDBqueries.findProduct(function(result){
+            //console.log(result);
+            inhoud = result;
+        }, productType2);
 
       return res.sendStatus(200);
 
