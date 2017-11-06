@@ -31,9 +31,8 @@ var inhoud;
             inhoud = result;
         }, productType2);
 
-      return res.sendStatus(200);
 
-
+        
       socket.emit('productName', { productName: productType2});
 
 
@@ -45,9 +44,17 @@ var inhoud;
       }else{
         // Als er geen product overeenkomsten zijn met database
         //socket.emit('noProduct', { data: "No product found"});
+          return res.json({
+              speech: "Default webhook response"
+          });
       }
 
-      // return res.json({
+
+        return res.json({
+            speech: "Default webhook response"
+        });
+
+        // return res.json({
       //     speech: "Default webhook response",
       // }); 
 
