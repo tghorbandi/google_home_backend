@@ -25,10 +25,10 @@ var inhoud = null;
       var productType2 = productType[Object.keys(productType)[0]];
 
 
-      if(req.body.result.contexts[0].name === "sledge_hammer"){
-          productType2 = "sledge hammer";
-          socket.emit('productName', { productName: productType2});
-      }
+      // if(req.body.result.contexts[0].name === "sledge_hammer"){
+      //     productType2 = "sledge hammer";
+      //     socket.emit('productName', { productName: productType2});
+      // }
 
       console.log("productType2: " + productType2);
 
