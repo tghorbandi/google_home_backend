@@ -32,9 +32,7 @@ var inhoud;
         }, productType2);
 
 
-        
       socket.emit('productName', { productName: productType2});
-
 
       // Als er inderdaad een overeenkomst is in de database
       if(inhoud){
@@ -43,20 +41,14 @@ var inhoud;
         socket.emit('productName', { productName: productType2});
       }else{
         // Als er geen product overeenkomsten zijn met database
+
         //socket.emit('noProduct', { data: "No product found"});
-          return res.json({
-              speech: "Default webhook response"
-          });
+
+          // return res.json({
+          //     speech: "Default webhook response"
+          // });
       }
 
-
-        return res.json({
-            speech: "Default webhook response"
-        });
-
-        // return res.json({
-      //     speech: "Default webhook response",
-      // }); 
 
       // if(req.body.result.resolvedQuery.indexOf('find')){
       //   return res.json({
