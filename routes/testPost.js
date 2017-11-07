@@ -3,7 +3,7 @@ var router = express.Router();
 var mongoDBqueries = require('../controllers/mongoDB');
 var socket;
 
-var inhoud;
+var inhoud = null;
 
   router.post('/', function(req, res) {
 
@@ -23,6 +23,13 @@ var inhoud;
       //Get context parameter van json request
       var productType =  req.body.result.contexts[0].parameters;
       var productType2 = productType[Object.keys(productType)[0]];
+
+
+      if(req.body.result.contexts[0].name === "sledge_hammer"){
+          productType2 = "sledge hammer";
+          socket.emit('productName', { productName: productType2});
+      }
+
       console.log("productType2: " + productType2);
 
       // //context overeenkomt met product in database
@@ -34,8 +41,9 @@ var inhoud;
 
       socket.emit('productName', { productName: productType2});
 
+
       // Als er inderdaad een overeenkomst is in de database
-      if(inhoud){
+      if(inhoud === true){
         console.log('inhoud!');
         // product / context doorsturen naar client
         socket.emit('productName', { productName: productType2});
