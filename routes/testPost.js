@@ -19,7 +19,7 @@ var inhoud = null;
         var productName = req.body.result.resolvedQuery;
         console.log("JSON resolvedQuery: " + productName);
 
-        console.log(req.body);
+        console.log(req.body.originalRequest);
 
         // check first time for a welcome intent
         // after the first time, give other welcome responses
@@ -31,11 +31,13 @@ var inhoud = null;
                     speech: "Hi! I'm e-sites digital assistant. I am designed to give advice and help about Do-it-Yourself store products. How can I help you?"
                 });
             }
-        }else{
+        }
+        if (intro ===2){
             return res.json({
                 speech: "Hi! I'm e-sites digital assistant. How can I help?"
             });
         }
+
 
 
         // Save query variable in mongoDB
