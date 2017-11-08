@@ -19,7 +19,7 @@ var inhoud = null;
         var productName = req.body.result.resolvedQuery;
         console.log("JSON resolvedQuery: " + productName);
 
-        console.log(req.body.result);
+        console.log(req.body);
 
         // check first time for a welcome intent
         // after the first time, give other welcome responses
