@@ -17,9 +17,23 @@ var inhoud = null;
 
         // Save Query in variable
         var productName = req.body.result.resolvedQuery;
-        console.log("JSON resolvedQuery: " + productName);
+        console.log("ResolvedQuery: " + productName);
+        // Save query variable in mongoDB
+        //mongoDBqueries.insertQuery(function(result){}, productName);
 
-        console.log(req.body.originalRequest);
+        // console.log(req.body.originalRequest);
+
+        //Data checken
+        console.log("OR.Data: " + req.body.originalRequest.data);
+        //conversationID
+        console.log("ConversationID: " + req.body.originalRequest.data.conversation);
+        //userID
+        console.log("UserID: " + req.body.originalRequest.data.user.userId);
+
+
+        // zodra de user klaar is met praten, webhook slot filled doen, en dan weet ik server side wanneer een user klaar is.
+        // zo kan ik userID/conversationID in de gaten houden, en dan nieuw gesprek starten, nieuwe user
+
 
         // check first time for a welcome intent
         // after the first time, give other welcome responses
@@ -40,8 +54,6 @@ var inhoud = null;
 
 
 
-        // Save query variable in mongoDB
-        //mongoDBqueries.insertQuery(function(result){}, productName);
 
         //Get context parameter van json request
         var productType =  req.body.result.contexts[0].parameters;
