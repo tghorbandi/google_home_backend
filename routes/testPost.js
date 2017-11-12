@@ -16,27 +16,41 @@ var userID = null;
 
         } else{
 
-        // Let clientside know that it has to show loading icon
-        // Check  for a welcome intent
-        // If the same user is talking, give another welcome message.
-        var welcome = req.body.result.action;
-        if (welcome === "input.welcome"){
-            socket.emit('loading', { loading: "true"});
+            // Let clientside know that it has to show loading icon
+            // Check  for a welcome intent
+            // If the same user is talking, give another welcome message.
+            var welcome = req.body.result.action;
+            if (welcome === "input.welcome"){
+
+                socket.emit('loading', { loading: "true"});
+
+                // Same user 
+                if(req.body.originalRequest.data.user.userId === userID){
+                    return res.json({
+                        speech: "Hi! I'm e-sites digital assistant. How can I help?"
+                    });
+                } // New user
+                else{
+                    return res.json({
+                        speech: "Hi! I'm e-sites digital assistant. I am designed to give advice and help about Do-it-Yourself store products. How can I help you?"
+                    });
+                }
+                
+                return res.sendStatus(200);
+            }
+
+            // Save Query in variable
+            var productName = req.body.result.resolvedQuery;
+            console.log("ResolvedQuery: " + productName);
+
+            // Get context parameter van json request
+            var productType =  req.body.result.contexts[0].parameters;
+            var productType2 = productType[Object.keys(productType)[0]];
+            console.log("ProductType2: " + productType2);
+
+            socket.emit('productName', { productName: productType2});
+
             return res.sendStatus(200);
-        }
-
-        // Save Query in variable
-        var productName = req.body.result.resolvedQuery;
-        console.log("ResolvedQuery: " + productName);
-
-        // Get context parameter van json request
-        var productType =  req.body.result.contexts[0].parameters;
-        var productType2 = productType[Object.keys(productType)[0]];
-        console.log("ProductType2: " + productType2);
-
-        socket.emit('productName', { productName: productType2});
-
-        return res.sendStatus(200);
         
 
         // Save query variable in mongoDB
