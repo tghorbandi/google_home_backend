@@ -17,8 +17,8 @@ var userID = null;
         } else{
 
 
-            console.log("body: " + JSON.stringify(req.body));
-            //console.log("contexts: " + JSON.stringify(req.body.result.contexts.parameters));
+            //console.log("body: " + JSON.stringify(req.body));
+            console.log("newnew: " + JSON.stringify(req.body.result.contexts.parameters));
             // Data request
             //console.log("OR.Data: " + req.body.originalRequest.data);
 
@@ -99,13 +99,6 @@ var userID = null;
 
 
  /*       
-
-        if(req.body.result.contexts[0].name === "sledge_hammer"){
-            productType2 = "sledge hammer";
-            socket.emit('productName', { productName: productType2});
-        }
-
-        console.log("productType2: " + productType2);
 
         // //context overeenkomt met product in database
         mongoDBqueries.findProduct(function(result){
