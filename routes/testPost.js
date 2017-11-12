@@ -31,11 +31,12 @@ var userID = null;
                     });
                 } // New user
                 else{
+                    userID = req.body.originalRequest.data.user.userId;
                     return res.json({
                         speech: "Hi! I'm e-sites digital assistant. I am designed to give advice and help about Do-it-Yourself store products. How can I help you?"
                     });
                 }
-                
+
                 return res.sendStatus(200);
             }
 
