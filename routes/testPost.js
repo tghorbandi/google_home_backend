@@ -18,7 +18,9 @@ var userID = null;
 
 
             //console.log("body: " + JSON.stringify(req.body));
-            console.log("newnew: " + JSON.stringify(req.body.result.contexts.parameters));
+            console.log("newnew: " + Object.keys(req.body.result.contexts.parameters)[1]);
+            console.log("newnew: " + JSON.stringify(Object.keys(req.body.result.contexts.parameters)[1]));
+
             // Data request
             //console.log("OR.Data: " + req.body.originalRequest.data);
 
