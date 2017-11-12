@@ -23,6 +23,11 @@ var userID = null;
         var productName = req.body.result.resolvedQuery;
         console.log("ResolvedQuery: " + productName);
 
+        // Get context parameter van json request
+        var productType =  req.body.result.contexts[0].parameters;
+        var productType2 = productType[Object.keys(productType)[0]];
+        console.log("ProductType2: " + productType2);
+
         // Save query variable in mongoDB
         //mongoDBqueries.insertQuery(function(result){}, productName);
 
@@ -60,10 +65,6 @@ var userID = null;
         // zo kan ik userID/conversationID in de gaten houden, en dan nieuw gesprek starten, nieuwe user
 
 
-        // Get context parameter van json request
-        var productType =  req.body.result.contexts[0].parameters;
-        var productType2 = productType[Object.keys(productType)[0]];
-        console.log("ProductType2: " + productType2);
 
         socket.emit('productName', { productName: productType2});
 
