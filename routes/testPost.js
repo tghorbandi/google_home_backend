@@ -92,13 +92,10 @@ var userID = null;
             var productType =  req.body.result.contexts[0].parameters;
             console.log(JSON.stringify(productType)); // {"sledge_hammer.original":"","sledge_hammer":"sledge hammer"}
 
-            var jsonObj = $.parseJSON('[' + productType + ']');
-            console.log(jsonObj[0]);
-
-
-            //var productType2 = productType[Object.keys(productType)[0]];
-            //console.log("ProductType2: " + productType2);
-
+            var obj = productType;
+            var productType2 =  obj[Object.keys(obj)[1]];
+            console.log("ProductType2: " + productType2);
+            
             socket.emit('productName', { productName: productType2});
 
             return res.sendStatus(200);
