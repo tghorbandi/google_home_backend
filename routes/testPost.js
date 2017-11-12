@@ -1,9 +1,9 @@
+// GLOBAL variables
 var express = require('express');
 var router = express.Router();
 var mongoDBqueries = require('../controllers/mongoDB');
 var socket;
 
-// Set Variables
 var intro = 1;
 var inhoud = null;
 var userID = null;
@@ -17,19 +17,20 @@ var userID = null;
         } else{
 
 
-            console.log("body: " + JSON.stringify(req.body));
-            console.log("contexts: " + JSON.stringify(req.body.result.contexts[0].parameters));
+            //console.log("body: " + JSON.stringify(req.body));
+            console.log("contexts: " + JSON.stringify(req.body.result.contexts.parameters));
 
-            // Data checken
+            // Data request
             //console.log("OR.Data: " + req.body.originalRequest.data);
 
-            // conversationID
-            //console.log("ConversationID: " + req.body.originalRequest.data.conversation.conversationId);
 
-            // Let clientside know that it has to show loading icon
-            // Check  for a welcome intent
-            // If the same user is talking, give another welcome message.
-            // user ID is steeds anders, na "google, stop"
+            /**
+            * Let clientside know that it has to show loading icon
+            * Check  for a welcome intent
+            * If the same user is still talking, give another welcome message (should not happen, keep user in application)
+            * NOTE: userId & conversationId resets after conversation end
+            * @var int userID
+            */
             if (req.body.result.action === "input.welcome"){
 
                 socket.emit('loading', { loading: "true"});
@@ -50,8 +51,13 @@ var userID = null;
                 return res.sendStatus(200);
             }
 
-            // If user exits the application
-            console.log("intentId: " + req.body.result.metadata.intentId);
+            
+            /**
+            * Check if user entered "end" intent.
+            * Returns end conversation fulfillment
+            * Sends reset socket object to client to reset image and text
+            */
+            //console.log("intentId: " + req.body.result.metadata.intentId);
             if (req.body.result.metadata.intentId === "fe0e8ad6-3c74-4261-afaa-6f72d46db370"){
                 return res.json({
                     speech: "Okay, Bye",
@@ -62,11 +68,18 @@ var userID = null;
                     },
                     contextOut: [],
                 });
+                // Reset UI client
+                socket.emit('reset', { reset: "true"});
             }
 
-            // Save Query in variable
+
+            /**
+            * save input query into mongoDB for research
+            * @var string productName
+            */
             var productName = req.body.result.resolvedQuery;
             console.log("ResolvedQuery: " + productName);
+            mongoDBqueries.insertQuery(function(result){}, productName);
 
             // Get context parameter van json request
             var productType =  req.body.result.contexts[0].parameters;
@@ -76,15 +89,7 @@ var userID = null;
             socket.emit('productName', { productName: productType2});
 
             return res.sendStatus(200);
-        
-
-        // Save query variable in mongoDB
-        //mongoDBqueries.insertQuery(function(result){}, productName);
-
-
-
-        // zodra de user klaar is met praten, webhook slot filled doen, en dan weet ik server side wanneer een user klaar is.
-        // zo kan ik userID/conversationID in de gaten houden, en dan nieuw gesprek starten, nieuwe user
+    
 
 
  /*       
