@@ -90,9 +90,7 @@ var userID = null;
             * @var string productType2
             */
             var productType =  req.body.result.contexts[0].parameters;
-            console.log("ProductType: " + productType);
-
-            console.log("ProductTypett: " + req.body.result.contexts[0].parameters.sledge_hammer);
+            console.log(JSON.stringify(productType));
 
             var productType2 = productType[Object.keys(productType)[0]];
             console.log("ProductType2: " + productType2);
