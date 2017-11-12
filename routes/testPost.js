@@ -17,7 +17,13 @@ var userID = null;
         } else{
 
         // Let clientside know that it has to show loading icon
-        socket.emit('loading', { loading: "true"}); // should be in welcome intent if else statement
+        // Check  for a welcome intent
+        // If the same user is talking, give another welcome message.
+        var welcome = req.body.result.action;
+        if (welcome === "input.welcome"){
+            socket.emit('loading', { loading: "true"});
+            return res.sendStatus(200);
+        }
 
         // Save Query in variable
         var productName = req.body.result.resolvedQuery;
@@ -31,6 +37,7 @@ var userID = null;
         socket.emit('productName', { productName: productType2});
 
         return res.sendStatus(200);
+        
 
         // Save query variable in mongoDB
         //mongoDBqueries.insertQuery(function(result){}, productName);
