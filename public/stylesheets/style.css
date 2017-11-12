@@ -27,3 +27,7 @@ a {
 #GHimg{
 	/*float:right;*/
 }
+
+#loading{
+  display: none;
+}

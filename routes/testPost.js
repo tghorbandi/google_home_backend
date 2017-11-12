@@ -15,6 +15,9 @@ var inhoud = null;
 
         } else{
 
+        // Let clientside know that it has to show loading icon
+        socket.emit('loading', { loading: "true"});
+
         // Save Query in variable
         var productName = req.body.result.resolvedQuery;
         console.log("ResolvedQuery: " + productName);
