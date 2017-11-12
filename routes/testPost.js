@@ -90,10 +90,14 @@ var userID = null;
             * @var string productType2
             */
             var productType =  req.body.result.contexts[0].parameters;
-            console.log(JSON.stringify(productType));
+            console.log(JSON.stringify(productType)); // {"sledge_hammer.original":" ","sledge_hammer":"sledge hammer"}
+            productType = JSON.stringify(productType); 
 
-            var productType2 = productType[Object.keys(productType)[0]];
-            console.log("ProductType2: " + productType2);
+           
+
+            var productType2 = Object.keys(productType)[1];
+            var productType3 = JSON.stringify(productType2);
+            console.log("ProductType3: " + productType3);
 
             socket.emit('productName', { productName: productType2});
 
