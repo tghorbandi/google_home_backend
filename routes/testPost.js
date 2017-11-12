@@ -17,8 +17,8 @@ var userID = null;
         } else{
 
 
-            console.log("body: " + req.body);
-            console.log("contexts: " + req.body.result.contexts[0].parameters);
+            console.log("body: " + JSON.stringify(req.body));
+            console.log("contexts: " + JSON.stringify(req.body.result.contexts[0].parameters));
 
             // Data checken
             //console.log("OR.Data: " + req.body.originalRequest.data);
