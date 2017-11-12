@@ -17,7 +17,7 @@ var userID = null;
         } else{
 
 
-            console.log("body2: " + JSON.stringify(req.body));
+            console.log("body: " + JSON.stringify(req.body));
 
             // Data request
             //console.log("OR.Data: " + req.body.originalRequest.data);
@@ -79,7 +79,7 @@ var userID = null;
             */
             var productName = req.body.result.resolvedQuery;
             console.log("ResolvedQuery: " + productName);
-            mongoDBqueries.insertQuery(function(result){}, productName);
+            //mongoDBqueries.insertQuery(function(result){}, productName);
 
 
             /**
