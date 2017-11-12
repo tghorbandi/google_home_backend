@@ -50,6 +50,20 @@ var userID = null;
                 return res.sendStatus(200);
             }
 
+            // If user exits the application
+            console.log("intentId: " + req.body.result.metadata.intentId);
+            if (req.body.result.metadata.intentId === "fe0e8ad6-3c74-4261-afaa-6f72d46db370"){
+                return res.json({
+                    speech: "Okay, Bye",
+                    data: {
+                        google: {
+                            expect_user_response: false,
+                        }
+                    },
+                    contextOut: [],
+                });
+            }
+
             // Save Query in variable
             var productName = req.body.result.resolvedQuery;
             console.log("ResolvedQuery: " + productName);
@@ -135,29 +149,3 @@ module.exports = function(io){
   return router;
 };
 
-
-/*
-
-    return res.json({
-        speech: "testing from webhook",
-        //displayText: "testing from webhook",
-        // data: {
-        //     "slack": "test"
-        // },
-        // contextOut: [{
-        //   "name": "testing", 
-        //   "lifespan": 2, 
-        //   "parameters": {
-        //     "city": "Rome"
-        //   }
-        // }],
-        source: 'webhook-echo-sample',
-        followupEvent: {
-          "name": "fill_slots",
-          "data": {
-            "<parameter_name>": "<parameter_value>"
-          }
-        }
-    });
-
-*/
