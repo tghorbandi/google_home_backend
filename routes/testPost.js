@@ -17,7 +17,7 @@ var userID = null;
         } else{
 
 
-            console.log("body: " + JSON.stringify(req.body));
+            console.log("body2: " + JSON.stringify(req.body));
 
             // Data request
             //console.log("OR.Data: " + req.body.originalRequest.data);
