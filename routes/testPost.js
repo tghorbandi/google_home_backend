@@ -28,9 +28,13 @@ var userID = null;
         var productType2 = productType[Object.keys(productType)[0]];
         console.log("ProductType2: " + productType2);
 
+        socket.emit('productName', { productName: productType2});
+
         // Save query variable in mongoDB
         //mongoDBqueries.insertQuery(function(result){}, productName);
 
+
+/*
         // Check  for a welcome intent
         // If the same user is talking, give another welcome message.
         var welcome = req.body.result.action;
@@ -58,7 +62,7 @@ var userID = null;
         //userID
         console.log("UserID: " + req.body.originalRequest.data.user.userId); // user ID is steeds anders, na "google, stop"
         userID = req.body.originalRequest.data.user.userId;
-
+*/
 
 
         // zodra de user klaar is met praten, webhook slot filled doen, en dan weet ik server side wanneer een user klaar is.
@@ -66,7 +70,7 @@ var userID = null;
 
 
 
-        socket.emit('productName', { productName: productType2});
+ /*       
 
         if(req.body.result.contexts[0].name === "sledge_hammer"){
             productType2 = "sledge hammer";
@@ -117,7 +121,7 @@ var userID = null;
         //       },
         //     }
         // });
-
+*/
   }
 
 });
