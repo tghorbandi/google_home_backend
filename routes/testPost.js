@@ -17,9 +17,7 @@ var userID = null;
         } else{
 
 
-            //console.log("body: " + JSON.stringify(req.body));
-            console.log("newnew: " + Object.keys(req.body.result.contexts.parameters)[1]);
-            console.log("newnew: " + JSON.stringify(Object.keys(req.body.result.contexts.parameters)[1]));
+            console.log("body: " + JSON.stringify(req.body));
 
             // Data request
             //console.log("OR.Data: " + req.body.originalRequest.data);
@@ -91,7 +89,8 @@ var userID = null;
             * @var string productType
             * @var string productType2
             */
-            var productType =  req.body.result.contexts[0].parameters;
+            var productType =  req.body.result.contexts[1].parameters;
+            console.log("ProductType: " + productType2);
             var productType2 = productType[Object.keys(productType)[0]];
             console.log("ProductType2: " + productType2);
 
