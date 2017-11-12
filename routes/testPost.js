@@ -17,10 +17,12 @@ var userID = null;
         } else{
 
 
-            console.log(req.body.originalRequest);
+            console.log("body: " + req.body);
+            console.log("contexts: " + req.body.result.contexts[0].parameters);
 
             // Data checken
             //console.log("OR.Data: " + req.body.originalRequest.data);
+
             // conversationID
             //console.log("ConversationID: " + req.body.originalRequest.data.conversation.conversationId);
 
@@ -28,8 +30,7 @@ var userID = null;
             // Check  for a welcome intent
             // If the same user is talking, give another welcome message.
             // user ID is steeds anders, na "google, stop"
-            var welcome = req.body.result.action;
-            if (welcome === "input.welcome"){
+            if (req.body.result.action === "input.welcome"){
 
                 socket.emit('loading', { loading: "true"});
 
