@@ -26,13 +26,14 @@ var inhoud = null;
         //Data checken
         console.log("OR.Data: " + req.body.originalRequest.data);
         //conversationID
-        console.log("ConversationID: " + req.body.originalRequest.data.conversation);
+        console.log("ConversationID: " + req.body.originalRequest.data.conversation.conversationId);
         //userID
-        console.log("UserID: " + req.body.originalRequest.data.user.userId);
+        console.log("UserID: " + req.body.originalRequest.data.user.userId); // user ID is steeds anders, na "google, stop"
 
 
         // zodra de user klaar is met praten, webhook slot filled doen, en dan weet ik server side wanneer een user klaar is.
         // zo kan ik userID/conversationID in de gaten houden, en dan nieuw gesprek starten, nieuwe user
+
 
 
         // check first time for a welcome intent
