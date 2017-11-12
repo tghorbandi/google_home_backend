@@ -17,7 +17,7 @@ var userID = null;
         } else{
 
         // Let clientside know that it has to show loading icon
-        socket.emit('loading', { loading: "true"});
+        socket.emit('loading', { loading: "true"}); // should be in welcome intent if else statement
 
         // Save Query in variable
         var productName = req.body.result.resolvedQuery;
