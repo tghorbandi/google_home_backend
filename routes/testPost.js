@@ -16,6 +16,8 @@ var userID = null;
 
         } else{
 
+            console.log("userID1: " + userID);
+
             // Let clientside know that it has to show loading icon
             // Check  for a welcome intent
             // If the same user is talking, give another welcome message.
@@ -26,12 +28,14 @@ var userID = null;
 
                 // Same user 
                 if(req.body.originalRequest.data.user.userId === userID){
+                    console.log("userID2: " + userID);
                     return res.json({
                         speech: "Hi! I'm e-sites digital assistant. How can I help?"
                     });
                 } // New user
                 else{
                     userID = req.body.originalRequest.data.user.userId;
+                    console.log("userID3: " + userID);
                     return res.json({
                         speech: "Hi! I'm e-sites digital assistant. I am designed to give advice and help about Do-it-Yourself store products. How can I help you?"
                     });
