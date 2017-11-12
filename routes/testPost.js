@@ -16,11 +16,18 @@ var userID = null;
 
         } else{
 
-            console.log("userID1: " + userID);
+
+            console.log(req.body.originalRequest);
+
+            // Data checken
+            //console.log("OR.Data: " + req.body.originalRequest.data);
+            // conversationID
+            //console.log("ConversationID: " + req.body.originalRequest.data.conversation.conversationId);
 
             // Let clientside know that it has to show loading icon
             // Check  for a welcome intent
             // If the same user is talking, give another welcome message.
+            // user ID is steeds anders, na "google, stop"
             var welcome = req.body.result.action;
             if (welcome === "input.welcome"){
 
@@ -28,14 +35,12 @@ var userID = null;
 
                 // Same user 
                 if(req.body.originalRequest.data.user.userId === userID){
-                    console.log("userID2: " + userID);
                     return res.json({
                         speech: "Hi! I'm e-sites digital assistant. How can I help?"
                     });
                 } // New user
                 else{
                     userID = req.body.originalRequest.data.user.userId;
-                    console.log("userID3: " + userID);
                     return res.json({
                         speech: "Hi! I'm e-sites digital assistant. I am designed to give advice and help about Do-it-Yourself store products. How can I help you?"
                     });
@@ -62,40 +67,9 @@ var userID = null;
         //mongoDBqueries.insertQuery(function(result){}, productName);
 
 
-/*
-        // Check  for a welcome intent
-        // If the same user is talking, give another welcome message.
-        var welcome = req.body.result.action;
-        if (welcome === "input.welcome"){
-            // Same user 
-            if(req.body.originalRequest.data.user.userId === userID){
-                return res.json({
-                    speech: "Hi! I'm e-sites digital assistant. How can I help?"
-                });
-            } // New user
-            else{
-                return res.json({
-                    speech: "Hi! I'm e-sites digital assistant. I am designed to give advice and help about Do-it-Yourself store products. How can I help you?"
-                });
-            }
-        }
-
-
-        // console.log(req.body.originalRequest);
-
-        //Data checken
-        console.log("OR.Data: " + req.body.originalRequest.data);
-        //conversationID
-        console.log("ConversationID: " + req.body.originalRequest.data.conversation.conversationId);
-        //userID
-        console.log("UserID: " + req.body.originalRequest.data.user.userId); // user ID is steeds anders, na "google, stop"
-        userID = req.body.originalRequest.data.user.userId;
-*/
-
 
         // zodra de user klaar is met praten, webhook slot filled doen, en dan weet ik server side wanneer een user klaar is.
         // zo kan ik userID/conversationID in de gaten houden, en dan nieuw gesprek starten, nieuwe user
-
 
 
  /*       
