@@ -60,11 +60,12 @@ var userID = null;
         // zo kan ik userID/conversationID in de gaten houden, en dan nieuw gesprek starten, nieuwe user
 
 
-
         // Get context parameter van json request
         var productType =  req.body.result.contexts[0].parameters;
         var productType2 = productType[Object.keys(productType)[0]];
+        console.log("ProductType2: " + productType2);
 
+        socket.emit('productName', { productName: productType2});
 
         if(req.body.result.contexts[0].name === "sledge_hammer"){
             productType2 = "sledge hammer";
@@ -80,7 +81,7 @@ var userID = null;
           }, productType2);
 
 
-        socket.emit('productName', { productName: productType2});
+
 
 
         // Als er inderdaad een overeenkomst is in de database
