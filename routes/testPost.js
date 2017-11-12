@@ -30,6 +30,8 @@ var userID = null;
 
         socket.emit('productName', { productName: productType2});
 
+        return res.sendStatus(200);
+
         // Save query variable in mongoDB
         //mongoDBqueries.insertQuery(function(result){}, productName);
 
