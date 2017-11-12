@@ -17,9 +17,8 @@ var userID = null;
         } else{
 
 
-            //console.log("body: " + JSON.stringify(req.body));
-            console.log("contexts: " + JSON.stringify(req.body.result.contexts.parameters));
-
+            console.log("body: " + JSON.stringify(req.body));
+            //console.log("contexts: " + JSON.stringify(req.body.result.contexts.parameters));
             // Data request
             //console.log("OR.Data: " + req.body.originalRequest.data);
 
@@ -35,12 +34,11 @@ var userID = null;
 
                 socket.emit('loading', { loading: "true"});
 
-                // Same user 
                 if(req.body.originalRequest.data.user.userId === userID){
                     return res.json({
                         speech: "Hi! I'm e-sites digital assistant. How can I help?"
                     });
-                } // New user
+                }
                 else{
                     userID = req.body.originalRequest.data.user.userId;
                     return res.json({
@@ -51,14 +49,18 @@ var userID = null;
                 return res.sendStatus(200);
             }
 
-            
+
             /**
             * Check if user entered "end" intent.
-            * Returns end conversation fulfillment
             * Sends reset socket object to client to reset image and text
+            * Returns end conversation fulfillment
             */
-            //console.log("intentId: " + req.body.result.metadata.intentId);
+            console.log("intentId: " + req.body.result.metadata.intentId);
             if (req.body.result.metadata.intentId === "fe0e8ad6-3c74-4261-afaa-6f72d46db370"){
+
+                // Reset UI client
+                socket.emit('reset', { reset: "true"});
+
                 return res.json({
                     speech: "Okay, Bye",
                     data: {
@@ -68,8 +70,6 @@ var userID = null;
                     },
                     contextOut: [],
                 });
-                // Reset UI client
-                socket.emit('reset', { reset: "true"});
             }
 
 
@@ -81,7 +81,14 @@ var userID = null;
             console.log("ResolvedQuery: " + productName);
             mongoDBqueries.insertQuery(function(result){}, productName);
 
-            // Get context parameter van json request
+
+            /**
+            * Check if context parameter is empty
+            * Check if context parameter contains product thats inside database
+            * Get context parameter of json request 
+            * @var string productType
+            * @var string productType2
+            */
             var productType =  req.body.result.contexts[0].parameters;
             var productType2 = productType[Object.keys(productType)[0]];
             console.log("ProductType2: " + productType2);
@@ -89,7 +96,6 @@ var userID = null;
             socket.emit('productName', { productName: productType2});
 
             return res.sendStatus(200);
-    
 
 
  /*       
@@ -106,9 +112,6 @@ var userID = null;
               //console.log(result);
               inhoud = result;
           }, productType2);
-
-
-
 
 
         // Als er inderdaad een overeenkomst is in de database
