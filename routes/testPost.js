@@ -46,7 +46,6 @@ var userID = null;
                     });
                 }
 
-                return res.sendStatus(200);
             }
 
 
