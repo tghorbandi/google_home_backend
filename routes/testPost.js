@@ -16,7 +16,6 @@ var userID = null;
 
         } else{
 
-
             console.log("body: " + JSON.stringify(req.body));
 
             // Data request
