@@ -20,6 +20,24 @@ router.post('/', function(req, res) {
 
 
         /**
+         * Check if inside "tell me productname" intent
+         */
+        if(req.body.result.metadata.intentId === "f493240d-4bf2-4ef3-9a19-1a36916e61e8"){
+            console.log("body22: " + JSON.stringify(req.body));
+            return res.json({
+                speech: "testing webhook"
+            });
+        }
+
+        /** TODO//
+         * Check if context finding-hammer contains product in the database
+         * Check which hammer it is
+         * return product
+         * return no product found
+         */
+
+
+        /**
          * Let clientside know that it has to show loading icon
          * Check  for a welcome intent
          * If the same user is still talking, give another welcome message (should not happen, keep user in application)
@@ -38,7 +56,7 @@ router.post('/', function(req, res) {
             else{
                 userID = req.body.originalRequest.data.user.userId;
                 return res.json({
-                    speech: "Hi! I'm e-sites digital assistant. I am designed to give advice and help about Do-it-Yourself store products. How can I help you?"
+                    speech: "Hi! I'm e-sites digital assistant. I am designed to give advice and help about hammer products. How can I help you?"
                 });
             }
 
