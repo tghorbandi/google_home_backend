@@ -51,7 +51,7 @@ router.post('/', function(req, res) {
          * Returns end conversation fulfillment
          */
         console.log("intentId: " + req.body.result.metadata.intentId);
-        if (req.body.result.metadata.intentId === "fe0e8ad6-3c74-4261-afaa-6f72d46db370"){
+        if (req.body.result.metadata.intentId === "50e7d411-c5da-497e-8a34-5eae79e0a744"){
 
             // Reset UI client
             socket.emit('reset', { reset: "true"});
