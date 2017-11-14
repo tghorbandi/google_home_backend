@@ -20,13 +20,23 @@ router.post('/', function(req, res) {
 
 
         /**
-         * Check if inside "tell me productname" intent
+         * Check if inside "tell me "Default Welcome Intent - yes - yes - custom" intent
+         * Check if resolvedQuery meets content of database, if yes, retrieve that row, and show name and location
+         *
          */
-        if(req.body.result.metadata.intentId === "f493240d-4bf2-4ef3-9a19-1a36916e61e8"){
-            console.log("body22: " + JSON.stringify(req.body));
-            return res.json({
-                speech: "testing webhook"
-            });
+        if(req.body.result.metadata.intentId === "96cca1ff-4122-45bc-9a4c-8c6b141b135a"){
+
+            var product = req.body.result.resolvedQuery;
+            if(product === "sledge hammer"){ // this check should be made in database and return location from db too
+                return res.json({
+                    speech: "You are looking for sledge hammer -webhook"
+                });
+            }else{
+                return res.json({
+                    speech: "I'm sorry your answer is either a product that I don't know about, or I haven't understood you properly. -webhook"
+                });
+            }
+
         }
 
         /** TODO//
