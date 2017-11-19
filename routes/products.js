@@ -24,20 +24,20 @@ router.post('/', function(req, res) {
          * Check if resolvedQuery meets content of database, if yes, retrieve that row, and show name and location
          *
          */
-        if(req.body.result.metadata.intentId === "96cca1ff-4122-45bc-9a4c-8c6b141b135a"){
+        // if(req.body.result.metadata.intentId === "96cca1ff-4122-45bc-9a4c-8c6b141b135a"){
 
-            var product = req.body.result.resolvedQuery;
-            if(product === "sledge hammer"){ // this check should be made in database and return location from db too
-                return res.json({
-                    speech: "You are looking for sledge hammer -webhook"
-                });
-            }else{
-                return res.json({
-                    speech: "I'm sorry your answer is either a product that I don't know about, or I haven't understood you properly. -webhook"
-                });
-            }
+        //     var product = req.body.result.resolvedQuery;
+        //     if(product === "sledge hammer"){ // this check should be made in database and return location from db too
+        //         return res.json({
+        //             speech: "You are looking for sledge hammer -webhook"
+        //         });
+        //     }else{
+        //         return res.json({
+        //             speech: "I'm sorry your answer is either a product that I don't know about, or I haven't understood you properly. -webhook"
+        //         });
+        //     }
 
-        }
+        // }
 
         /** TODO//
          * Check if context finding-hammer contains product in the database
@@ -72,6 +72,37 @@ router.post('/', function(req, res) {
 
         }
 
+
+        
+        /**
+         * Check if user entered "searching - yes - custom" intent.
+         * In this statement, check if user input has a value that is the same as in the database.
+         * User says: "A hammer", that is a not a valid product, or that is a product that I do not know of.
+         * 
+         * If user input is the same as something in the array, return: "I have found your product, have a look at the screen, 
+         is this the product you were looking for?"
+         */
+         if (req.body.result.metadata.intentId === "d9689d6d-aa9c-4470-b2dc-a72fa1f6bc9f"){
+
+            var input = req.body.result.resolvedQuery;
+            console.log("ResolvedQuery: " + input);
+
+            var inputArray = str.split(" ");
+            console.log(inputArray);
+
+            return res.json({
+                speech: "Testing backend console.log"
+            });
+
+            // input = wat user zegt na de vraag: What product are you looking for?
+            // inhoud van input overeenkomt met array dan heeft Estella iets gevonden.
+
+
+            // if(req.body.result.resolvedQuery.indexOf('find')){
+
+            // }
+
+         }
 
         /**
          * Check if user entered "end" intent.
