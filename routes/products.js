@@ -85,9 +85,10 @@ router.post('/', function(req, res) {
             console.log("ResolvedQuery: " + input);
 
             var inputArray = input.split(" ");
-            console.log("InputArray: " + inputArray);
+            console.log(inputArray);
 
             var regex = inputArray.join("|");
+            console.log(regex);
 
             mongoDBqueries.findSpecificType(function(result){
                   console.log("MONGODB RESULT:" + JSON.stringify(result));
