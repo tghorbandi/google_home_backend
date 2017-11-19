@@ -94,10 +94,6 @@ router.post('/', function(req, res) {
                     return res.json({
                         speech: "I have found your product, have a look at the screen, is this the product you were looking for?"
                     });
-                  }else{
-                    return res.json({
-                        speech: "I'm sorry that is a not a valid product, or that is a product that I do not know of. Please try again."
-                    });
                   }
               }, inputArray);
          }
