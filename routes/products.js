@@ -77,10 +77,7 @@ router.post('/', function(req, res) {
         /**
          * Check if user entered "searching - yes - custom" intent.
          * In this statement, check if user input has a value that is the same as in the database.
-         * User says: "A hammer", that is a not a valid product, or that is a product that I do not know of.
          * 
-         * If user input is the same as something in the array, return: "I have found your product, have a look at the screen, 
-         is this the product you were looking for?"
          */
          if (req.body.result.metadata.intentId === "d9689d6d-aa9c-4470-b2dc-a72fa1f6bc9f"){
 
@@ -90,17 +87,35 @@ router.post('/', function(req, res) {
             var inputArray = input.split(" ");
             console.log(inputArray);
 
-            return res.json({
-                speech: "Testing backend console.log"
-            });
-
-            // input = wat user zegt na de vraag: What product are you looking for?
-            // inhoud van input overeenkomt met array dan heeft Estella iets gevonden.
+            var testArray = ["sledge", "toolmaker", "curved claw"];
 
 
-            // if(req.body.result.resolvedQuery.indexOf('find')){
+            // eigenlijk moet callback een array worden ipv string
+            var sledge = "sledge";
+            var inhoud;
+            mongoDBqueries.findProduct(function(result){
+                  console.log("MONGODB RESULT:" + result);
+                  inhoud = result;
+              }, sledge);
 
+            
+
+            // if (testArray.some(v => inputArray.includes(v)) === true ){
+            //     console.log('true!');
+
+            //     // welk woord komt overeen, pak daar de ID uit, met full_product_name en img location
+
+            //     return res.json({
+            //         speech: "I have found your product, have a look at the screen, is this the product you were looking for?"
+            //     });
+            // }else{
+            //     return res.json({
+            //         speech: "I'm sorry that is a not a valid product, or that is a product that I do not know of. Please try again."
+            //     });
             // }
+
+
+             return res.sendStatus(200);
 
          }
 
