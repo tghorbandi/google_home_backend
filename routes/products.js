@@ -91,7 +91,7 @@ router.post('/', function(req, res) {
 
             mongoDBqueries.findSpecificType(function(result){
                 console.log("MONGODB RESULT:" + JSON.stringify(result));
-                console.log(result[0].type);
+                //console.log(result[0].type);
 
                 if(result){
                     gevonden = true;
@@ -100,15 +100,18 @@ router.post('/', function(req, res) {
                 }
 
                 function checkVariable() {
-
+                    console.log('test111');
                    if (gevonden == true) {
                        return res.json({
                            speech: "I have found your product, have a look at the screen, is this the product you were looking for?"
                        });
+                       console.log('test1');
                    }else{
+                        console.log('test2');
                         return res.json({
                             speech: "I'm sorry that is a not a valid product, or that is a product that I do not know of. Please try again."
                         });
+
                    }
                  }
 
