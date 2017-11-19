@@ -87,14 +87,14 @@ router.post('/', function(req, res) {
             var inputArray = input.split(" ");
             console.log(inputArray);
 
-            var regex = inputArray.join("|");
-            console.log(regex);
+            // var regex = inputArray.join("|");
+            // console.log(regex);
 
-            regex = "sledge";
+            // regex = "sledge";
 
             mongoDBqueries.findSpecificType(function(result){
                   console.log("MONGODB RESULT:" + JSON.stringify(result));
-              }, regex);
+              }, inputArray);
 
 
             // // find alle type hamers
