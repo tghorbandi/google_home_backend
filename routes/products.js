@@ -87,21 +87,41 @@ router.post('/', function(req, res) {
             var inputArray = input.split(" ");
             console.log(inputArray);
 
+            var gevonden;
+
             mongoDBqueries.findSpecificType(function(result){
                 console.log("MONGODB RESULT:" + JSON.stringify(result));
                 console.log(result[0].type);
+
+                if(result){
+                    gevonden = true;
+                }else{
+                    gevonden = false;
+                }
+
+                function checkVariable() {
+
+                   if (gevonden == true) {
+                       return res.json({
+                           speech: "I have found your product, have a look at the screen, is this the product you were looking for?"
+                       });
+                   }else{
+                        return res.json({
+                            speech: "I'm sorry that is a not a valid product, or that is a product that I do not know of. Please try again."
+                        });
+                   }
+                 }
+
+                 setTimeout(checkVariable, 50);
+
             }, inputArray);
 
 
-            // return res.json({
-            //     speech: "I'm sorry that is a not a valid product, or that is a product that I do not know of. Please try again."
-            // });
 
-            console.log('testt');
+
+
     
-            return res.json({
-                speech: "I have found your product, have a look at the screen, is this the product you were looking for?"
-            });
+
 
          }
 
