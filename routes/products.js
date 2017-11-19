@@ -95,7 +95,7 @@ router.post('/', function(req, res) {
             var inhoud;
             mongoDBqueries.findProduct(function(result){
                   console.log("MONGODB RESULT:" + JSON.stringify(result));
-                  inhoud = result;
+                  inhoud = JSON.stringify(result);
               }, sledge);
 
             console.log(inhoud);
