@@ -99,12 +99,26 @@ router.post('/', function(req, res) {
                     });
                 }else{
                    return res.json({
-                       speech: "I'm sorry that is a not a valid product, or that is a product that I do not know of. Please try again."
+                       speech: "I'm sorry, I couldn't find that. Try specifying the type of product you are looking for."
                    });
                 }
             }, inputArray);
 
          }
+
+
+         /**
+          * intent "Location product"
+          */
+          if (req.body.result.metadata.intentId === "bee1c466-9b92-4c2a-83e5-f2ca083c17c7"){
+
+                console.log("productPlacement: " + productPlacement);
+                //var newPlacement = JSON.parse(productPlacement);
+
+                return res.setHeader('Content-Type', 'application/json');
+                return res.send(JSON.stringify({ speech: productPlacement }));
+
+          }
 
 
          /**
