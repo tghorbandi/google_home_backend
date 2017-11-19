@@ -90,6 +90,8 @@ router.post('/', function(req, res) {
             var regex = inputArray.join("|");
             console.log(regex);
 
+            regex = "sledge";
+
             mongoDBqueries.findSpecificType(function(result){
                   console.log("MONGODB RESULT:" + JSON.stringify(result));
               }, regex);
