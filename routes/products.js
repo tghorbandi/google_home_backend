@@ -100,9 +100,9 @@ router.post('/', function(req, res) {
             mongoDBqueries.findAllTypes(function(result){
 
                   console.log("MONGODB RESULT:" + JSON.stringify(result));
-                  // inhoud = result[0].type;
-                  // console.log(inhoud);
-                  // if in alle types 
+                  inhoud = result[0].type;
+                  console.log(inhoud);
+                  console.log(JSON.stringify(inhoud));
               });
            
 
