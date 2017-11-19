@@ -150,3 +150,4 @@ module.exports.insertImage = insertImage;
 module.exports.insertQuery = insertQuery ;
 module.exports.insertProductName = insertProductName;
 module.exports.findProduct = findProduct;
+module.exports.findAllTypes = findAllTypes;
