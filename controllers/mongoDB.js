@@ -144,8 +144,6 @@ var findAllTypes = function(callback) {
 var findSpecificType = function(callback, regex) {
   var collection = db2.collection('type_hammers');
   collection.find({type: { $in: regex}} ).toArray(function(err, docs) {
-    console.log(docs);
-    //if docs is empty al iets meesturen
     callback(docs);
   });
 }
