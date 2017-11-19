@@ -100,9 +100,6 @@ router.post('/', function(req, res) {
                     });
                   }
               }, inputArray);
-    
-             return res.sendStatus(200);
-
          }
 
         /**
