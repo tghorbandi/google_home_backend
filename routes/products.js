@@ -124,9 +124,7 @@ router.post('/', function(req, res) {
 
             //   });
     
-            return res.json({
-                speech: "I have found your product, have a look at the screen, is this the product you were looking for?"
-            });
+             return res.sendStatus(200);
 
          }
 
