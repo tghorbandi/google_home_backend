@@ -143,11 +143,11 @@ var findAllTypes = function(callback) {
 
 var findSpecificType = function(callback, regex) {
   var collection = db2.collection('type_hammers');
-  collection.find({"type": {"$regex": regex, "$options": "i"}}, (function(err, docs) {
-    //console.log('found records inside mongoDB');
+  collection.find({"type": {"$regex": regex, "$options": "i"}}).toArray(function(err, docs) {
     callback(docs);
-  }));
+  });
 }
+
 
 
 module.exports = {}
