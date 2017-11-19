@@ -87,39 +87,35 @@ router.post('/', function(req, res) {
             var inputArray = input.split(" ");
             console.log(inputArray);
 
-            var testArray = ["sledge", "toolmaker", "curved claw"];
+            var regex = inputArray.join("|");
 
-
-            // eigenlijk moet callback een array worden ipv string
-            var sledge = "sledge";
-            var inhoud;
-
-
-
-            // find alles
-            mongoDBqueries.findAllTypes(function(result){
-
+            mongoDBqueries.findSpecificType(function(result){
                   console.log("MONGODB RESULT:" + JSON.stringify(result));
-                  inhoud = result[0].type;
-                  console.log(inhoud);
-                  console.log(JSON.stringify(inhoud));
+              }, regex);
 
 
-                  // if (testArray.some(v => inputArray.includes(v)) === true ){
-                  //     console.log('true!');
+            // // find alle type hamers
+            // mongoDBqueries.findAllTypes(function(result){
 
-                  //     // welk woord komt overeen, pak daar de ID uit, met full_product_name en img location
+            //       console.log("MONGODB RESULT:" + JSON.stringify(result));
+            //       var inhoud = result;
 
-                  //     return res.json({
-                  //         speech: "I have found your product, have a look at the screen, is this the product you were looking for?"
-                  //     });
-                  // }else{
-                  //     return res.json({
-                  //         speech: "I'm sorry that is a not a valid product, or that is a product that I do not know of. Please try again."
-                  //     });
-                  // }
+            //       if (inhoud.some(v => inputArray.includes(v)) === true ){
+            //           console.log('true!');
 
-              });
+            //           // welk woord komt overeen, pak daar de ID uit, met full_product_name en img location
+
+
+            //           return res.json({
+            //               speech: "I have found your product, have a look at the screen, is this the product you were looking for?"
+            //           });
+            //       }else{
+            //           return res.json({
+            //               speech: "I'm sorry that is a not a valid product, or that is a product that I do not know of. Please try again."
+            //           });
+            //       }
+
+            //   });
     
              return res.sendStatus(200);
 

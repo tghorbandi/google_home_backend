@@ -128,7 +128,6 @@ var findProduct = function(callback, productType) {
   });
 }
 
-
 /*
 **
   Find every type in Database
@@ -137,7 +136,17 @@ var findProduct = function(callback, productType) {
 var findAllTypes = function(callback) {
   var collection = db2.collection('type_hammers');
   collection.distinct('type', (function(err, docs) {
-    callback(docs); }));
+    callback(docs); 
+  }));
+}
+
+
+var findSpecificType = function(callback, regex) {
+  var collection = db2.collection('type_hammers');
+  collection.find({"type": {"$regex": regex, "$options": "i"}}, (function(err, docs) {
+    //console.log('found records inside mongoDB');
+    callback(docs);
+  }));
 }
 
 
@@ -150,3 +159,4 @@ module.exports.insertQuery = insertQuery ;
 module.exports.insertProductName = insertProductName;
 module.exports.findProduct = findProduct;
 module.exports.findAllTypes = findAllTypes;
+module.exports.findSpecificType = findSpecificType; 
