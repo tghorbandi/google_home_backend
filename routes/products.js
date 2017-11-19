@@ -96,7 +96,9 @@ router.post('/', function(req, res) {
                   if(JSON.stringify(result).length > 0){
                     console.log('testtt');
                   }else{
-                    console.log('test2');
+                              return res.json({
+                                  speech: "I'm sorry that is a not a valid product, or that is a product that I do not know of. Please try again."
+                              });
                   }
               }, inputArray);
 
@@ -124,7 +126,9 @@ router.post('/', function(req, res) {
 
             //   });
     
-             return res.sendStatus(200);
+                                   return res.json({
+                          speech: "I have found your product, have a look at the screen, is this the product you were looking for?"
+                      });
 
          }
 
