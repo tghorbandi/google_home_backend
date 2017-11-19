@@ -96,10 +96,11 @@ router.post('/', function(req, res) {
             mongoDBqueries.findProduct(function(result){
                   console.log("MONGODB RESULT:" + JSON.stringify(result));
                   inhoud = JSON.stringify(result);
+                  console.log("inhoud test");
               }, sledge);
 
-            console.log(inhoud);
-            //console.log("inhoud test" + inhoud.type);
+            console.log("inhoud" + inhoud);
+            console.log("inhoud test");
             
 
             // if (testArray.some(v => inputArray.includes(v)) === true ){
