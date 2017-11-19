@@ -98,6 +98,8 @@ router.post('/', function(req, res) {
                   inhoud = result;
               }, sledge);
 
+            console.log(inhoud);
+            console.log("inhoud test" + inhoud.type);
             
 
             // if (testArray.some(v => inputArray.includes(v)) === true ){
