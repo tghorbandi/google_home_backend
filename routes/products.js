@@ -87,7 +87,7 @@ router.post('/', function(req, res) {
             var input = req.body.result.resolvedQuery;
             console.log("ResolvedQuery: " + input);
 
-            var inputArray = str.split(" ");
+            var inputArray = input.split(" ");
             console.log(inputArray);
 
             return res.json({
