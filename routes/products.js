@@ -93,7 +93,7 @@ router.post('/', function(req, res) {
                   //console.log(result[0].type);
 
 
-                  if(result){
+                  if(result[0].type){
                     console.log('testtt');
                   }else{
                               return res.json({
