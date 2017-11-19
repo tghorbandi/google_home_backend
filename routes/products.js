@@ -113,11 +113,13 @@ router.post('/', function(req, res) {
           if (req.body.result.metadata.intentId === "bee1c466-9b92-4c2a-83e5-f2ca083c17c7"){
 
                 
-                // var productPlacement2 = "You can find the product " + productplacement;
-                // console.log("productPlacement: " + productPlacement2);
-                // var newPlacement = {};
-                // var key = "speech";
-                // newPlacement[key] = productPlacement2;
+                var productPlacement2 = "You can find the product " + productplacement;
+                console.log("productPlacement: " + productPlacement2);
+                var newPlacement = {};
+                var key = "speech";
+                newPlacement[key] = productPlacement2;
+
+                console.log(JSON.stringify(newPlacement));
 
                 // return res.json(JSON.stringify(newPlacement));
 
