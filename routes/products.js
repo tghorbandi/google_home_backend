@@ -97,6 +97,8 @@ router.post('/', function(req, res) {
             mongoDBqueries.findProduct(function(result){
 
                   console.log("MONGODB RESULT:" + JSON.stringify(result));
+                  console.log(result.type);
+                  console.log(result[0].type);
                   inhoud = JSON.stringify(result);
                   var inhoud2 = JSON.parse(inhoud);
                   console.log(inhoud2.type);
