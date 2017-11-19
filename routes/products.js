@@ -99,7 +99,7 @@ router.post('/', function(req, res) {
                     });
                   }else{
                     console.log('test2');
-                    return res.sendStatus(200);
+                    //return res.sendStatus(200);
                   }
               }, inputArray);
 
