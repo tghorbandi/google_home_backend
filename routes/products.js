@@ -90,7 +90,7 @@ router.post('/', function(req, res) {
             mongoDBqueries.findSpecificType(function(result){
                 console.log("MONGODB RESULT:" + JSON.stringify(result));
                 //console.log(result[0].type);
-                if(result[0].type){
+                if(result[0]){
                     return res.json({
                         speech: "I have found your product, have a look at the screen, is this the product you were looking for?"
                     });
