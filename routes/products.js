@@ -93,14 +93,16 @@ router.post('/', function(req, res) {
             // eigenlijk moet callback een array worden ipv string
             var sledge = "sledge";
             var inhoud;
+
             mongoDBqueries.findProduct(function(result){
+
                   console.log("MONGODB RESULT:" + JSON.stringify(result));
                   inhoud = JSON.stringify(result);
-                  console.log("inhoud test");
+                  console.log("inhoud" + inhoud);
+                  console.log(inhoud.type);
+
               }, sledge);
 
-            console.log("inhoud" + inhoud);
-            console.log("inhoud test");
             
 
             // if (testArray.some(v => inputArray.includes(v)) === true ){
