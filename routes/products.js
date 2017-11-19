@@ -91,7 +91,7 @@ router.post('/', function(req, res) {
                   console.log("MONGODB RESULT:" + JSON.stringify(result));
                   console.log(result.type);
                   if(JSON.stringify(result).length > 0){
-                    console('testtt');
+                    console.log('testtt');
                   }
               }, inputArray);
 
