@@ -91,6 +91,7 @@ router.post('/', function(req, res) {
                 //console.log(result[0].type);
                 if(result[0]){
                     productPlacement = result[0].location;
+                    console.log("productPlacement SET!!" + productplacement);
                     socket.emit('productName', { productName: result[0].fullProductName});
                     return res.json({
                         speech: "I have found your product, have a look at the screen, do you want to know where to find this product?"
@@ -113,13 +114,13 @@ router.post('/', function(req, res) {
           if (req.body.result.metadata.intentId === "bee1c466-9b92-4c2a-83e5-f2ca083c17c7"){
 
                 
-                var productPlacement2 = "You can find the product " + productplacement;
-                console.log("productPlacement: " + productPlacement2);
-                // var newPlacement = {};
-                // var key = "speech";
-                // newPlacement[key] = productPlacement2;
+                // var productPlacement2 = "You can find the product " + productplacement;
+                console.log("productPlacement: " + productPlacement);
+                var newPlacement = {};
+                var key = "speech";
+                newPlacement[key] = productPlacement;
 
-                // console.log(JSON.stringify(newPlacement));
+                console.log(JSON.stringify(newPlacement));
 
                 // return res.json(JSON.stringify(newPlacement));
 
