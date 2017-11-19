@@ -87,24 +87,19 @@ router.post('/', function(req, res) {
             var inputArray = input.split(" ");
             console.log(inputArray);
 
-            new Promise(function(resolve, reject){
-                mongoDBqueries.findSpecificType(function(result){
-                    console.log("MONGODB RESULT:" + JSON.stringify(result));
-                    console.log(result[0].type);
-                    if(result[0].type){
-                        console.log('test1');
-                        return res.json({
-                            speech: "I have found your product, have a look at the screen, is this the product you were looking for?"
-                        });
-                    }
-                }, inputArray);
-                resolve();
-            }).then(function(result) {
-                return res.json({
-                    speech: "I'm sorry that is a not a valid product, or that is a product that I do not know of. Please try again."
-                });
-                return result;
-            })
+            mongoDBqueries.findSpecificType(function(result){
+                console.log("MONGODB RESULT:" + JSON.stringify(result));
+                console.log(result[0].type);
+            }, inputArray);
+
+
+            // return res.json({
+            //     speech: "I'm sorry that is a not a valid product, or that is a product that I do not know of. Please try again."
+            // });
+    
+            return res.json({
+                speech: "I have found your product, have a look at the screen, is this the product you were looking for?"
+            });
 
          }
 
