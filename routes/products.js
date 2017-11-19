@@ -87,13 +87,15 @@ router.post('/', function(req, res) {
             var inputArray = input.split(" ");
             console.log(inputArray);
 
+            var test = 10;
+
             mongoDBqueries.findSpecificType(function(result){
                   console.log("MONGODB RESULT:" + JSON.stringify(result));
 
                   //console.log(result[0].type);
 
 
-                  if(result[0].type){
+                  if(test > 15){
                     console.log('testtt');
                   }else{
                               return res.json({
