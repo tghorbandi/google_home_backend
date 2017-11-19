@@ -115,11 +115,11 @@ router.post('/', function(req, res) {
                 
                 var productPlacement2 = "You can find the product " + productplacement;
                 console.log("productPlacement: " + productPlacement2);
-                var newPlacement = {};
-                var key = "speech";
-                newPlacement[key] = productPlacement2;
+                // var newPlacement = {};
+                // var key = "speech";
+                // newPlacement[key] = productPlacement2;
 
-                console.log(JSON.stringify(newPlacement));
+                // console.log(JSON.stringify(newPlacement));
 
                 // return res.json(JSON.stringify(newPlacement));
 
