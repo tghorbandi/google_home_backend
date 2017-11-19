@@ -103,33 +103,24 @@ router.post('/', function(req, res) {
                   inhoud = result[0].type;
                   console.log(inhoud);
                   console.log(JSON.stringify(inhoud));
+
+
+                  // if (testArray.some(v => inputArray.includes(v)) === true ){
+                  //     console.log('true!');
+
+                  //     // welk woord komt overeen, pak daar de ID uit, met full_product_name en img location
+
+                  //     return res.json({
+                  //         speech: "I have found your product, have a look at the screen, is this the product you were looking for?"
+                  //     });
+                  // }else{
+                  //     return res.json({
+                  //         speech: "I'm sorry that is a not a valid product, or that is a product that I do not know of. Please try again."
+                  //     });
+                  // }
+
               });
-           
-
-            // mongoDBqueries.findProduct(function(result){
-            //       console.log("MONGODB RESULT:" + JSON.stringify(result));
-            //       inhoud = result[0].type;
-            //       console.log(inhoud);
-            //       // if in alle types 
-            //   }, sledge);
-
-            
-
-            // if (testArray.some(v => inputArray.includes(v)) === true ){
-            //     console.log('true!');
-
-            //     // welk woord komt overeen, pak daar de ID uit, met full_product_name en img location
-
-            //     return res.json({
-            //         speech: "I have found your product, have a look at the screen, is this the product you were looking for?"
-            //     });
-            // }else{
-            //     return res.json({
-            //         speech: "I'm sorry that is a not a valid product, or that is a product that I do not know of. Please try again."
-            //     });
-            // }
-
-
+    
              return res.sendStatus(200);
 
          }
