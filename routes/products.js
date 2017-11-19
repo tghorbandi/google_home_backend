@@ -4,6 +4,7 @@ var router = express.Router();
 var mongoDBqueries = require('../controllers/mongoDB');
 var socket;
 var userID = null;
+var productPlacement;
 
 router.post('/', function(req, res) {
 
@@ -72,12 +73,10 @@ router.post('/', function(req, res) {
 
         }
 
-
-        
         /**
-         * Check if user entered "searching - yes - custom" intent.
          * In this statement, check if user input has a value that is the same as in the database.
-         * Node.js works Async, so everything has to be in the fallback of findProduct function.
+         * Check if user entered "searching - yes - custom" intent.
+         * Change resolved query string into an array, then use that array as a variable to check the database,
          */
          if (req.body.result.metadata.intentId === "d9689d6d-aa9c-4470-b2dc-a72fa1f6bc9f"){
 
@@ -91,9 +90,12 @@ router.post('/', function(req, res) {
                 console.log("MONGODB RESULT:" + JSON.stringify(result));
                 //console.log(result[0].type);
                 if(result[0]){
+                    productPlacement = result[0].location;
                     socket.emit('productName', { productName: result[0].fullProductName});
                     return res.json({
-                        speech: "I have found your product, have a look at the screen, is this the product you were looking for?"
+                        speech: "I have found your product, have a look at the screen, do you want to know where to find this product?"
+                        //dit geeft yes/no terug, naar nieuwe intent, in dat intent moet je productplacement gebruiken om te laten zien
+                        // waar het product licht. 
                     });
                 }else{
                    return res.json({
@@ -102,15 +104,44 @@ router.post('/', function(req, res) {
                 }
             }, inputArray);
 
-
          }
+
+
+         /**
+          * intent "Direct search"
+          */
+          if (req.body.result.metadata.intentId === "46e9f973-d7aa-40ab-92d4-0a02cc5f4e7e"){
+
+             var input = req.body.result.resolvedQuery;
+             console.log("ResolvedQuery: " + input);
+
+             var inputArray = input.split(" ");
+             console.log(inputArray);
+
+             mongoDBqueries.findSpecificType(function(result){
+                 console.log("MONGODB RESULT:" + JSON.stringify(result));
+                 //console.log(result[0].type);
+                 if(result[0]){
+                     socket.emit('productName', { productName: result[0].fullProductName});
+                     return res.json({
+                         speech: "I have found your product, have a look at the screen"
+                     });
+                 }else{
+                    return res.json({
+                        speech: "I'm sorry that is a not a valid product, or that is a product that I do not know of. Please try again."
+                    });
+                 }
+             }, inputArray);
+
+          }
+
+         
 
         /**
          * Check if user entered "end" intent.
          * Sends reset socket object to client to reset image and text
          * Returns end conversation fulfillment
          */
-        console.log("intentId: " + req.body.result.metadata.intentId);
         if (req.body.result.metadata.intentId === "50e7d411-c5da-497e-8a34-5eae79e0a744"){
 
             // Reset UI client
