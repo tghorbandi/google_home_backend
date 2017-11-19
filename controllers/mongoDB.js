@@ -129,6 +129,17 @@ var findProduct = function(callback, productType) {
 }
 
 
+/*
+**
+  Find every type in Database
+**
+*/
+var findAllTypes = function(callback) {
+  var collection = db2.collection('type_hammers');
+  collection.find({}).toArray(function(err, docs) {
+    callback(docs);
+  });
+}
 
 
 module.exports = {}
