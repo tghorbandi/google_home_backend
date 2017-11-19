@@ -89,9 +89,12 @@ router.post('/', function(req, res) {
 
             mongoDBqueries.findSpecificType(function(result){
                   console.log("MONGODB RESULT:" + JSON.stringify(result));
-                  console.log(result.type);
+                  var inhoud = JSON.parse(result);
+                  console.log(inhoud.type);
                   if(JSON.stringify(result).length > 0){
                     console.log('testtt');
+                  }else{
+                    console.log('test2');
                   }
               }, inputArray);
 
