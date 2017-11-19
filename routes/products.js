@@ -93,7 +93,7 @@ router.post('/', function(req, res) {
                   //console.log(result[0].type);
 
 
-                  if(JSON.stringify(result).length > 0){
+                  if(JSON.stringify(result).length > 1){
                     console.log('testtt');
                   }else{
                               return res.json({
