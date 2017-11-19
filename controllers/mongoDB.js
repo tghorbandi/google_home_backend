@@ -136,7 +136,7 @@ var findProduct = function(callback, productType) {
 */
 var findAllTypes = function(callback) {
   var collection = db2.collection('type_hammers');
-  collection.find({"type": *}).toArray(function(err, docs) {
+  collection.find({"type"}).toArray(function(err, docs) {
     callback(docs);
   });
 }
