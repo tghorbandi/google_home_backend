@@ -77,7 +77,7 @@ router.post('/', function(req, res) {
         /**
          * Check if user entered "searching - yes - custom" intent.
          * In this statement, check if user input has a value that is the same as in the database.
-         * 
+         * Node.js works Async, so everything has to be in the fallback of findProduct function.
          */
          if (req.body.result.metadata.intentId === "d9689d6d-aa9c-4470-b2dc-a72fa1f6bc9f"){
 
@@ -99,7 +99,7 @@ router.post('/', function(req, res) {
                   console.log("MONGODB RESULT:" + JSON.stringify(result));
                   inhoud = JSON.stringify(result);
                   console.log("inhoud" + inhoud);
-                  console.log(inhoud.type);
+                  console.log(result.type);
 
               }, sledge);
 
