@@ -91,7 +91,7 @@ router.post('/', function(req, res) {
                 //console.log(result[0].type);
                 if(result[0]){
                     productPlacement = result[0].location;
-                    console.log("productPlacement SET!!" + productplacement);
+                    console.log("productPlacement SET!!" + productPlacement);
                     socket.emit('productName', { productName: result[0].fullProductName});
                     return res.json({
                         speech: "I have found your product, have a look at the screen, do you want to know where to find this product?"
