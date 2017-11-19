@@ -99,7 +99,7 @@ router.post('/', function(req, res) {
                   console.log("MONGODB RESULT:" + JSON.stringify(result));
                   inhoud = JSON.stringify(result);
                   console.log("inhoud" + inhoud);
-                  console.log(result.type);
+                  console.log(inhoud[0].type);
 
               }, sledge);
 
