@@ -85,7 +85,7 @@ router.post('/', function(req, res) {
             console.log("ResolvedQuery: " + input);
 
             var inputArray = input.split(" ");
-            console.log(inputArray);
+            console.log("InputArray: " + inputArray);
 
             var regex = inputArray.join("|");
 
