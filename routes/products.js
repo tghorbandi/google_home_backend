@@ -90,7 +90,7 @@ router.post('/', function(req, res) {
                 console.log("MONGODB RESULT:" + JSON.stringify(result));
                 //console.log(result[0].type);
                 if(result[0]){
-                    productPlacement = result[0].location;
+                    productPlacement = "You can find the product " + result[0].location;
                     console.log("productPlacement SET!!" + productPlacement);
                     socket.emit('productName', { productName: result[0].fullProductName});
                     return res.json({
@@ -114,13 +114,10 @@ router.post('/', function(req, res) {
           if (req.body.result.metadata.intentId === "bee1c466-9b92-4c2a-83e5-f2ca083c17c7"){
 
                 
-                // var productPlacement2 = "You can find the product " + productplacement;
-                var productPlacementString = "You can find the product ";
-                var productPlacement2 = productPlacementString + productplacement;
-                console.log("productPlacement: " + productPlacement2);
+                console.log("productPlacement: " + productPlacement);
                 var newPlacement = {};
                 var key = "speech";
-                newPlacement[key] = productPlacement2;
+                newPlacement[key] = productPlacement;
 
                 console.log(JSON.stringify(newPlacement));
 
