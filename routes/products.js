@@ -122,7 +122,7 @@ router.post('/', function(req, res) {
 
                 console.log(JSON.stringify(newPlacement));
 
-                return res.json(JSON.stringify(newPlacement));
+                return res.json(newPlacement);
 
                 // return res.json({
                 //     speech: "test iekks"
