@@ -122,11 +122,11 @@ router.post('/', function(req, res) {
 
                 console.log(JSON.stringify(newPlacement));
 
-                // return res.json(JSON.stringify(newPlacement));
+                return res.json(JSON.stringify(newPlacement));
 
-                return res.json({
-                    speech: "test iekks"
-                });
+                // return res.json({
+                //     speech: "test iekks"
+                // });
 
                 /* 
                 productPlacement = "tteeeeee";
