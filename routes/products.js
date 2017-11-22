@@ -183,6 +183,15 @@ router.post('/', function(req, res) {
                 console.log(key, req.body.result.parameters[key]);
             }
 
+            var result = [];
+
+            for(var i in req.body.result.parameters)
+                result.push([i, req.body.result.parameters [i]]);
+
+            console.log(result);
+            console.log("Filter: " + result.filter(Boolean));
+
+
             // not empty
             // if (req.body.result.parameters){
             //
