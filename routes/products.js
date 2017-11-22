@@ -68,6 +68,7 @@ router.post('/', function(req, res) {
                         // waar het product licht. 
                     });
                 }else{
+
                    return res.json({
                        speech: "I'm sorry, I couldn't find that. Try specifying the type of product you are looking for."
                    });
@@ -128,9 +129,10 @@ router.post('/', function(req, res) {
                          speech: "I have found your product, have a look at the screen. This is how your product looks like. Click on the image for more information"
                      });
                  }else{
-                    return res.json({
-                        speech: "I'm sorry that is a not a valid product, or that is a product that I do not know of. Please try again."
-                    });
+                     socket.emit('noProduct', { data: "no product found"});
+                     return res.json({
+                         speech: "I'm sorry that is a not a valid type product, or that is a product that I do not know of.  Please try again."
+                     });
                  }
              }, inputArray);
 
