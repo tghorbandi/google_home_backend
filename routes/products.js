@@ -179,6 +179,9 @@ router.post('/', function(req, res) {
 
             console.log(JSON.stringify(req.body.result.parameters));
 
+            console.log(Object.values(req.body.result.parameters)[0]);
+            console.log(Object.values(req.body.result.parameters)[1]);
+
             // for (const key of Object.keys(req.body.result.parameters)) {
             //     console.log(key, req.body.result.parameters[key]);
             // }
@@ -189,7 +192,6 @@ router.post('/', function(req, res) {
             //     result.push([i, req.body.result.parameters [i]]);
             //
             // console.log(result);
-            console.log("Filter: " + req.body.result.parameters.filter(Boolean));
 
 
             // not empty
