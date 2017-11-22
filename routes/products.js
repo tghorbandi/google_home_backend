@@ -177,7 +177,13 @@ router.post('/', function(req, res) {
 
         }
 
-
+        /**
+         * User doesn't want product location (Don't want location intent)
+         * Reset GUI client to google home, and remove talking icon.
+         */
+        if (req.body.result.metadata.intentId === "675c0d4b-fe09-4386-adaa-977fc0299586"){
+            socket.emit('reset', { reset: "true"});
+        }
          
 
         /**
