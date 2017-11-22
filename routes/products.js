@@ -58,15 +58,23 @@ router.post('/', function(req, res) {
             mongoDBqueries.findSpecificType(function(result){
                 console.log("MONGODB RESULT:" + JSON.stringify(result));
                 //console.log(result[0].type);
+
                 if(result[0]){
-                    productPlacement = "You can find the product " + result[0].location;
+
+                    productPlacement = "You can find " + result[0].fullProductName + " " + "in " + result[0].location;
+                    var newPlacement = {};
+                    var key = "speech";
+                    newPlacement[key] = productPlacement;
+
                     console.log("productPlacement SET!!" + productPlacement);
+
                     socket.emit('productName', { productName: result[0].fullProductName});
-                    return res.json({
-                        speech: "You can find this product in in Section B, Row 4. This image shows how the product looks like"
-                        //dit geeft yes/no terug, naar nieuwe intent, in dat intent moet je productplacement gebruiken om te laten zien
-                        // waar het product licht. 
-                    });
+
+                    // return res.json({
+                    //     speech: "You can find this product in Section B, Row 4. This image shows how the product looks like"
+                    // });
+                    return res.json(newPlacement);
+                    
                 }else{
                     socket.emit('noProduct', { data: "no product found"});
                    return res.json({
@@ -213,7 +221,7 @@ router.post('/', function(req, res) {
          * @var string productType2
          */
         var productType =  req.body.result.contexts[0].parameters;
-        console.log(JSON.stringify(productType)); // {"sledge_hammer.original":"","sledge_hammer":"sledge hammer"}
+        console.log(JSON.stringify(productType)); 
 
         var obj = productType;
         var productType2 =  obj[Object.keys(obj)[1]];
