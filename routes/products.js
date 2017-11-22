@@ -50,10 +50,10 @@ router.post('/', function(req, res) {
          if (req.body.result.metadata.intentId === "d9689d6d-aa9c-4470-b2dc-a72fa1f6bc9f"){
 
             var input = req.body.result.resolvedQuery;
-            console.log("ResolvedQuery: " + input);
+            //console.log("ResolvedQuery: " + input);
 
             var inputArray = input.split(" ");
-            console.log(inputArray);
+            //console.log(inputArray);
 
             mongoDBqueries.findSpecificType(function(result){
                 console.log("MONGODB RESULT:" + JSON.stringify(result));
@@ -68,7 +68,7 @@ router.post('/', function(req, res) {
                         // waar het product licht. 
                     });
                 }else{
-
+                    socket.emit('noProduct', { data: "no product found"});
                    return res.json({
                        speech: "I'm sorry, I couldn't find that. Try specifying the type of product you are looking for."
                    });
