@@ -36,7 +36,7 @@ router.post('/', function(req, res) {
             else{
                 userID = req.body.originalRequest.data.user.userId;
                 return res.json({
-                    speech: "Hi! I'm e-sites digital assistant. I am designed to give advice and help about hammer products. How can I help you?"
+                    speech: "Hi! I'm e-sites virtual assistant. I am designed to give advice and help about hammer products. How can I help you?"
                 });
             }
 
@@ -74,7 +74,7 @@ router.post('/', function(req, res) {
                     //     speech: "You can find this product in Section B, Row 4. This image shows how the product looks like"
                     // });
                     return res.json(newPlacement);
-                    
+
                 }else{
                     socket.emit('noProduct', { data: "no product found"});
                    return res.json({
