@@ -63,7 +63,7 @@ router.post('/', function(req, res) {
                     console.log("productPlacement SET!!" + productPlacement);
                     socket.emit('productName', { productName: result[0].fullProductName});
                     return res.json({
-                        speech: "I have found your product, have a look at the screen, do you want to know where to find this product?"
+                        speech: "You can find this product in in Section B, Row 4. This image shows how the product looks like"
                         //dit geeft yes/no terug, naar nieuwe intent, in dat intent moet je productplacement gebruiken om te laten zien
                         // waar het product licht. 
                     });
@@ -81,17 +81,17 @@ router.post('/', function(req, res) {
          /**
           * intent "Location product"
           */
-          if (req.body.result.metadata.intentId === "bee1c466-9b92-4c2a-83e5-f2ca083c17c7"){
+          // if (req.body.result.metadata.intentId === "bee1c466-9b92-4c2a-83e5-f2ca083c17c7"){
 
-                console.log("productPlacement: " + productPlacement);
-                var newPlacement = {};
-                var key = "speech";
-                newPlacement[key] = productPlacement;
+          //       console.log("productPlacement: " + productPlacement);
+          //       var newPlacement = {};
+          //       var key = "speech";
+          //       newPlacement[key] = productPlacement;
 
-                console.log(JSON.stringify(newPlacement));
+          //       console.log(JSON.stringify(newPlacement));
 
-                return res.json(newPlacement);
-          }
+          //       return res.json(newPlacement);
+          // }
 
 
          /**
