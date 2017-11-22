@@ -126,7 +126,12 @@ router.post('/', function(req, res) {
         if (req.body.result.metadata.intentId === "c2708040-2664-48a1-914f-79c7eeafa2bb"){
             socket.emit('productName', { productName: "curved claw hammer parts"});
             return res.json({
-                speech: "Have a look at the screen. A curved claw hammer exists of 6 different parts, the Claw. Eye. Cheek. Neck. Poll and the face."
+                speech: "Have a look at the screen. A curved claw hammer exists of 6 different parts. That is <break time="400ms"/> the Claw. <break time="400ms"/>Eye. <break time="400ms"/Cheek. Neck. Poll and the face."
+                data: {
+                    google: {
+                        is_ssml: true,
+                    }
+                },
             });
         }
         
