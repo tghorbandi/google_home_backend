@@ -173,44 +173,28 @@ router.post('/', function(req, res) {
          *
          */
         if (req.body.result.metadata.intentId === "d351acb0-19f2-4e20-8dc3-b5b337dfb101"){
-            // check which parameter is not empty
-            // socket emit ook image path
-            // console.log(array.filter(Boolean);
 
             console.log(JSON.stringify(req.body.result.parameters));
-
             console.log(Object.values(req.body.result.parameters)[0]);
             console.log(Object.values(req.body.result.parameters)[1]);
 
+            //curved claw hammer inhoud
             if(Object.values(req.body.result.parameters)[0]){
-                //curved claw hammer inhoud
+
+                socket.emit('productName', { productName: "curved claw hammer"});
                 return res.json({
                     speech: "curved claw hammer inhoud"
                 });
             }
+
+            //sledge hammer inhoud
             if(Object.values(req.body.result.parameters)[1]){
-                //sledge hammer inhoud
+
+                socket.emit('productName', { productName: "sledge hammer"});
                 return res.json({
                     speech: "sledge hammer inhoud"
                 });
             }
-
-            // for (const key of Object.keys(req.body.result.parameters)) {
-            //     console.log(key, req.body.result.parameters[key]);
-            // }
-            //
-            // var result = [];
-            //
-            // for(var i in req.body.result.parameters)
-            //     result.push([i, req.body.result.parameters [i]]);
-            //
-            // console.log(result);
-
-
-            // not empty
-            // if (req.body.result.parameters){
-            //
-            // }
 
 
         }
