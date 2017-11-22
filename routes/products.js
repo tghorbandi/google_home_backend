@@ -16,37 +16,6 @@ router.post('/', function(req, res) {
 
         console.log("body: " + JSON.stringify(req.body));
 
-        // Data request
-        //console.log("OR.Data: " + req.body.originalRequest.data);
-
-
-        /**
-         * Check if inside "tell me "Default Welcome Intent - yes - yes - custom" intent
-         * Check if resolvedQuery meets content of database, if yes, retrieve that row, and show name and location
-         *
-         */
-        // if(req.body.result.metadata.intentId === "96cca1ff-4122-45bc-9a4c-8c6b141b135a"){
-
-        //     var product = req.body.result.resolvedQuery;
-        //     if(product === "sledge hammer"){ // this check should be made in database and return location from db too
-        //         return res.json({
-        //             speech: "You are looking for sledge hammer -webhook"
-        //         });
-        //     }else{
-        //         return res.json({
-        //             speech: "I'm sorry your answer is either a product that I don't know about, or I haven't understood you properly. -webhook"
-        //         });
-        //     }
-
-        // }
-
-        /** TODO//
-         * Check if context finding-hammer contains product in the database
-         * Check which hammer it is
-         * return product
-         * return no product found
-         */
-
 
         /**
          * Let clientside know that it has to show loading icon
@@ -181,9 +150,9 @@ router.post('/', function(req, res) {
             //curved claw hammer inhoud
             if(Object.values(req.body.result.parameters)[0]){
 
-                socket.emit('productName', { productName: "curved claw hammer"});
+                socket.emit('productName', { productName: "curved claw hammer2"});
                 return res.json({
-                    speech: "curved claw hammer inhoud"
+                    speech: "For that specific type of job, you will need a curved claw hammer. You can easily remove nails with its curved claw"
                 });
             }
 
@@ -192,7 +161,7 @@ router.post('/', function(req, res) {
 
                 socket.emit('productName', { productName: "sledge hammer"});
                 return res.json({
-                    speech: "sledge hammer inhoud"
+                    speech: "For that specific type of job, you will need sledge hammers. These are big hammers designed to destroy objects."
                 });
             }
 
