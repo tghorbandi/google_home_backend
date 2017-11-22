@@ -1,4 +1,3 @@
-// GLOBAL variables
 var express = require('express');
 var router = express.Router();
 var mongoDBqueries = require('../controllers/mongoDB');
@@ -18,6 +17,7 @@ router.post('/', function(req, res) {
 
 
         /**
+         * #intent: Welcome Intent
          * Let clientside know that it has to show loading icon
          * Check  for a welcome intent
          * If the same user is still talking, give another welcome message (should not happen, keep user in application)
@@ -43,6 +43,7 @@ router.post('/', function(req, res) {
         }
 
         /**
+         * #Intent: Searching Yes Custom
          * In this statement, check if user input has a value that is the same as in the database.
          * Check if user entered "searching - yes - custom" intent.
          * Change resolved query string into an array, then use that array as a variable to check the database,
@@ -86,53 +87,8 @@ router.post('/', function(req, res) {
          }
 
 
-         /**
-          * intent "Location product"
-          */
-          // if (req.body.result.metadata.intentId === "bee1c466-9b92-4c2a-83e5-f2ca083c17c7"){
-
-          //       console.log("productPlacement: " + productPlacement);
-          //       var newPlacement = {};
-          //       var key = "speech";
-          //       newPlacement[key] = productPlacement;
-
-          //       console.log(JSON.stringify(newPlacement));
-
-          //       return res.json(newPlacement);
-          // }
-
-
-         /**
-          * intent "Direct search"
-          */
-          if (req.body.result.metadata.intentId === "46e9f973-d7aa-40ab-92d4-0a02cc5f4e7e"){
-
-             var input = req.body.result.resolvedQuery;
-             console.log("ResolvedQuery: " + input);
-
-             var inputArray = input.split(" ");
-             console.log(inputArray);
-
-             mongoDBqueries.findSpecificType(function(result){
-                 console.log("MONGODB RESULT:" + JSON.stringify(result));
-                 console.log(result[0].type);
-                 if(result[0]){
-                     socket.emit('productName', { productName: result[0].fullProductName});
-                     return res.json({
-                         speech: "Have a look at the screen. This is how your product looks like. You can find this product in section B row 4"
-                     });
-                 }else{
-                     socket.emit('noProduct', { data: "no product found"});
-                     return res.json({
-                         speech: "I'm sorry that is either an invalid product, or a product that I do not know of.  Please try again."
-                     });
-                 }
-             }, inputArray);
-
-          }
-
         /**
-         * Intent "project intent"
+         * #Intent: Project intent
          * If user says something like: Rebuilding, look at the parameter and value
          * @var curved claw hammer = req.body.result.parameters)[0]
          * @var sledge hammer = req.body.result.parameters)[1]
@@ -171,18 +127,7 @@ router.post('/', function(req, res) {
         }
 
         /**
-         * User doesn't want product location (Don't want location intent)
-         * Reset GUI client to google home, and remove talking icon.
-         */
-        if (req.body.result.metadata.intentId === "675c0d4b-fe09-4386-adaa-977fc0299586"){
-            socket.emit('reset', { reset: "true"});
-            return res.json({
-                speech: "Okay, goodluck finding the product. bye."
-            });
-        }
-         
-
-        /**
+         * #Intent: Bye 
          * Check if user entered "end" intent.
          * Sends reset socket object to client to reset image and text
          * Returns end conversation fulfillment
@@ -208,8 +153,8 @@ router.post('/', function(req, res) {
          * save input query into mongoDB for research
          * @var string productName
          */
-        var productName = req.body.result.resolvedQuery;
-        console.log("ResolvedQuery: " + productName);
+        // var productName = req.body.result.resolvedQuery;
+        // console.log("ResolvedQuery: " + productName);
         //mongoDBqueries.insertQuery(function(result){}, productName);
 
 
@@ -220,17 +165,14 @@ router.post('/', function(req, res) {
          * @var string productType
          * @var string productType2
          */
-        var productType =  req.body.result.contexts[0].parameters;
-        console.log(JSON.stringify(productType)); 
+        // var productType =  req.body.result.contexts[0].parameters;
+        // console.log(JSON.stringify(productType)); 
 
-        var obj = productType;
-        var productType2 =  obj[Object.keys(obj)[1]];
-        console.log("ProductType2: " + productType2);
+        // var obj = productType;
+        // var productType2 =  obj[Object.keys(obj)[1]];
+        // console.log("ProductType2: " + productType2);
 
-        socket.emit('productName', { productName: productType2});
-
-        //return res.sendStatus(200);
-
+        // socket.emit('productName', { productName: productType2});
 
     }
 
