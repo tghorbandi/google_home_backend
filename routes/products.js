@@ -167,6 +167,33 @@ router.post('/', function(req, res) {
 
           }
 
+        /**
+         * Intent "project intent"
+         * If user says something like: Rebuilding -> sledge hammer
+         *
+         */
+        if (req.body.result.metadata.intentId === "d351acb0-19f2-4e20-8dc3-b5b337dfb101"){
+            // check which parameter is not empty
+            // socket emit ook image path
+            // console.log(array.filter(Boolean);
+
+            console.log(JSON.stringify(req.body.result.parameters));
+
+            for (const key of Object.keys(req.body.result.parameters)) {
+                console.log(key, req.body.result.parameters[key]);
+            }
+
+            // not empty
+            // if (req.body.result.parameters){
+            //
+            // }
+
+            return res.json({
+                speech: "testing webhook"
+            });
+        }
+
+
          
 
         /**
