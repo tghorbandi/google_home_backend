@@ -179,17 +179,17 @@ router.post('/', function(req, res) {
 
             console.log(JSON.stringify(req.body.result.parameters));
 
-            for (const key of Object.keys(req.body.result.parameters)) {
-                console.log(key, req.body.result.parameters[key]);
-            }
-
-            var result = [];
-
-            for(var i in req.body.result.parameters)
-                result.push([i, req.body.result.parameters [i]]);
-
-            console.log(result);
-            console.log("Filter: " + result.filter(Boolean));
+            // for (const key of Object.keys(req.body.result.parameters)) {
+            //     console.log(key, req.body.result.parameters[key]);
+            // }
+            //
+            // var result = [];
+            //
+            // for(var i in req.body.result.parameters)
+            //     result.push([i, req.body.result.parameters [i]]);
+            //
+            // console.log(result);
+            console.log("Filter: " + req.body.result.parameters.filter(Boolean));
 
 
             // not empty
