@@ -111,7 +111,7 @@ router.post('/', function(req, res) {
                  if(result[0]){
                      socket.emit('productName', { productName: result[0].fullProductName});
                      return res.json({
-                         speech: "I have found your product, have a look at the screen. This is how your product looks like. Click on the image for more information"
+                         speech: "Have a look at the screen. This is how your product looks like. You can find this product in section B row 4"
                      });
                  }else{
                      socket.emit('noProduct', { data: "no product found"});
