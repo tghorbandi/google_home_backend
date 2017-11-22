@@ -52,7 +52,6 @@ router.post('/', function(req, res) {
 
             var input = req.body.result.resolvedQuery;
             //console.log("ResolvedQuery: " + input);
-
             var inputArray = input.split(" ");
             //console.log(inputArray);
 
@@ -67,13 +66,10 @@ router.post('/', function(req, res) {
                     var key = "speech";
                     newPlacement[key] = productPlacement;
 
-                    console.log("productPlacement SET!!" + productPlacement);
+                    console.log("productPlacement: " + productPlacement);
 
                     socket.emit('productName', { productName: result[0].fullProductName});
 
-                    // return res.json({
-                    //     speech: "You can find this product in Section B, Row 4. This image shows how the product looks like"
-                    // });
                     return res.json(newPlacement);
 
                 }else{
@@ -113,7 +109,7 @@ router.post('/', function(req, res) {
 
                 socket.emit('productName', { productName: "sledge hammer"});
                 return res.json({
-                    speech: "For that specific type of job, you will need sledge hammers. These are big hammers designed to destroy objects."
+                    speech: "For those jobs, you will need sledge hammers. These are big hammers designed to destroy objects."
                 });
             }
 
@@ -122,10 +118,18 @@ router.post('/', function(req, res) {
             // return res.json({
             //     speech: "I didn't understand that, can you rephrase the project you are working on?"
             // });
-
-
         }
 
+        /**
+         * #Intent: Parts Curved Claw hammer
+         */
+        if (req.body.result.metadata.intentId === "c2708040-2664-48a1-914f-79c7eeafa2bb"){
+            socket.emit('productName', { productName: "curved claw hammer parts"});
+            return res.json({
+                speech: "Have a look at the screen. A curved claw hammer exists of 6 different parts, the Claw. Eye. Cheek. Neck. Poll and the face."
+            });
+        }
+        
         /**
          * #Intent: Bye 
          * Check if user entered "end" intent.
