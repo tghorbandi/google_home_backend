@@ -100,14 +100,14 @@ router.post('/', function(req, res) {
           if (req.body.result.metadata.intentId === "46e9f973-d7aa-40ab-92d4-0a02cc5f4e7e"){
 
              var input = req.body.result.resolvedQuery;
-             //console.log("ResolvedQuery: " + input);
+             console.log("ResolvedQuery: " + input);
 
              var inputArray = input.split(" ");
-             //console.log(inputArray);
+             console.log(inputArray);
 
              mongoDBqueries.findSpecificType(function(result){
                  console.log("MONGODB RESULT:" + JSON.stringify(result));
-                 //console.log(result[0].type);
+                 console.log(result[0].type);
                  if(result[0]){
                      socket.emit('productName', { productName: result[0].fullProductName});
                      return res.json({
@@ -116,7 +116,7 @@ router.post('/', function(req, res) {
                  }else{
                      socket.emit('noProduct', { data: "no product found"});
                      return res.json({
-                         speech: "I'm sorry that is a not a valid type product, or that is a product that I do not know of.  Please try again."
+                         speech: "I'm sorry that is either an invalid product, or a product that I do not know of.  Please try again."
                      });
                  }
              }, inputArray);
