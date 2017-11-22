@@ -30,7 +30,7 @@ router.post('/', function(req, res) {
 
             if(req.body.originalRequest.data.user.userId === userID){
                 return res.json({
-                    speech: "Hi! I'm e-sites digital assistant. How can I help?"
+                    speech: "Hey, welcome back! How can I help?"
                 });
             }
             else{
