@@ -182,6 +182,19 @@ router.post('/', function(req, res) {
             console.log(Object.values(req.body.result.parameters)[0]);
             console.log(Object.values(req.body.result.parameters)[1]);
 
+            if(Object.values(req.body.result.parameters)[0]){
+                //curved claw hammer inhoud
+                return res.json({
+                    speech: "curved claw hammer inhoud"
+                });
+            }
+            if(Object.values(req.body.result.parameters)[1]){
+                //sledge hammer inhoud
+                return res.json({
+                    speech: "sledge hammer inhoud"
+                });
+            }
+
             // for (const key of Object.keys(req.body.result.parameters)) {
             //     console.log(key, req.body.result.parameters[key]);
             // }
@@ -199,9 +212,7 @@ router.post('/', function(req, res) {
             //
             // }
 
-            return res.json({
-                speech: "testing webhook"
-            });
+
         }
 
 
