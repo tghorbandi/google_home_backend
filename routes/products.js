@@ -167,7 +167,7 @@ router.post('/', function(req, res) {
             }
 
             //No project found
-            socket.emit('noProduct', { data: "No product found"});
+            socket.emit('noProduct', { data: "no product found"});
             return res.json({
                 speech: "I didn't understand that, can you rephrase the project you are working on?"
             });
