@@ -83,7 +83,6 @@ router.post('/', function(req, res) {
           */
           if (req.body.result.metadata.intentId === "bee1c466-9b92-4c2a-83e5-f2ca083c17c7"){
 
-                
                 console.log("productPlacement: " + productPlacement);
                 var newPlacement = {};
                 var key = "speech";
@@ -92,20 +91,6 @@ router.post('/', function(req, res) {
                 console.log(JSON.stringify(newPlacement));
 
                 return res.json(newPlacement);
-
-                // return res.json({
-                //     speech: "test iekks"
-                // });
-
-                /* 
-                productPlacement = "tteeeeee";
-                var newPlacement = {};
-                var key = "speech";
-                newPlacement[key] = productPlacement;
-
-                console.log(JSON.stringify(newPlacement))
-                */
-
           }
 
 
@@ -169,10 +154,10 @@ router.post('/', function(req, res) {
             }
 
             //No project found
-            socket.emit('noProduct', { data: "no product found"});
-            return res.json({
-                speech: "I didn't understand that, can you rephrase the project you are working on?"
-            });
+            // socket.emit('noProduct', { data: "no product found"});
+            // return res.json({
+            //     speech: "I didn't understand that, can you rephrase the project you are working on?"
+            // });
 
 
         }
@@ -182,7 +167,6 @@ router.post('/', function(req, res) {
          * Reset GUI client to google home, and remove talking icon.
          */
         if (req.body.result.metadata.intentId === "675c0d4b-fe09-4386-adaa-977fc0299586"){
-            console.log('nooo');
             socket.emit('reset', { reset: "true"});
             return res.json({
                 speech: "Okay, goodluck finding the product. bye."
