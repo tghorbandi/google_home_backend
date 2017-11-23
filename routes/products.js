@@ -104,7 +104,7 @@ router.post('/', function(req, res) {
                 });
             }
 
-
+            // sledge hammer inhoud
             if(Object.values(req.body.result.parameters)[1]){
                 console.log('sledge hammer inhoud!!');
                 socket.emit('productName', { productName: "sledge hammer"});
@@ -113,12 +113,12 @@ router.post('/', function(req, res) {
                 });
             }
 
-            //sledge hammer inhoud
+            //toolmaker hammer inhoud
             if(Object.values(req.body.result.parameters)[2]){
                 console.log('Toolmaker hammer inhoud!!');
                 socket.emit('productName', { productName: "toolmaker hammer"});
                 return res.json({
-                    speech: "For those jobs, you will need a toolmaker hammer. These are hammers with a magnifying glass on top."
+                    speech: "For that work, you will need a toolmaker hammer. These are hammers with a magnifying glass on top."
                 });
             }
 
