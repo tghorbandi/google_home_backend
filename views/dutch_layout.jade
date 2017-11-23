@@ -13,6 +13,6 @@ html
     body
         block content
 
-script var socket = io.connect('https://tawabgooglehome.herokuapp.com/dutch'); console.log('test'); responsiveVoice.setDefaultVoice("US English Female"); socket.on('speech', function(data){ responsiveVoice.speak(data.text) });
+script var socket = io.connect('https://tawabgooglehome.herokuapp.com/dutch'); console.log('test'); responsiveVoice.setDefaultVoice("US English Female"); socket.on('speech', function(data){ console.log(data.text);  });
 
 
