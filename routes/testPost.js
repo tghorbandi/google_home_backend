@@ -63,10 +63,10 @@ var userID = null;
                     speech: "Okay, Bye",
                     data: {
                         google: {
-                            expect_user_response: false,
+                            expect_user_response: false
                         }
                     },
-                    contextOut: [],
+                    contextOut: []
                 });
             }
 

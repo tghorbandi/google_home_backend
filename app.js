@@ -10,7 +10,7 @@ var socket_io  = require('socket.io');
 // ***************
 // USE ROUTES NEW
 // ***************
-var index = require('./routes/index');
+//var index = require('./routes/index');
 var users = require('./routes/users');
 
 var app = express();
@@ -22,6 +22,8 @@ app.io = io;
 var index = require('./routes/index')(io);
 var product = require('./routes/products')(io);
 var tests = require('./routes/testPost')(io);
+var nl_speech = require('./routes/speechNL')(io);
+var dutch = require('./routes/dutch')(io);
 
 // socket.io events
 io.on( "connection", function( socket ){
@@ -68,7 +70,8 @@ app.use('/', index);
 app.use('/users', users);
 app.use('/testPost', tests);
 app.use('/products', product);
-
+app.use('/speechNL', nl_speech);
+app.use('/dutch', dutch);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
