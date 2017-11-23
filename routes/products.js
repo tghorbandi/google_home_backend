@@ -104,21 +104,21 @@ router.post('/', function(req, res) {
                 });
             }
 
-            //sledge hammer inhoud
+
             if(Object.values(req.body.result.parameters)[1]){
                 console.log('sledge hammer inhoud!!');
-                socket.emit('productName', { productName: "toolmaker hammer"});
-                return res.json({
-                    speech: "For those jobs, you will need a toolmaker hammer. These are hammers with a magnifying glass on top."
-                });
-            }
-
-
-            if(Object.values(req.body.result.parameters)[2]){
-                console.log('Toolmaker hammer inhoud!!');
                 socket.emit('productName', { productName: "sledge hammer"});
                 return res.json({
                     speech: "For those jobs, you will need sledge hammers. These are big hammers designed to destroy objects."
+                });
+            }
+
+            //sledge hammer inhoud
+            if(Object.values(req.body.result.parameters)[2]){
+                console.log('Toolmaker hammer inhoud!!');
+                socket.emit('productName', { productName: "toolmaker hammer"});
+                return res.json({
+                    speech: "For those jobs, you will need a toolmaker hammer. These are hammers with a magnifying glass on top."
                 });
             }
 
