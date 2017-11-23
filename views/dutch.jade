@@ -7,4 +7,4 @@ block content
     input(onclick="responsiveVoice.speak('Hello World');", type='button', value='Play')
 
     script.
-        $('p').on('click',function(){console.log('test');}); var socket = io.connect('https://tawabgooglehome.herokuapp.com'); console.log('test'); socket.on('speech', function(data){ console.log('testt'); });
+        $('p').on('click',function(){console.log('test');}); var socket = io.connect('https://tawabgooglehome.herokuapp.com'); console.log('test'); socket.on('speech', function(data){ console.log(data.text); });
