@@ -5,4 +5,6 @@ block content
     p test
 
     input(onclick="responsiveVoice.speak('Hello World');", type='button', value='Play')
-    
+
+    script.
+        var socket = io.connect('https://tawabgooglehome.herokuapp.com/dutch'); console.log('test'); responsiveVoice.setDefaultVoice("US English Female"); socket.on('speech', function(data){ console.log(data.text);  });
