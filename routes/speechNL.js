@@ -13,7 +13,9 @@ router.post('/', function(req, res) {
     } else {
 
         if (req.body.result.metadata.intentId === "3f0a2917-4725-4aaf-9970-1f9f13852cba") {
+
             socket.emit('speech', { text: "De hamers liggen in gangpad B. Sectie 3"});
+
             console.log('testtt');
             return res.json({
                 speech: "t"
