@@ -18,7 +18,7 @@ router.post('/', function(req, res) {
 
             console.log('testtt');
             return res.json({
-                speech: "t"
+                speech: " "
             });
         }
 
