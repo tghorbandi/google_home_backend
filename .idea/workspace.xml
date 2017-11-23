@@ -28,8 +28,8 @@
       <file leaf-file-name="speechNL.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/speechNL.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="91" lean-forward="false" selection-start-line="14" selection-start-column="91" selection-end-line="14" selection-end-column="91" />
+            <state relative-caret-position="225">
+              <caret line="15" column="86" lean-forward="false" selection-start-line="15" selection-start-column="86" selection-end-line="15" selection-end-column="86" />
               <folding />
             </state>
           </provider>
@@ -48,8 +48,8 @@
       <file leaf-file-name="dutch.jade" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/dutch.jade">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="60" lean-forward="false" selection-start-line="9" selection-start-column="60" selection-end-line="9" selection-end-column="60" />
+            <state relative-caret-position="150">
+              <caret line="9" column="214" lean-forward="false" selection-start-line="9" selection-start-column="214" selection-end-line="9" selection-end-column="214" />
               <folding />
             </state>
           </provider>
@@ -96,8 +96,8 @@
         <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/routes/dutch.js" />
         <option value="$PROJECT_DIR$/routes/testPost.js" />
-        <option value="$PROJECT_DIR$/routes/speechNL.js" />
         <option value="$PROJECT_DIR$/views/dutch_layout.jade" />
+        <option value="$PROJECT_DIR$/routes/speechNL.js" />
         <option value="$PROJECT_DIR$/views/dutch.jade" />
       </list>
     </option>
@@ -226,12 +226,12 @@
       <updated>1509720899880</updated>
       <workItem from="1509720911399" duration="93000" />
       <workItem from="1509721055887" duration="13809000" />
-      <workItem from="1511342971996" duration="17541000" />
+      <workItem from="1511342971996" duration="17687000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40544000" />
+    <option name="totallyTimeSpent" value="40690000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="582" y="23" width="1338" height="1135" extended-state="0" />
@@ -470,8 +470,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/speechNL.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="91" lean-forward="false" selection-start-line="14" selection-start-column="91" selection-end-line="14" selection-end-column="91" />
+        <state relative-caret-position="225">
+          <caret line="15" column="86" lean-forward="false" selection-start-line="15" selection-start-column="86" selection-end-line="15" selection-end-column="86" />
           <folding />
         </state>
       </provider>
@@ -486,8 +486,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/dutch.jade">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="60" lean-forward="false" selection-start-line="9" selection-start-column="60" selection-end-line="9" selection-end-column="60" />
+        <state relative-caret-position="150">
+          <caret line="9" column="214" lean-forward="false" selection-start-line="9" selection-start-column="214" selection-end-line="9" selection-end-column="214" />
           <folding />
         </state>
       </provider>
