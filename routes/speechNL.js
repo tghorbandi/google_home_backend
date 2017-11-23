@@ -12,27 +12,15 @@ router.post('/', function(req, res) {
 
     } else {
 
+        if (req.body.result.metadata.intentId === "3f0a2917-4725-4aaf-9970-1f9f13852cba") {
+            socket.emit('speech', {text: "De hamers liggen in gangpad B. Sectie 3"});
+            return res.json({
+                speech: ""
+            });
+        }
 
         return res.sendStatus(200);
 
-        // console.log("body: " + JSON.stringify(req.body));
-        //
-        //
-        // /**
-        //  * #intent: Welcome Intent
-        //  */
-        // if (req.body.result.action === "input.welcome") {
-        //
-        //     //socket.emit('loading', {loading: "true"});
-        //
-        // }
-        //
-        // /**
-        //  *
-        //  */
-        // if (req.body.result.metadata.intentId === " ") {
-        //
-        // }
     }
 
 
