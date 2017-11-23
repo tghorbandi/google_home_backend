@@ -12,24 +12,27 @@ router.post('/', function(req, res) {
 
     } else {
 
-        console.log("body: " + JSON.stringify(req.body));
 
+        return res.sendStatus(200);
 
-        /**
-         * #intent: Welcome Intent
-         */
-        if (req.body.result.action === "input.welcome") {
-
-            //socket.emit('loading', {loading: "true"});
-
-        }
-
-        /**
-         *
-         */
-        if (req.body.result.metadata.intentId === " ") {
-
-        }
+        // console.log("body: " + JSON.stringify(req.body));
+        //
+        //
+        // /**
+        //  * #intent: Welcome Intent
+        //  */
+        // if (req.body.result.action === "input.welcome") {
+        //
+        //     //socket.emit('loading', {loading: "true"});
+        //
+        // }
+        //
+        // /**
+        //  *
+        //  */
+        // if (req.body.result.metadata.intentId === " ") {
+        //
+        // }
     }
 
 
