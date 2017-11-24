@@ -48,6 +48,7 @@ router.post('/', function(req, res) {
             socket.emit('speech', { text: "De verf assortiment kun je vinden in gangpad D"});
 
             socket.emit('text1', { text1: "Gangpad D"});
+            socket.emit('text2', { text1: " "});
 
             return res.json({
                 speech: " "
