@@ -39,7 +39,7 @@
         <entry file="file://$PROJECT_DIR$/routes/speechNL.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="750">
-              <caret line="50" column="44" lean-forward="false" selection-start-line="50" selection-start-column="44" selection-end-line="50" selection-end-column="44" />
+              <caret line="50" column="48" lean-forward="true" selection-start-line="50" selection-start-column="48" selection-end-line="50" selection-end-column="48" />
               <folding />
             </state>
           </provider>
@@ -48,7 +48,7 @@
       <file leaf-file-name="dutch.jade" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/dutch.jade">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
+            <state relative-caret-position="210">
               <caret line="11" column="455" lean-forward="true" selection-start-line="11" selection-start-column="455" selection-end-line="11" selection-end-column="455" />
               <folding />
             </state>
@@ -227,12 +227,12 @@
       <updated>1509720899880</updated>
       <workItem from="1509720911399" duration="93000" />
       <workItem from="1509721055887" duration="13809000" />
-      <workItem from="1511342971996" duration="24431000" />
+      <workItem from="1511342971996" duration="24588000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47434000" />
+    <option name="totallyTimeSpent" value="47591000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="582" y="23" width="1338" height="1135" extended-state="0" />
@@ -479,7 +479,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/dutch.jade">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
+        <state relative-caret-position="210">
           <caret line="11" column="455" lean-forward="true" selection-start-line="11" selection-start-column="455" selection-end-line="11" selection-end-column="455" />
           <folding />
         </state>
@@ -488,7 +488,7 @@
     <entry file="file://$PROJECT_DIR$/routes/speechNL.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="750">
-          <caret line="50" column="44" lean-forward="false" selection-start-line="50" selection-start-column="44" selection-end-line="50" selection-end-column="44" />
+          <caret line="50" column="48" lean-forward="true" selection-start-line="50" selection-start-column="48" selection-end-line="50" selection-end-column="48" />
           <folding />
         </state>
       </provider>
