@@ -23,13 +23,17 @@ router.post('/', function(req, res) {
 
         if (req.body.result.metadata.intentId === "e7cbd274-f73f-4f58-937c-165bb2b8708b") {
 
-            socket.emit('speech', { text: "De hamers liggen in gangpad B. Sectie 3"});
+            console.log('testt');
 
-            socket.emit('showText', { text0: "Gangpad B", text1: "Sectie 3"});
+            socket.emit('speech', { text: "De hamers liggen in gangpad B. rij 3"});
+
+            socket.emit('text1', { text1: "Gangpad B"});
+            socket.emit('text2', { text2: "Rij 3"});
 
             return res.json({
                 speech: " "
             });
+
         }
 
 
