@@ -2,9 +2,11 @@ extends dutch_layout
 
 block content
 
-    p
+    .locatie-container
+        h1.locatie1
+        h1.locatie2
 
-    input(onclick="responsiveVoice.speak('Hello World');", type='button', value='Play')
+    //input(onclick="responsiveVoice.speak('Hello World');", type='button', value='Play')
 
     script.
-        $('p').on('click',function(){console.log('test');}); var socket = io.connect('https://tawabgooglehome.herokuapp.com'); console.log('test'); socket.on('speech', function(data){ console.log(data.text); responsiveVoice.speak(data.text, "Dutch Female"); }); socket.on('text1', function(data){ console.log(data.text1); }); socket.on('text2', function(data){ console.log(data.text2); });
+        $('p').on('click',function(){console.log('test');}); var socket = io.connect('https://tawabgooglehome.herokuapp.com'); console.log('test'); socket.on('speech', function(data){ console.log(data.text); responsiveVoice.speak(data.text, "Dutch Female"); }); socket.on('text1', function(data){ $(".locatie1").text(data.text1); console.log(data.text1); }); socket.on('text2', function(data){ $(".locatie2").text(data.text2); console.log(data.text2); });

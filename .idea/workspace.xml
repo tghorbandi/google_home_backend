@@ -35,21 +35,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="speechNL.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="speechNL.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/speechNL.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="12" lean-forward="true" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="12" />
+            <state relative-caret-position="345">
+              <caret line="23" column="91" lean-forward="true" selection-start-line="23" selection-start-column="91" selection-end-line="23" selection-end-column="91" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dutch.jade" pinned="false" current-in-tab="false">
+      <file leaf-file-name="dutch.jade" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/dutch.jade">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="9" column="383" lean-forward="false" selection-start-line="9" selection-start-column="383" selection-end-line="9" selection-end-column="383" />
+            <state relative-caret-position="210">
+              <caret line="11" column="425" lean-forward="false" selection-start-line="11" selection-start-column="425" selection-end-line="11" selection-end-column="425" />
               <folding />
             </state>
           </provider>
@@ -80,6 +80,7 @@
       <find>productName</find>
       <find>noprodu</find>
       <find>reset</find>
+      <find>html</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -226,12 +227,12 @@
       <updated>1509720899880</updated>
       <workItem from="1509720911399" duration="93000" />
       <workItem from="1509721055887" duration="13809000" />
-      <workItem from="1511342971996" duration="22637000" />
+      <workItem from="1511342971996" duration="23238000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="45640000" />
+    <option name="totallyTimeSpent" value="46241000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="582" y="23" width="1338" height="1135" extended-state="0" />
@@ -452,14 +453,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/layout.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="17" column="951" lean-forward="false" selection-start-line="17" selection-start-column="946" selection-end-line="17" selection-end-column="951" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/dutch_layout.jade">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -476,18 +469,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/dutch.jade">
+    <entry file="file://$PROJECT_DIR$/routes/speechNL.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="9" column="383" lean-forward="false" selection-start-line="9" selection-start-column="383" selection-end-line="9" selection-end-column="383" />
+        <state relative-caret-position="345">
+          <caret line="23" column="91" lean-forward="true" selection-start-line="23" selection-start-column="91" selection-end-line="23" selection-end-column="91" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/speechNL.js">
+    <entry file="file://$PROJECT_DIR$/views/layout.jade">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="12" lean-forward="true" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="12" />
+        <state relative-caret-position="315">
+          <caret line="17" column="170" lean-forward="false" selection-start-line="17" selection-start-column="170" selection-end-line="17" selection-end-column="211" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/dutch.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="11" column="425" lean-forward="false" selection-start-line="11" selection-start-column="425" selection-end-line="11" selection-end-column="425" />
           <folding />
         </state>
       </provider>

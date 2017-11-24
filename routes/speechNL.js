@@ -23,8 +23,6 @@ router.post('/', function(req, res) {
 
         if (req.body.result.metadata.intentId === "e7cbd274-f73f-4f58-937c-165bb2b8708b") {
 
-            console.log('testt');
-
             socket.emit('speech', { text: "De hamers liggen in gangpad B. rij 3"});
 
             socket.emit('text1', { text1: "Gangpad B"});
