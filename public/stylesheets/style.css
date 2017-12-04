@@ -50,7 +50,8 @@ h1{
 }
 
 #loading{
-  display: none;
+    display: none;
+    color: white;
 }
 
 #welcome-text{
