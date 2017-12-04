@@ -1,0 +1,639 @@
+[
+  {
+    "productnr": "39137",
+    "fullProductName": "Atlas landbouwhamer met steel 110 mm",
+    "type": "Agriculture Hammer",
+    "imgPath": "https://www.hubo.nl/sites/default/files/images/productafbeeldingen/a/Atlaslandbouwhamermetsteel110mm-114448.jpg",
+    "description": ""
+  },
+  {
+    "productnr": "28262",
+    "fullProductName": "Atlas steel voor kunststof landbouwhamer essenhout 1,1 m",
+    "type": "Agriculture Hammer",
+    "imgPath": "https://www.hubo.nl/sites/default/files/images/productafbeeldingen/a/Atlassteelvoorkunststoflandbouwhameressenhout11m-114477.jpg",
+    "description": ""
+  },
+  {
+    "productnr": "19936",
+    "fullProductName": "Atlas steel voor landbouwhamer essenhout 1 m",
+    "type": "Agriculture Hammer",
+    "imgPath": "https://www.hubo.nl/sites/default/files/images/productafbeeldingen/a/Atlassteelvoorlandbouwhameressenhout1m-108146.jpg",
+    "description": ""
+  },
+  {
+    "productnr": "30927",
+    "fullProductName": "Bahco bankhamer 300 g",
+    "type": "Regular hammer",
+    "imgPath": "https://www.hubo.nl/sites/default/files/images/productafbeeldingen/b/Bahcobankhamer300g-123933.jpg",
+    "description": ""
+  },
+  {
+    "productnr": "32423",
+    "fullProductName": "Bahco klauwhamer 429-16",
+    "type": "Claw hammer",
+    "imgPath": "https://www.hubo.nl/sites/default/files/images/productafbeeldingen/b/Bahcoklauwhamer429-16-10607.jpg",
+    "description": ""
+  },
+  {
+    "productnr": "39700",
+    "fullProductName": "Bankhamersteel hickory 1,5 kg",
+    "type": "Bankhammer handle",
+    "imgPath": "https://www.hubo.nl/sites/default/files/images/productafbeeldingen/b/Bankhamersteelhickory15kg-124221.jpg",
+    "description": ""
+  },
+  {
+    "productnr": "39702",
+    "fullProductName": "Bankhamersteel hickory 2 kg",
+    "type": "Bankhammer handle",
+    "imgPath": "https://www.hubo.nl/sites/default/files/images/productafbeeldingen/b/Bankhamersteelhickory2kg-124240.jpg",
+    "description": ""
+  },
+  {
+    "productnr": "39701",
+    "fullProductName": "Bankhamersteel hickory 200 g",
+    "type": "Bankhammer handle",
+    "imgPath": "https://www.hubo.nl/sites/default/files/images/productafbeeldingen/b/Bankhamersteelhickory200g-124239.jpg",
+    "description": ""
+  },
+  {
+    "productnr": "39703",
+    "fullProductName": "Bankhamersteel hickory 300 g",
+    "type": "Bankhammer handle",
+    "imgPath": "https://www.hubo.nl/sites/default/files/images/productafbeeldingen/b/Bankhamersteelhickory300g-124241.jpg",
+    "description": ""
+  },
+  {
+    "productnr": "39704",
+    "fullProductName": "Bankhamersteel hickory 400 g",
+    "type": "Bankhammer handle",
+    "imgPath": "https://www.hubo.nl/sites/default/files/images/productafbeeldingen/b/Bankhamersteelhickory400g-124243.jpg",
+    "description": ""
+  },
+  {
+    "productnr": "39705",
+    "fullProductName": "Bankhamersteel hickory 500 g",
+    "type": "Bankhammer handle",
+    "imgPath": "https://www.hubo.nl/sites/default/files/images/productafbeeldingen/b/Bankhamersteelhickory500g-124244.jpg",
+    "description": ""
+  },
+  {
+    "productnr": "39024",
+    "fullProductName": "Carpoint noodhamer",
+    "type": "Node hammer",
+    "imgPath": "https://www.hubo.nl/sites/default/files/images/productafbeeldingen/c/Carpointnoodhamer-110224.jpg",
+    "description": ""
+  },
+  {
+    "productnr": "11934",
+    "fullProductName": "Carpoint noodhamer glow in the dark",
+    "type": "Node hammer",
+    "imgPath": "https://www.hubo.nl/sites/default/files/images/productafbeeldingen/c/Carpointnoodhamerglowinthedark-80184.jpg",
+    "description": ""
+  },
+  {
+    "productnr": "37786",
+    "fullProductName": "De Wit stratenmakershamer 1 kg",
+    "type": "Brick Hammer",
+    "imgPath": "https://www.hubo.nl/sites/default/files/images/productafbeeldingen/d/DeWitstratenmakershamer1kg-96318.jpg",
+    "description": ""
+  },
+  {
+    "productnr": "37792",
+    "fullProductName": "De Wit stratenmakershamer 1,5 kg",
+    "type": "Brick Hammer",
+    "imgPath": "https://www.hubo.nl/sites/default/files/images/productafbeeldingen/d/DeWitstratenmakershamer15kg-96317.jpg",
+    "description": ""
+  },
+  {
+    "productnr": "19864",
+    "fullProductName": "De Wit stratenmakershamer 1,75 kg",
+    "type": "Brick Hammer",
+    "imgPath": "https://www.hubo.nl/sites/default/files/images/productafbeeldingen/d/DeWitstratenmakershamer175kg-57426.jpg",
+    "description": ""
+  },
+  {
+    "productnr": "32187",
+    "fullProductName": "Gedore bankhamer 300 g",
+    "type": "Regular hammer",
+    "imgPath": "https://www.hubo.nl/sites/default/files/images/productafbeeldingen/g/Gedorebankhamer300g-5402.jpg",
+    "description": ""
+  },
+  {
+    "productnr": "32188",
+    "fullProductName": "Gedore bankhamer 400 g",
+    "type": "Regular hammer",
+    "imgPath": "https://www.hubo.nl/sites/default/files/images/productafbeeldingen/g/Gedorebankhamer400g-5403.jpg",
+    "description": ""
+  },
+  {
+    "productnr": "32159",
+    "fullProductName": "Gedore bankhamer 500 g",
+    "type": "Regular hammer",
+    "imgPath": "https://www.hubo.nl/sites/default/files/images/productafbeeldingen/g/Gedorebankhamer500g-5404.jpg",
+    "description": ""
+  },
+  {
+    "productnr": "34685",
+    "fullProductName": "Hamerholster leer",
+    "type": "Hammer holster",
+    "imgPath": "https://www.hubo.nl/sites/default/files/images/productafbeeldingen/h/Hamerholsterleer-85442.jpg",
+    "description": ""
+  },
+  {
+    "productnr": "37634",
+    "fullProductName": "Hamersteel essen 340 mm voor rubberhamer nr. 2",
+    "type": "Rubber hammer handle",
+    "imgPath": "https://www.hubo.nl/sites/default/files/images/productafbeeldingen/h/Hamersteelessen340mmvoorrubberhamernr2-95978.jpg",
+    "description": ""
+  },
+  {
+    "productnr": "27573",
+    "fullProductName": "Hendrik Jan houten hamer met steel 100 cm",
+    "type": "Wooden hammer",
+    "imgPath": "https://www.hubo.nl/sites/default/files/images/productafbeeldingen/h/HendrikJanhoutenhamermetsteel100cm-37995.jpg",
+    "description": ""
+  },
+  {
+    "productnr": "13772",
+    "fullProductName": "Hendrik Jan rubberhamer nr.4 zacht 90 mm",
+    "type": "Rubber hammer",
+    "imgPath": "https://www.hubo.nl/sites/default/files/images/productafbeeldingen/h/HendrikJanrubberhamernr4zacht90mm-37696.jpg",
+    "description": ""
+  },
+  {
+    "productnr": "17310",
+    "fullProductName": "Houten hamer 70 x 140 mm",
+    "type": "Wooden hammer",
+    "imgPath": "https://www.hubo.nl/sites/default/files/images/productafbeeldingen/h/Houtenhamer70x140mm-31952.jpg",
+    "description": ""
+  },
+  {
+    "productnr": "32192",
+    "fullProductName": "Kaphamer stalen steel 600gr Habero",
+    "type": "Brick hammer",
+    "imgPath": "https://www.hubo.nl/sites/default/files/images/productafbeeldingen/k/Kaphamerstalensteel600grHabero-5406.jpg",
+    "description": ""
+  },
+  {
+    "productnr": "20382",
+    "fullProductName": "Klauwhamer fiber 16 oz 139295",
+    "type": "Fiber clawhammer",
+    "imgPath": "https://www.hubo.nl/sites/default/files/images/producten/k/Klauwhamerfiber16oz139295.jpg",
+    "description": ""
+  },
+  {
+    "productnr": "19709",
+    "fullProductName": "Klauwhamer grafiet 1-51-505 Stanley",
+    "type": "Graphite clawhammer",
+    "imgPath": "https://www.hubo.nl/sites/default/files/images/productafbeeldingen/k/Klauwhamergrafiet1-51-505Stanley-2587.jpg",
+    "description": ""
+  },
+  {
+    "productnr": "17796",
+    "fullProductName": "Klauwhamer profi staal",
+    "type": "Steel clawhammer",
+    "imgPath": "https://www.hubo.nl/sites/default/files/images/productafbeeldingen/k/Klauwhamerprofistaal-43164.jpg",
+    "description": ""
+  },
+  {
+    "productnr": "38223",
+    "fullProductName": "Lathamer 1-51-037",
+    "type": "Electricians Hammer",
+    "imgPath": "https://www.hubo.nl/sites/default/files/images/productafbeeldingen/l/Lathamer1-51-037-100594.jpg",
+    "description": ""
+  },
+  {
+    "productnr": "35241",
+    "fullProductName": "Lignostone kuras hamer 55 mm",
+    "type": "Joiner hammer",
+    "imgPath": "https://www.hubo.nl/sites/default/files/images/productafbeeldingen/l/Lignostonekurashamer55mm-88874.jpg",
+    "description": ""
+  },
+  {
+    "productnr": "35242",
+    "fullProductName": "Lignostone kuras hamer 75 mm",
+    "type": "Joiner hammer",
+    "imgPath": "https://www.hubo.nl/sites/default/files/images/productafbeeldingen/l/Lignostonekurashamer75mm-88876.jpg",
+    "description": ""
+  },
+  {
+    "productnr": "31061",
+    "fullProductName": "Metselaarskaphamer 1-51-039",
+    "type": "Prospector Hammer",
+    "imgPath": "https://www.hubo.nl/sites/default/files/images/productafbeeldingen/m/Metselaarskaphamer1-51-039-86701.jpg",
+    "description": ""
+  },
+  {
+    "productnr": "39688",
+    "fullProductName": "Osca bankhamer 100 g",
+    "type": "Regular hammer",
+    "imgPath": "https://www.hubo.nl/sites/default/files/images/productafbeeldingen/o/Oscabankhamer100g-124040.jpg",
+    "description": ""
+  },
+  {
+    "productnr": "39689",
+    "fullProductName": "Osca bankhamer 200 g",
+    "type": "Regular hammer",
+    "imgPath": "https://www.hubo.nl/sites/default/files/images/productafbeeldingen/o/Oscabankhamer200g-124041.jpg",
+    "description": ""
+  },
+  {
+    "productnr": "39681",
+    "fullProductName": "Osca bankhamer 300 g",
+    "type": "Regular hammer",
+    "imgPath": "https://www.hubo.nl/sites/default/files/images/productafbeeldingen/o/Oscabankhamer300g-123835.jpg",
+    "description": ""
+  },
+  {
+    "productnr": "39690",
+    "fullProductName": "Osca bankhamer 300 g",
+    "type": "Regular hammer",
+    "imgPath": "https://www.hubo.nl/sites/default/files/images/productafbeeldingen/o/Oscabankhamer300g-124083.jpg",
+    "description": ""
+  },
+  {
+    "productnr": "39682",
+    "fullProductName": "Osca bankhamer 400 g",
+    "type": "Regular hammer",
+    "imgPath": "https://www.hubo.nl/sites/default/files/images/productafbeeldingen/o/Oscabankhamer400g-123846.jpg",
+    "description": ""
+  },
+  {
+    "productnr": "39691",
+    "fullProductName": "Osca bankhamer 400 g",
+    "type": "Regular hammer",
+    "imgPath": "https://www.hubo.nl/sites/default/files/images/productafbeeldingen/o/Oscabankhamer400g-124092.jpg",
+    "description": ""
+  },
+  {
+    "productnr": "39679",
+    "fullProductName": "Osca bankhamer 500 g",
+    "type": "Regular hammer",
+    "imgPath": "https://www.hubo.nl/sites/default/files/images/productafbeeldingen/o/Oscabankhamer500g-124104.jpg",
+    "description": ""
+  },
+  {
+    "productnr": "39683",
+    "fullProductName": "Osca bankhamer 500 g",
+    "type": "Regular hammer",
+    "imgPath": "https://www.hubo.nl/sites/default/files/images/productafbeeldingen/o/Oscabankhamer500g-123857.jpg",
+    "description": ""
+  },
+  {
+    "productnr": "37916",
+    "fullProductName": "Osca voorhamer 3 kg",
+    "type": "Sledge hammer",
+    "imgPath": "https://www.hubo.nl/sites/default/files/images/productafbeeldingen/o/Oscavoorhamer3kg-98938.jpg",
+    "description": ""
+  },
+  {
+    "productnr": "19890",
+    "fullProductName": "Osca voorhamer 4 kg",
+    "type": "Sledge hammer",
+    "imgPath": "https://www.hubo.nl/sites/default/files/images/productafbeeldingen/o/Oscavoorhamer4kg-81264.jpg",
+    "description": ""
+  },
+  {
+    "productnr": "37974",
+    "fullProductName": "Osca voorhamer 5 kg",
+    "type": "Sledge hammer",
+    "imgPath": "https://www.hubo.nl/sites/default/files/images/productafbeeldingen/o/Oscavoorhamer5kg-98939.jpg",
+    "description": ""
+  },
+  {
+    "productnr": "17303",
+    "fullProductName": "Skandia bankhamer 100 g",
+    "type": "Regular hammer",
+    "imgPath": "https://www.hubo.nl/sites/default/files/images/productafbeeldingen/s/Skandiabankhamer100g-31930.jpg",
+    "description": ""
+  },
+  {
+    "productnr": "17304",
+    "fullProductName": "Skandia bankhamer 200 g",
+    "type": "Regular hammer",
+    "imgPath": "https://www.hubo.nl/sites/default/files/images/productafbeeldingen/s/Skandiabankhamer200g-31931.jpg",
+    "description": ""
+  },
+  {
+    "productnr": "19764",
+    "fullProductName": "Skandia bankhamer 300 g",
+    "type": "Regular hammer",
+    "imgPath": "https://www.hubo.nl/sites/default/files/images/productafbeeldingen/s/Skandiabankhamer300g-31932.jpg",
+    "description": ""
+  },
+  {
+    "productnr": "17305",
+    "fullProductName": "Skandia bankhamer 400 g",
+    "type": "Regular hammer",
+    "imgPath": "https://www.hubo.nl/sites/default/files/images/productafbeeldingen/s/Skandiabankhamer400g-31933.jpg",
+    "description": ""
+  },
+  {
+    "productnr": "17306",
+    "fullProductName": "Skandia bankhamer 500 g",
+    "type": "Regular hammer",
+    "imgPath": "https://www.hubo.nl/sites/default/files/images/productafbeeldingen/s/Skandiabankhamer500g-31934.jpg",
+    "description": ""
+  },
+  {
+    "productnr": "39685",
+    "fullProductName": "Skandia bankhamer 800 g",
+    "type": "Regular hammer",
+    "imgPath": "https://www.hubo.nl/sites/default/files/images/productafbeeldingen/s/Skandiabankhamer800g-124210.jpg",
+    "description": ""
+  },
+  {
+    "productnr": "40986",
+    "fullProductName": "Skandia bankhamer fiber steel 200 g",
+    "type": "Steel regular hammer",
+    "imgPath": "https://www.hubo.nl/sites/default/files/images/productafbeeldingen/s/Skandiabankhamerfibersteel200g-202334.jpg",
+    "description": ""
+  },
+  {
+    "productnr": "29921",
+    "fullProductName": "Skandia bankhamer fiber steel 300 g",
+    "type": "Steel regular hammer",
+    "imgPath": "https://www.hubo.nl/sites/default/files/images/productafbeeldingen/s/Skandiabankhamerfibersteel300g-195116.jpg",
+    "description": ""
+  },
+  {
+    "productnr": "41106",
+    "fullProductName": "Skandia bankhamer fiber steel 500 g",
+    "type": "Steel regular hammer",
+    "imgPath": "https://www.hubo.nl/sites/default/files/images/productafbeeldingen/s/Skandiabankhamerfibersteel500g-202335.jpg",
+    "description": ""
+  },
+  {
+    "productnr": "19867",
+    "fullProductName": "Skandia bankhamersteel essenhout voor 300 g",
+    "type": "Steel regular hammer",
+    "imgPath": "https://www.hubo.nl/sites/default/files/images/productafbeeldingen/s/Skandiabankhamersteelessenhoutvoor300g-57113.jpg",
+    "description": ""
+  },
+  {
+    "productnr": "19765",
+    "fullProductName": "Skandia klauwhamer fiber steel 27 mm",
+    "type": "Claw hammer",
+    "imgPath": "https://www.hubo.nl/sites/default/files/images/productafbeeldingen/s/Skandiaklauwhamerfibersteel27mm-31944.jpg",
+    "description": ""
+  },
+  {
+    "productnr": "17307",
+    "fullProductName": "Skandia klauwhamer houten steel 27 mm",
+    "type": "Claw hammer",
+    "imgPath": "https://www.hubo.nl/sites/default/files/images/productafbeeldingen/s/Skandiaklauwhamerhoutensteel27mm-31940.jpg",
+    "description": ""
+  },
+  {
+    "productnr": "13727",
+    "fullProductName": "Skandia klauwhamer stalen steel 27 mm",
+    "type": "Claw hammer",
+    "imgPath": "https://www.hubo.nl/sites/default/files/images/productafbeeldingen/s/Skandiaklauwhamerstalensteel27mm-31942.jpg",
+    "description": ""
+  },
+  {
+    "productnr": "17455",
+    "fullProductName": "Skandia klauwhamer stalen steel 27 mm",
+    "type": "Claw hammer",
+    "imgPath": "https://www.hubo.nl/sites/default/files/images/productafbeeldingen/s/Skandiaklauwhamerstalensteel27mm-32960.jpg",
+    "description": ""
+  },
+  {
+    "productnr": "17308",
+    "fullProductName": "Skandia klauwhamer stalen steel mini 23 mm",
+    "type": "Claw hammer",
+    "imgPath": "https://www.hubo.nl/sites/default/files/images/productafbeeldingen/s/Skandiaklauwhamerstalensteelmini23mm-31941.jpg",
+    "description": ""
+  },
+  {
+    "productnr": "17309",
+    "fullProductName": "Skandia kunststofhamer 32 mm",
+    "type": "Soft faced Hammers",
+    "imgPath": "https://www.hubo.nl/sites/default/files/images/productafbeeldingen/s/Skandiakunststofhamer32mm-31949.jpg",
+    "description": ""
+  },
+  {
+    "productnr": "19915",
+    "fullProductName": "Skandia rubberhamer hard wit 57 mm",
+    "type": "Rubber faced hammers",
+    "imgPath": "https://www.hubo.nl/sites/default/files/images/productafbeeldingen/s/Skandiarubberhamerhardwit57mm-102256.jpg",
+    "description": ""
+  },
+  {
+    "productnr": "41107",
+    "fullProductName": "Skandia rubberhamer hard wit 83 mm",
+    "type": "Rubber faced hammers",
+    "imgPath": "https://www.hubo.nl/sites/default/files/images/productafbeeldingen/s/Skandiarubberhamerhardwit83mm-202336.jpg",
+    "description": ""
+  },
+  {
+    "productnr": "17448",
+    "fullProductName": "Skandia rubberhamer zacht zwart 60 mm",
+    "type": "Rubber faced hammers",
+    "imgPath": "https://www.hubo.nl/sites/default/files/images/productafbeeldingen/s/Skandiarubberhamerzachtzwart60mm-32690.jpg",
+    "description": ""
+  },
+  {
+    "productnr": "13746",
+    "fullProductName": "Skandia rubberhamer zacht zwart 83 mm",
+    "type": "Rubber faced hammers",
+    "imgPath": "https://www.hubo.nl/sites/default/files/images/productafbeeldingen/s/Skandiarubberhamerzachtzwart83mm-32689.jpg",
+    "description": ""
+  },
+  {
+    "productnr": "38650",
+    "fullProductName": "Stanley bankhamer 100 g",
+    "type": "Regular hammer",
+    "imgPath": "https://www.hubo.nl/sites/default/files/images/productafbeeldingen/s/Stanleybankhamer100g-108990.jpg",
+    "description": ""
+  },
+  {
+    "productnr": "38651",
+    "fullProductName": "Stanley bankhamer 200 g",
+    "type": "Regular hammer",
+    "imgPath": "https://www.hubo.nl/sites/default/files/images/productafbeeldingen/s/Stanleybankhamer200g-108991.jpg",
+    "description": ""
+  },
+  {
+    "productnr": "31730",
+    "fullProductName": "Stanley bankhamer 300 g",
+    "type": "Regular hammer",
+    "imgPath": "https://www.hubo.nl/sites/default/files/images/productafbeeldingen/s/Stanleybankhamer300g-108992.jpg",
+    "description": ""
+  },
+  {
+    "productnr": "39714",
+    "fullProductName": "Stanley bankhamer 400 g",
+    "type": "Regular hammer",
+    "imgPath": "https://www.hubo.nl/sites/default/files/images/productafbeeldingen/s/Stanleybankhamer400g-123987.jpg",
+    "description": ""
+  },
+  {
+    "productnr": "41019",
+    "fullProductName": "Stanley bankhamer graphite 200 g",
+    "type": "Graphite regular hammer",
+    "imgPath": "https://www.hubo.nl/sites/default/files/images/productafbeeldingen/s/Stanleybankhamergraphite200g-202318.jpg",
+    "description": ""
+  },
+  {
+    "productnr": "41020",
+    "fullProductName": "Stanley bankhamer graphite 500 g",
+    "type": "Graphite regular hammer",
+    "imgPath": "https://www.hubo.nl/sites/default/files/images/productafbeeldingen/s/Stanleybankhamergraphite500g-202319.jpg",
+    "description": ""
+  },
+  {
+    "productnr": "30514",
+    "fullProductName": "Stanley bankhamer graphite steel 300g",
+    "type": "Graphite regular hammer",
+    "imgPath": "https://www.hubo.nl/sites/default/files/images/productafbeeldingen/s/Stanleybankhamergraphitesteel300g-194481.jpg",
+    "description": ""
+  },
+  {
+    "productnr": "14507",
+    "fullProductName": "Stanley fatmax antivibe klauwhamer 450 gram",
+    "type": "Claw hammer",
+    "imgPath": "https://www.hubo.nl/sites/default/files/images/productafbeeldingen/s/Stanleyfatmaxantivibeklauwhamer450gram-134135.jpg",
+    "description": ""
+  },
+  {
+    "productnr": "32025",
+    "fullProductName": "Stanley hamerholster leer beige",
+    "type": "Leather hammer holster",
+    "imgPath": "https://www.hubo.nl/sites/default/files/images/productafbeeldingen/s/Stanleyhamerholsterleerbeige-2623.jpg",
+    "description": ""
+  },
+  {
+    "productnr": "17151",
+    "fullProductName": "Stanley klauwhamer 450 g",
+    "type": "Claw hammer",
+    "imgPath": "https://www.hubo.nl/sites/default/files/images/productafbeeldingen/s/Stanleyklauwhamer450g-7156.jpg",
+    "description": ""
+  },
+  {
+    "productnr": "30503",
+    "fullProductName": "Stanley klauwhamer 570 g",
+    "type": "Claw hammer",
+    "imgPath": "https://www.hubo.nl/sites/default/files/images/productafbeeldingen/s/Stanleyklauwhamer570g-121479.jpg",
+    "description": ""
+  },
+  {
+    "productnr": "19774",
+    "fullProductName": "Steelwood bankhamer 100 g",
+    "type": "Regular hammer",
+    "imgPath": "https://www.hubo.nl/sites/default/files/images/productafbeeldingen/s/Steelwoodbankhamer100g-31935.jpg",
+    "description": ""
+  },
+  {
+    "productnr": "19775",
+    "fullProductName": "Steelwood bankhamer 200 g",
+    "type": "Regular hammer",
+    "imgPath": "https://www.hubo.nl/sites/default/files/images/productafbeeldingen/s/Steelwoodbankhamer200g-31936.jpg",
+    "description": ""
+  },
+  {
+    "productnr": "19776",
+    "fullProductName": "Steelwood bankhamer 300 g",
+    "type": "Regular hammer",
+    "imgPath": "https://www.hubo.nl/sites/default/files/images/productafbeeldingen/s/Steelwoodbankhamer300g-31937.jpg",
+    "description": ""
+  },
+  {
+    "productnr": "19777",
+    "fullProductName": "Steelwood bankhamer 400 g",
+    "type": "Regular hammer",
+    "imgPath": "https://www.hubo.nl/sites/default/files/images/productafbeeldingen/s/Steelwoodbankhamer400g-31938.jpg",
+    "description": ""
+  },
+  {
+    "productnr": "19778",
+    "fullProductName": "Steelwood klauwhamer 27 mm houten steel",
+    "type": "Claw hammer",
+    "imgPath": "https://www.hubo.nl/sites/default/files/images/productafbeeldingen/s/Steelwoodklauwhamer27mmhoutensteel-31939.jpg",
+    "description": ""
+  },
+  {
+    "productnr": "19770",
+    "fullProductName": "Steelwood klauwhamer 27 mm stalen steel",
+    "type": "Claw hammer",
+    "imgPath": "https://www.hubo.nl/sites/default/files/images/productafbeeldingen/s/Steelwoodklauwhamer27mmstalensteel-31943.jpg",
+    "description": ""
+  },
+  {
+    "productnr": "19730",
+    "fullProductName": "Tegelhamers puntmodel 50 g",
+    "type": "Prospector hammer",
+    "imgPath": "https://www.hubo.nl/sites/default/files/images/productafbeeldingen/t/Tegelhamerspuntmodel50g-5431.jpg",
+    "description": ""
+  },
+  {
+    "productnr": "37698",
+    "fullProductName": "Telefoon bankhamer 70gr",
+    "type": "Regular hammer",
+    "imgPath": "https://www.hubo.nl/sites/default/files/images/productafbeeldingen/t/Telefoonbankhamer70gr-96599.jpg",
+    "description": ""
+  },
+  {
+    "productnr": "34582",
+    "fullProductName": "ToolPack hamerholster polyester zwart/bruin",
+    "type": "Polyester hammer holster",
+    "imgPath": "https://www.hubo.nl/sites/default/files/images/productafbeeldingen/t/ToolPackhamerholsterpolyesterzwartbruin-85441.jpg",
+    "description": ""
+  },
+  {
+    "productnr": "19914",
+    "fullProductName": "Voorhamer 4 kg",
+    "type": "Sledge hammer",
+    "imgPath": "https://www.hubo.nl/sites/default/files/images/productafbeeldingen/v/Voorhamer4kg-100169.jpg",
+    "description": ""
+  },
+  {
+    "productnr": "15829",
+    "fullProductName": "Voorhamersteel hickory 900 mm voor 3-4 kg",
+    "type": "Sledge hammer",
+    "imgPath": "https://www.hubo.nl/sites/default/files/images/productafbeeldingen/v/Voorhamersteelhickory900mmvoor3-4kg-36028.jpg",
+    "description": ""
+  },
+  {
+    "productnr": "39716",
+    "fullProductName": "Work Plus bankhamer 100 g",
+    "type": "",
+    "imgPath": "https://www.hubo.nl/sites/default/files/images/productafbeeldingen/w/WorkPlusbankhamer100g-123746.jpg",
+    "description": ""
+  },
+  {
+    "productnr": "39718",
+    "fullProductName": "Work Plus bankhamer 200 g",
+    "type": "",
+    "imgPath": "https://www.hubo.nl/sites/default/files/images/productafbeeldingen/w/WorkPlusbankhamer200g-123868.jpg",
+    "description": ""
+  },
+  {
+    "productnr": "39678",
+    "fullProductName": "Work Plus bankhamer 300 g",
+    "type": "",
+    "imgPath": "https://www.hubo.nl/sites/default/files/images/productafbeeldingen/w/WorkPlusbankhamer300g-123911.jpg",
+    "description": ""
+  },
+  {
+    "productnr": "39677",
+    "fullProductName": "Work Plus bankhamer 500 g",
+    "type": "",
+    "imgPath": "https://www.hubo.nl/sites/default/files/images/productafbeeldingen/w/WorkPlusbankhamer500g-124118.jpg",
+    "description": ""
+  },
+  {
+    "productnr": "40009",
+    "fullProductName": "Work Plus hamer 1000 g",
+    "type": "",
+    "imgPath": "https://www.hubo.nl/sites/default/files/images/productafbeeldingen/w/WorkPlushamer1000g-135097.jpg",
+    "description": ""
+  },
+  {
+    "productnr": "40010",
+    "fullProductName": "Work Plus hamer 1500 g",
+    "type": "",
+    "imgPath": "https://www.hubo.nl/sites/default/files/images/productafbeeldingen/w/WorkPlushamer1500g-135098.jpg",
+    "description": ""
+  }
+]

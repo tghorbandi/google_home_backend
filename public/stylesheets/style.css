@@ -1,19 +1,40 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif !important;
-/*  background: url('../images/background.png') no-repeat center center fixed; 
+    padding-top:20px;
+    /*padding: 50px;*/
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif !important;
+/*
+    background: url('../images/background.png') no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
-    background-size: cover;*/
+    background-size: cover;
+*/
+    background-color: #ecece8;
+
+    /* #ffd540 */
+
 }
 
 a {
   color: #00B7FF;
 }
 
+h1{
+    font-weight: 800;
+    font-size: 26px;
+}
+
 #main-container{
 	/*border: 1px solid gray;*/
+    padding: 0;
+    margin: 0;
+    background: url(../images/bgNew.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: contain;
+    height: 800px;
+
 }
 
 #buttons{
@@ -30,4 +51,95 @@ a {
 
 #loading{
   display: none;
+}
+
+#welcome-text{
+    padding: 20px 20px 50px;
+    background-color: white;
+    /*margin-top:-20px;*/
+}
+
+#welcome-text h1{
+    font-weight: 800;
+    font-size: 26px;
+}
+
+#welcome-text h3{
+    font-weight: 200;
+    font-size: 18px;
+}
+
+#header-container{
+    padding: 0;
+    margin: 0;
+    margin-bottom:20px;
+    margin-left: 0px;
+}
+
+#header-white-background{
+    background: white;
+    height:64px;
+}
+
+#op-zoek-naar{
+    margin-top: 20px;
+    background: #ffd540;
+    margin-bottom: -100%;
+}
+
+#op-zoek-naar h2{
+    font-weight: 800;
+    font-size:24px;
+}
+
+.vraag-style{
+    font-weight: normal;
+    line-height: 1.25;
+    text-align: left;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    text-decoration: none;
+    border: 1px solid transparent;
+    position: relative;
+    padding: .563rem 1.25rem;
+    border-radius: .25rem;
+    transition: all 0.2s ease-in-out;
+    background: #ffd540;
+    color: #0f0e11;
+    border-radius: 20px;
+    padding-right: 2rem;
+    position: relative;
+    display: block;
+    background-color: #0f0e11;
+    color: #fff;
+    float: left;
+    padding-top: 8px;
+    padding-bottom: 0px;
+    margin-bottom: 20px;
+    font-size: 13px;
+}
+
+/*#background-image-container{*/
+    /*background: url(../images/bgNew.jpg) no-repeat center center fixed;*/
+    /*-webkit-background-size: cover;*/
+    /*-moz-background-size: cover;*/
+    /*-o-background-size: cover;*/
+    /*background-size: cover;*/
+/*}*/
+
+#labs-logo{
+    float: right;
+}
+
+.multimate-logo {
+    float: left;
+}
+
+.english-only{
+    font-size: 24px;
+    color: #888789
 }

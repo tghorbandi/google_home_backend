@@ -1,0 +1,21 @@
+[{
+  "type": "sledge",
+  "location": "Section B, Row 4",
+  "usage": "break stuff",
+  "fullProductName": "sledge hammer",
+  "imgPath": "sledge hammer"
+},
+{
+  "type": "claw",
+  "location": "Section C row 2",
+  "usage": "Remove nails",
+  "fullProductName": "curved claw hammer",
+  "imgPath": "curved claw hammer"
+},
+{
+  "type": "toolmaker",
+  "location": "Section B row 1",
+  "usage": "For precision work",
+  "fullProductName": "toolmaker hammer",
+  "imgPath": "toolmaker hammer"
+}]
