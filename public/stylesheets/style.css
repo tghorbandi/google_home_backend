@@ -184,7 +184,7 @@ h1{
     display: none;
     background-color: transparent;
     color: #0f0e11;
-    font-size: 1.8em;
+    font-size: 1.2em;
 }
 
 .breadcrumb a {
@@ -193,4 +193,10 @@ h1{
 
 #container-product{
     margin: 15px;
+    float: right;
+}
+
+#breadcrumb-container{
+    margin: 0;
+    padding: 0;
 }
