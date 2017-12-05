@@ -179,3 +179,14 @@ h1{
     right: 0;
     display: block;
 }
+
+.breadcrumb{
+    display: none;
+    background-color: transparent;
+    color: #0f0e11;
+    font-size: 1.8em;
+}
+
+.breadcrumb a {
+    color: #0f0e11;
+}

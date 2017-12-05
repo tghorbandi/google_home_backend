@@ -170,6 +170,10 @@ router.post('/', function(req, res) {
             mongoDBqueries.findProductNr(function(result) {
                 console.log("MONGODB RESULT:" + JSON.stringify(result));
 
+                console.log(result[0].fullProductName);
+                console.log(result[0].imgPath);
+                console.log(result[0].type);
+
                 // afbeelding van dit result mee sturen naar client
                 // full naam meesturen van dit image
 
@@ -180,7 +184,7 @@ router.post('/', function(req, res) {
             socket.emit('hammerBackground', { imgSrc: "bgNew.jpg"});
 
             // Emit product name to change image
-            socket.emit('productImageNew', { productImageNew: "https://www.hubo.nl/sites/default/files/images/productafbeeldingen/b/Bahcoklauwhamer429-16-10607.jpg"});
+            socket.emit('productImageNew', { productImageNew: ""});
 
 
             return res.json({
