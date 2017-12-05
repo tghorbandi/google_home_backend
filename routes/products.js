@@ -182,7 +182,7 @@ router.post('/', function(req, res) {
                 socket.emit('hammerBackground', { imgSrc: ""});
 
                 // Emit product name to change image
-                socket.emit('productImageNew', { productImageNew: "result[0].imgPath"});
+                socket.emit('productImageNew', { productImageNew: result[0].imgPath});
 
 
                 if(result){
