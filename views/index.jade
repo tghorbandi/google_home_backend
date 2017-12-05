@@ -36,11 +36,13 @@ block content
                 h1 Talking..
 
         br
-        .col-sm-12
-            //img#GHimg(src='images/googleHomeIcon.svg', width='600')
 
-        #container-product.col-md-5.col-sm-5
-            #product1
+        #product-container.row
+            #image-container.col-md-5.col-sm-5
+                img#product1img(src= image2)
+
+            #container-product.col-md-5.col-sm-5
+                #product1
                 h1
 
         #breadcrumb-container.col-md-6
@@ -52,10 +54,6 @@ block content
                 a.breadcrumb-item(href='#')  Hammers &nbsp;
                     i.fa.fa-angle-right(aria-hidden='true')
                 span.breadcrumb-item.active  Bahco klauwhamer 429-16
-
-        p
-            img#product1img(src= image2)
-
 
 
     #footer-container.container-fluid

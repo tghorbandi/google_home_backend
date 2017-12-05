@@ -171,27 +171,31 @@ router.post('/', function(req, res) {
             mongoDBqueries.findProductNr(function(result) {
                 console.log("MONGODB RESULT:" + JSON.stringify(result));
 
-                console.log(result[0].fullProductName);
-                console.log(result[0].imgPath);
-                console.log(result[0].type);
-
-                // Emit product name
-                socket.emit('productName', { productName: result[0].fullProductName});
-
-                // Emit background image
-                socket.emit('hammerBackground', { imgSrc: ""});
-
-                // Emit product name to change image
-                socket.emit('productImageNew', { productImageNew: result[0].imgPath});
+                // console.log(result[0].fullProductName);
+                // console.log(result[0].imgPath);
+                // console.log(result[0].type);
 
 
                 if(result){
+                    // Emit product name
+                    socket.emit('productName', { productName: result[0].fullProductName});
+
+                    // Emit background image
+                    socket.emit('hammerBackground', { imgSrc: ""});
+
+                    // Emit product name to change image
+                    socket.emit('productImageNew', { productImageNew: result[0].imgPath});
+
+                    // Breadcumb navbar position
+                    //socket.emit('breadcrumb', { string: "Bahco klauwhamer 429-16"});
+
                     return res.json({
                         speech: "You are looking for claw hammers is that correct? / You can find claw hammers in row 4 section B"
                     });
+
                 }else{
                     return res.json({
-                        speech: "I'm sorry there went something wrong with receiving products from the database."
+                        speech: "I'm sorry there went something wrong with retrieving products from the database."
                     });
                 }
 
