@@ -24,11 +24,16 @@ h1{
     font-size: 26px;
 }
 
+.row{
+    margin-left: 0px;
+}
+
 #main-container{
 	/*border: 1px solid gray;*/
     padding: 0;
     margin: 0;
-    background: url(../images/bgNew.jpg) no-repeat center center fixed;
+    /*background: url(../images/bgNew.jpg) no-repeat center center fixed;*/
+    background: url(../images/helpdesk1.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -52,6 +57,15 @@ h1{
 #loading{
     display: none;
     color: white;
+    width: 50%;
+    height: 50%;
+    overflow: auto;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
 }
 
 #welcome-text{
@@ -147,4 +161,21 @@ h1{
 
 .spinner{
     float: left;
+}
+
+.fa-3x{
+    font-size: 8em;
+}
+
+#loading-container{
+    width: 50%;
+    height: 50%;
+    overflow: auto;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: block;
 }

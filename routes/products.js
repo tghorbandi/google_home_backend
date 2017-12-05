@@ -161,6 +161,32 @@ router.post('/', function(req, res) {
             });
         }
 
+        /**
+         * #Intent: claw hammer
+         * change background image to hammer toolwand
+         */
+        if (req.body.result.metadata.intentId === "00768954-4b2e-4e79-8f79-f20d5fda1818"){
+
+            mongoDBqueries.findProductNr(function(result) {
+                console.log("MONGODB RESULT:" + JSON.stringify(result));
+
+                // afbeelding van dit result mee sturen naar client
+                // full naam meesturen van dit image
+
+            }, "32423");
+
+
+            // Emit background image source
+            socket.emit('hammerBackground', { imgSrc: "bgNew.jpg"});
+
+            // Emit product name to change image
+            socket.emit('productImageNew', { productImageNew: "https://www.hubo.nl/sites/default/files/images/productafbeeldingen/b/Bahcoklauwhamer429-16-10607.jpg"});
+
+
+            return res.json({
+                speech: "You are looking for claw hammers is that correct? / You can find claw hammers in row 4 section B"
+            });
+        }
 
         /**
          * save input query into mongoDB for research

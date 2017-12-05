@@ -154,6 +154,20 @@ var findSpecificType = function(callback, regex) {
 }
 
 
+/*
+**
+  Find specific product with productnr
+**
+*/
+var findProductNr = function(callback, productnr) {
+    var collection = db2.collection('type_hammers');
+    collection.find({productnr: productnr}).toArray(function(err, docs) {
+        //console.log('found records inside mongoDB');
+        callback(docs);
+    });
+}
+
+
 module.exports = {}
 module.exports.findDocuments = findDocuments;
 module.exports.insertDocuments = insertDocuments;
@@ -163,4 +177,5 @@ module.exports.insertQuery = insertQuery ;
 module.exports.insertProductName = insertProductName;
 module.exports.findProduct = findProduct;
 module.exports.findAllTypes = findAllTypes;
-module.exports.findSpecificType = findSpecificType; 
+module.exports.findSpecificType = findSpecificType;
+module.exports.findProductNr = findProductNr;
