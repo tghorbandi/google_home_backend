@@ -164,6 +164,7 @@ router.post('/', function(req, res) {
         /**
          * #Intent: claw hammer
          * change background image to hammer toolwand
+         * Check if productnr exists in database, then find that product
          */
         if (req.body.result.metadata.intentId === "00768954-4b2e-4e79-8f79-f20d5fda1818"){
 
@@ -174,22 +175,29 @@ router.post('/', function(req, res) {
                 console.log(result[0].imgPath);
                 console.log(result[0].type);
 
-                // afbeelding van dit result mee sturen naar client
-                // full naam meesturen van dit image
+                // Emit product name
+                socket.emit('productName', { productName: result[0].fullProductName});
+
+                // Emit background image
+                socket.emit('hammerBackground', { imgSrc: ""});
+
+                // Emit product name to change image
+                socket.emit('productImageNew', { productImageNew: "result[0].imgPath"});
+
+
+                if(result){
+                    return res.json({
+                        speech: "You are looking for claw hammers is that correct? / You can find claw hammers in row 4 section B"
+                    });
+                }else{
+                    return res.json({
+                        speech: "I'm sorry there went something wrong with receiving products from the database."
+                    });
+                }
+
 
             }, "32423");
 
-
-            // Emit background image source
-            socket.emit('hammerBackground', { imgSrc: "bgNew.jpg"});
-
-            // Emit product name to change image
-            socket.emit('productImageNew', { productImageNew: ""});
-
-
-            return res.json({
-                speech: "You are looking for claw hammers is that correct? / You can find claw hammers in row 4 section B"
-            });
         }
 
         /**
