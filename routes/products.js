@@ -211,7 +211,7 @@ router.post('/', function(req, res) {
          * Check if productnr exists in database, then find that product
          */
         if (req.body.result.metadata.intentId === "55c24519-5439-4cbe-a0c0-2159d5c71e4e"){
-            mongoDBqueries.findProductNr(function(result) {
+            mongoDBqueries.findProductWithIntentId(function(result) {
                 if(result){
                     socket.emit('productDetails', { productName: result[0].fullProductName, productDescription: result[0].description, productImageNew: result[0].imgPath, productLocation: result[0].location });
                     socket.emit('hammerBackground', { imgSrc: ""});
@@ -223,7 +223,7 @@ router.post('/', function(req, res) {
                         speech: "I'm sorry there went something wrong with retrieving products from the database."
                     });
                 }
-            }, req.body.result.metadata.intentId );
+            }, req.body.result.metadata.intentId);
         }
 
         /**

@@ -167,6 +167,19 @@ var findProductNr = function(callback, productnr) {
     });
 }
 
+/*
+**
+  Find specific product with intentId
+**
+*/
+var findProductWithIntentId = function(callback, intentId) {
+    var collection = db2.collection('type_hammers');
+    collection.find({productnr: intentId}).toArray(function(err, docs) {
+        //console.log('found records inside mongoDB');
+        callback(docs);
+    });
+}
+
 
 module.exports = {}
 module.exports.findDocuments = findDocuments;
@@ -179,3 +192,4 @@ module.exports.findProduct = findProduct;
 module.exports.findAllTypes = findAllTypes;
 module.exports.findSpecificType = findSpecificType;
 module.exports.findProductNr = findProductNr;
+module.exports.findProductWithIntentId = findProductWithIntentId;
