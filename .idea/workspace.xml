@@ -25,11 +25,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="products.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="products.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/products.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="355">
-              <caret line="242" column="54" lean-forward="false" selection-start-line="242" selection-start-column="54" selection-end-line="242" selection-end-column="54" />
+              <caret line="242" column="55" lean-forward="false" selection-start-line="242" selection-start-column="55" selection-end-line="242" selection-end-column="55" />
               <folding />
             </state>
           </provider>
@@ -45,11 +45,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="layout.jade" pinned="false" current-in-tab="false">
+      <file leaf-file-name="layout.jade" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/layout.jade">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="701">
-              <caret line="19" column="490" lean-forward="false" selection-start-line="19" selection-start-column="490" selection-end-line="19" selection-end-column="490" />
+            <state relative-caret-position="716">
+              <caret line="19" column="527" lean-forward="false" selection-start-line="19" selection-start-column="527" selection-end-line="19" selection-end-column="527" />
               <folding />
             </state>
           </provider>
@@ -121,8 +121,8 @@
         <option value="$PROJECT_DIR$/controllers/mongoDB.js" />
         <option value="$PROJECT_DIR$/views/index.jade" />
         <option value="$PROJECT_DIR$/public/stylesheets/style.css" />
-        <option value="$PROJECT_DIR$/views/layout.jade" />
         <option value="$PROJECT_DIR$/routes/products.js" />
+        <option value="$PROJECT_DIR$/views/layout.jade" />
       </list>
     </option>
   </component>
@@ -261,12 +261,12 @@
       <workItem from="1509720911399" duration="93000" />
       <workItem from="1509721055887" duration="13809000" />
       <workItem from="1511342971996" duration="25045000" />
-      <workItem from="1512380247701" duration="41793000" />
+      <workItem from="1512380247701" duration="42047000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="89841000" />
+    <option name="totallyTimeSpent" value="90095000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -583,10 +583,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/layout.jade">
+    <entry file="file://$PROJECT_DIR$/routes/products.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="701">
-          <caret line="19" column="490" lean-forward="false" selection-start-line="19" selection-start-column="490" selection-end-line="19" selection-end-column="490" />
+        <state relative-caret-position="355">
+          <caret line="242" column="55" lean-forward="false" selection-start-line="242" selection-start-column="55" selection-end-line="242" selection-end-column="55" />
           <folding />
         </state>
       </provider>
@@ -599,10 +599,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/products.js">
+    <entry file="file://$PROJECT_DIR$/views/layout.jade">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="355">
-          <caret line="242" column="54" lean-forward="false" selection-start-line="242" selection-start-column="54" selection-end-line="242" selection-end-column="54" />
+        <state relative-caret-position="716">
+          <caret line="19" column="527" lean-forward="false" selection-start-line="19" selection-start-column="527" selection-end-line="19" selection-end-column="527" />
           <folding />
         </state>
       </provider>

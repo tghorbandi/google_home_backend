@@ -240,7 +240,7 @@ router.post('/', function(req, res) {
             socket.emit('allHammers', { showList: "true" });
 
             return res.json({
-                speech: "Here is a list of all hammers"
+                speech: "Here is a list of all hammers2"
 
             })
 
