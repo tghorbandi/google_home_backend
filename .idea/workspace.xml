@@ -49,7 +49,7 @@
         <entry file="file://$PROJECT_DIR$/views/layout.jade">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="716">
-              <caret line="19" column="527" lean-forward="false" selection-start-line="19" selection-start-column="527" selection-end-line="19" selection-end-column="527" />
+              <caret line="19" column="562" lean-forward="false" selection-start-line="19" selection-start-column="562" selection-end-line="19" selection-end-column="562" />
               <folding />
             </state>
           </provider>
@@ -261,12 +261,12 @@
       <workItem from="1509720911399" duration="93000" />
       <workItem from="1509721055887" duration="13809000" />
       <workItem from="1511342971996" duration="25045000" />
-      <workItem from="1512380247701" duration="42047000" />
+      <workItem from="1512380247701" duration="42325000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="90095000" />
+    <option name="totallyTimeSpent" value="90373000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -602,7 +602,7 @@
     <entry file="file://$PROJECT_DIR$/views/layout.jade">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="716">
-          <caret line="19" column="527" lean-forward="false" selection-start-line="19" selection-start-column="527" selection-end-line="19" selection-end-column="527" />
+          <caret line="19" column="562" lean-forward="false" selection-start-line="19" selection-start-column="562" selection-end-line="19" selection-end-column="562" />
           <folding />
         </state>
       </provider>
