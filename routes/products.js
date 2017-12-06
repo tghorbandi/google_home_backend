@@ -213,7 +213,12 @@ router.post('/', function(req, res) {
         if (req.body.result.metadata.intentId === "55c24519-5439-4cbe-a0c0-2159d5c71e4e"){
             mongoDBqueries.findProductWithIntentId(function(result) {
                 if(result){
-                    socket.emit('productDetails', { productName: result[0].fullProductName, productDescription: result[0].description, productImageNew: result[0].imgPath, productLocation: result[0].location });
+                    socket.emit('productDetails', {
+                        productName: result[0].fullProductName,
+                        productDescription: result[0].description,
+                        productImageNew: result[0].imgPath,
+                        productLocation: result[0].location
+                    });
                     socket.emit('hammerBackground', { imgSrc: ""});
                     return res.json({
                         speech: "You are looking for claw hammers is that correct? / You can find claw hammers in row 4 section B"
