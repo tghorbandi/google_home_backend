@@ -174,7 +174,7 @@ var findProductNr = function(callback, productnr) {
 */
 var findProductWithIntentId = function(callback, intentId) {
     var collection = db2.collection('type_hammers');
-    collection.find({productnr: intentId}).toArray(function(err, docs) {
+    collection.find({intentId: intentId}).toArray(function(err, docs) {
         //console.log('found records inside mongoDB');
         callback(docs);
     });
