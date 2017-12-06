@@ -4,6 +4,7 @@ var mongoDBqueries = require('../controllers/mongoDB');
 var socket;
 var userID = null;
 var productPlacement;
+var fallback = 0;
 
 router.post('/', function(req, res) {
 
@@ -177,14 +178,15 @@ router.post('/', function(req, res) {
 
 
                 if(result){
-                    // Emit product name
-                    socket.emit('productName', { productName: result[0].fullProductName});
+
+                    // Emit product name & description & image path from database.
+                    socket.emit('productDetails', { productName: result[0].fullProductName, productDescription: result[0].description, productImageNew: result[0].imgPath });
 
                     // Emit background image
                     socket.emit('hammerBackground', { imgSrc: ""});
 
                     // Emit product name to change image
-                    socket.emit('productImageNew', { productImageNew: result[0].imgPath});
+                    //socket.emit('productImageNew', { productImageNew: result[0].imgPath});
 
                     // Breadcumb navbar position
                     //socket.emit('breadcrumb', { string: "Bahco klauwhamer 429-16"});
@@ -202,6 +204,24 @@ router.post('/', function(req, res) {
 
             }, "32423");
 
+        }
+
+        /**
+         * if dialog goes in fallback three times
+         * @var int fallback
+         * outgoing context meegeven om weer naar welcome intent te gaan.
+         */
+        if(req.body.result.metadata.intentId === "224ab83a-266e-4868-8ca4-856d3ea9b669"){
+
+            if(fallback < 3){
+
+                fallback++;
+
+            }else{
+                return res.json({
+                    speech: "I'm sorry, something went terribly wrong. Let's try again. Are you looking for hammers?"
+                });
+            }
         }
 
         /**
