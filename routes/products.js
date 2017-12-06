@@ -180,7 +180,7 @@ router.post('/', function(req, res) {
                 if(result){
 
                     // Emit product name & description & image path from database.
-                    socket.emit('productDetails', { productName: result[0].fullProductName, productDescription: result[0].description, productImageNew: result[0].imgPath });
+                    socket.emit('productDetails', { productName: result[0].fullProductName, productDescription: result[0].description, productImageNew: result[0].imgPath, productLocation: result[0].location });
 
                     // Emit background image
                     socket.emit('hammerBackground', { imgSrc: ""});

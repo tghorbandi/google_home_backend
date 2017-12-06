@@ -9,14 +9,6 @@ block content
                 img(src='images/multimateLogo.jpg', width='150')
                 span.english-only &nbsp; <u>English</u> only
 
-            #op-zoek-naar.col-md-3.col-sm-3
-                h2 Try me! <br /> Start your sentence with: "Hey, E-sites"
-                .vraag-style
-                    p Hey E-sites, what can you do?
-            //#header-white-background.col-md-5.col-md-offset-1
-                //p test
-
-
     #main-container.container-fluid
         .row
 
@@ -25,6 +17,11 @@ block content
 
                 h3 I am designed to help with problems. At this moment the only functionality I have is to find <u>hammers</u>. I also only understand <u>English</u>.
                 p E-sites Virtual Assistant
+
+            #op-zoek-naar.col-md-3.col-sm-3
+                h2 Try me! <br /> Start your sentence with: "Hey, E-sites"
+                .vraag-style
+                    p Hey E-sites, what can you do?
 
             #welcome-image.col-md-5
                 //img(src='images/bgNew.jpg', width='600')
@@ -54,9 +51,10 @@ block content
             #container-product.col-md-5.col-sm-5
                 #product1
                     h1.product-name <br />
-                    p.product-description
+                    p.product-description <br /><br />
+                    h1.product-location
 
-                    .follow-up-container.col-md-8.col-sm-8
+                    .follow-up-container.col-md-9.col-sm-9
                         .follow-up
                             h2 Need more info? try asking:
                             .vraag-style
@@ -66,12 +64,22 @@ block content
         #suggestion-products-container.container-fluid
             h1 You might also like
             .row
-                .col-md-3
-                    p test
-                .col-md-3
-                    p test
-                .col-md-3
-                    p test
+                .col-md-3(style="background: white;")
+                    h3 Steel Claw hammer 27mm
+                    img(style="max-width:100%;")(src='https://www.multimate.nl/sites/multimate/files/images/productafbeeldingen/s/Skandiaklauwhamerstalensteel27mm-31942.jpg')
+                    p lorem ipsum lorem ipsum lorem ipsum
+                .col-md-3(style="background: white;")
+                    h3 Steel Claw hammer 27mm
+                    img(style="max-width:100%;")(src='https://www.multimate.nl/sites/multimate/files/images/productafbeeldingen/s/Skandiaklauwhamerstalensteel27mm-31942.jpg')
+                    p lorem ipsum lorem ipsum lorem ipsum
+                .col-md-3(style="background: white;")
+                    h3 Steel Claw hammer 27mm
+                    img(style="max-width:100%;")(src='https://www.multimate.nl/sites/multimate/files/images/productafbeeldingen/s/Skandiaklauwhamerstalensteel27mm-31942.jpg')
+                    p lorem ipsum lorem ipsum lorem ipsum
+                .col-md-3(style="background: white;")
+                    h3 Steel Claw hammer 27mm
+                    img(style="max-width:100%;")(src='https://www.multimate.nl/sites/multimate/files/images/productafbeeldingen/s/Skandiaklauwhamerstalensteel27mm-31942.jpg')
+                    p lorem ipsum lorem ipsum lorem ipsum
 
     #footer-container.container-fluid
         .row
