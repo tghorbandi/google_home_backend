@@ -212,6 +212,7 @@ router.post('/', function(req, res) {
          */
         if (req.body.result.metadata.intentId === "00768954-4b2e-4e79-8f79-f20d5fda1818" || req.body.result.metadata.intentId === "55c24519-5439-4cbe-a0c0-2159d5c71e4e"){
             mongoDBqueries.findProductWithIntentId(function(result) {
+                console.log("MONGODB RESULT:" + JSON.stringify(result));
                 if(result){
                     socket.emit('productDetails', {
                         productName: result[0].fullProductName,
