@@ -237,6 +237,8 @@ router.post('/', function(req, res) {
          */
         if(req.body.result.metadata.intentId === "b7bfba95-4293-4d32-a206-751e48f10b15") {
 
+            socket.emit('allHammers', { showList: "true" });
+
             return res.json({
                 speech: "Here is a list of all hammers"
 

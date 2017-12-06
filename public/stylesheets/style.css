@@ -239,5 +239,21 @@ h1{
     font-size: 65px;
 }
 
+#footer-container{
+    margin-top: 100px;
+}
+
+#hammer-list-container ul{
+    display: none;
+    margin-top: 150px;
+    list-style-type: none;
+    text-align: center;
+    font-size: 30px;
+    color: white;
+}
+
+#hammer-list-container li{
+    margin-top: 20px;
+}
 
 
