@@ -167,50 +167,50 @@ router.post('/', function(req, res) {
          * change background image to hammer toolwand
          * Check if productnr exists in database, then find that product
          */
-        if (req.body.result.metadata.intentId === "00768954-4b2e-4e79-8f79-f20d5fda1818"){
-
-            mongoDBqueries.findProductNr(function(result) {
-                console.log("MONGODB RESULT:" + JSON.stringify(result));
-
-                // console.log(result[0].fullProductName);
-                // console.log(result[0].imgPath);
-                // console.log(result[0].type);
-
-
-                if(result){
-
-                    // Emit product name & description & image path from database.
-                    socket.emit('productDetails', { productName: result[0].fullProductName, productDescription: result[0].description, productImageNew: result[0].imgPath, productLocation: result[0].location });
-
-                    // Emit background image
-                    socket.emit('hammerBackground', { imgSrc: ""});
-
-                    // Emit product name to change image
-                    //socket.emit('productImageNew', { productImageNew: result[0].imgPath});
-
-                    // Breadcumb navbar position
-                    //socket.emit('breadcrumb', { string: "Bahco klauwhamer 429-16"});
-
-                    return res.json({
-                        speech: "You are looking for claw hammers is that correct? / You can find claw hammers in row 4 section B"
-                    });
-
-                }else{
-                    return res.json({
-                        speech: "I'm sorry there went something wrong with retrieving products from the database."
-                    });
-                }
-
-
-            }, "32423");
-
-        }
+        // if (req.body.result.metadata.intentId === "00768954-4b2e-4e79-8f79-f20d5fda1818"){
+        //
+        //     mongoDBqueries.findProductNr(function(result) {
+        //         console.log("MONGODB RESULT:" + JSON.stringify(result));
+        //
+        //         // console.log(result[0].fullProductName);
+        //         // console.log(result[0].imgPath);
+        //         // console.log(result[0].type);
+        //
+        //
+        //         if(result){
+        //
+        //             // Emit product name & description & image path from database.
+        //             socket.emit('productDetails', { productName: result[0].fullProductName, productDescription: result[0].description, productImageNew: result[0].imgPath, productLocation: result[0].location });
+        //
+        //             // Emit background image
+        //             socket.emit('hammerBackground', { imgSrc: ""});
+        //
+        //             // Emit product name to change image
+        //             //socket.emit('productImageNew', { productImageNew: result[0].imgPath});
+        //
+        //             // Breadcumb navbar position
+        //             //socket.emit('breadcrumb', { string: "Bahco klauwhamer 429-16"});
+        //
+        //             return res.json({
+        //                 speech: "You are looking for claw hammers is that correct? / You can find claw hammers in row 4 section B"
+        //             });
+        //
+        //         }else{
+        //             return res.json({
+        //                 speech: "I'm sorry there went something wrong with retrieving products from the database."
+        //             });
+        //         }
+        //
+        //
+        //     }, "32423");
+        //
+        // }
 
         /**
          * #Intent: regular hammer
          * Check if productnr exists in database, then find that product
          */
-        if (req.body.result.metadata.intentId === "55c24519-5439-4cbe-a0c0-2159d5c71e4e"){
+        if (req.body.result.metadata.intentId === "00768954-4b2e-4e79-8f79-f20d5fda1818" || req.body.result.metadata.intentId === "55c24519-5439-4cbe-a0c0-2159d5c71e4e"){
             mongoDBqueries.findProductWithIntentId(function(result) {
                 if(result){
                     socket.emit('productDetails', {
@@ -229,6 +229,19 @@ router.post('/', function(req, res) {
                     });
                 }
             }, req.body.result.metadata.intentId);
+        }
+
+        /**
+         * #intent: list of all hammers
+         * outgoing context meegeven om weer naar welcome intent te gaan.
+         */
+        if(req.body.result.metadata.intentId === "b7bfba95-4293-4d32-a206-751e48f10b15") {
+
+            return res.json({
+                speech: "Here is a list of all hammers"
+
+            })
+
         }
 
         /**

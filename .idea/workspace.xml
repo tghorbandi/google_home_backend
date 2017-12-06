@@ -25,11 +25,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="products.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="products.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/routes/products.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="206">
-              <caret line="202" column="0" lean-forward="true" selection-start-line="202" selection-start-column="0" selection-end-line="202" selection-end-column="0" />
+              <caret line="209" column="34" lean-forward="true" selection-start-line="209" selection-start-column="34" selection-end-line="209" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -48,8 +48,8 @@
       <file leaf-file-name="index.jade" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/index.jade">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="350">
-              <caret line="44" column="53" lean-forward="true" selection-start-line="44" selection-start-column="53" selection-end-line="44" selection-end-column="53" />
+            <state relative-caret-position="287">
+              <caret line="21" column="67" lean-forward="false" selection-start-line="21" selection-start-column="67" selection-end-line="21" selection-end-column="67" />
               <folding />
             </state>
           </provider>
@@ -65,11 +65,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/stylesheets/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="756">
-              <caret line="234" column="18" lean-forward="true" selection-start-line="234" selection-start-column="18" selection-end-line="234" selection-end-column="18" />
+            <state relative-caret-position="141">
+              <caret line="193" column="0" lean-forward="true" selection-start-line="193" selection-start-column="0" selection-end-line="193" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -107,6 +107,7 @@
       <find>labs</find>
       <find>product</find>
       <find>loading</find>
+      <find>suggestion</find>
       <find>productLoca</find>
     </findStrings>
   </component>
@@ -128,9 +129,9 @@
         <option value="$PROJECT_DIR$/oldData.json" />
         <option value="$PROJECT_DIR$/controllers/mongoDB.js" />
         <option value="$PROJECT_DIR$/views/layout.jade" />
-        <option value="$PROJECT_DIR$/routes/products.js" />
-        <option value="$PROJECT_DIR$/views/index.jade" />
         <option value="$PROJECT_DIR$/public/stylesheets/style.css" />
+        <option value="$PROJECT_DIR$/views/index.jade" />
+        <option value="$PROJECT_DIR$/routes/products.js" />
       </list>
     </option>
   </component>
@@ -269,12 +270,12 @@
       <workItem from="1509720911399" duration="93000" />
       <workItem from="1509721055887" duration="13809000" />
       <workItem from="1511342971996" duration="25045000" />
-      <workItem from="1512380247701" duration="36233000" />
+      <workItem from="1512380247701" duration="37517000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="84281000" />
+    <option name="totallyTimeSpent" value="85565000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -575,10 +576,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/mongoDB.js">
+    <entry file="file://$PROJECT_DIR$/public/stylesheets/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="159" column="2" lean-forward="true" selection-start-line="159" selection-start-column="2" selection-end-line="159" selection-end-column="2" />
+        <state relative-caret-position="141">
+          <caret line="193" column="0" lean-forward="true" selection-start-line="193" selection-start-column="0" selection-end-line="193" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/index.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="287">
+          <caret line="21" column="67" lean-forward="false" selection-start-line="21" selection-start-column="67" selection-end-line="21" selection-end-column="67" />
           <folding />
         </state>
       </provider>
@@ -591,10 +600,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/index.jade">
+    <entry file="file://$PROJECT_DIR$/controllers/mongoDB.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="44" column="53" lean-forward="true" selection-start-line="44" selection-start-column="53" selection-end-line="44" selection-end-column="53" />
+        <state relative-caret-position="378">
+          <caret line="159" column="2" lean-forward="true" selection-start-line="159" selection-start-column="2" selection-end-line="159" selection-end-column="2" />
           <folding />
         </state>
       </provider>
@@ -602,15 +611,7 @@
     <entry file="file://$PROJECT_DIR$/routes/products.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="206">
-          <caret line="202" column="0" lean-forward="true" selection-start-line="202" selection-start-column="0" selection-end-line="202" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/stylesheets/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="756">
-          <caret line="234" column="18" lean-forward="true" selection-start-line="234" selection-start-column="18" selection-end-line="234" selection-end-column="18" />
+          <caret line="209" column="34" lean-forward="true" selection-start-line="209" selection-start-column="34" selection-end-line="209" selection-end-column="34" />
           <folding />
         </state>
       </provider>
