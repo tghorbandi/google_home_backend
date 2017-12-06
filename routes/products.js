@@ -207,6 +207,26 @@ router.post('/', function(req, res) {
         }
 
         /**
+         * #Intent: regular hammer
+         * Check if productnr exists in database, then find that product
+         */
+        if (req.body.result.metadata.intentId === "55c24519-5439-4cbe-a0c0-2159d5c71e4e"){
+            mongoDBqueries.findProductNr(function(result) {
+                if(result){
+                    socket.emit('productDetails', { productName: result[0].fullProductName, productDescription: result[0].description, productImageNew: result[0].imgPath, productLocation: result[0].location });
+                    socket.emit('hammerBackground', { imgSrc: ""});
+                    return res.json({
+                        speech: "You are looking for claw hammers is that correct? / You can find claw hammers in row 4 section B"
+                    });
+                }else{
+                    return res.json({
+                        speech: "I'm sorry there went something wrong with retrieving products from the database."
+                    });
+                }
+            }, req.body.result.metadata.intentId );
+        }
+
+        /**
          * if dialog goes in fallback three times
          * @var int fallback
          * outgoing context meegeven om weer naar welcome intent te gaan.
@@ -219,7 +239,7 @@ router.post('/', function(req, res) {
 
             }else{
                 return res.json({
-                    speech: "I'm sorry, something went terribly wrong. Let's try again. Are you looking for hammers?"
+                    speech: "I'm sorry, something went terribly wrong. Let's try again. What type of hammer are you looking for?"
                 });
             }
         }
