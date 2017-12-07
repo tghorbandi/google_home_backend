@@ -48,8 +48,8 @@
       <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/stylesheets/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="888">
-              <caret line="259" column="19" lean-forward="true" selection-start-line="259" selection-start-column="19" selection-end-line="259" selection-end-column="19" />
+            <state relative-caret-position="873">
+              <caret line="258" column="0" lean-forward="true" selection-start-line="258" selection-start-column="0" selection-end-line="258" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -103,8 +103,8 @@
       <find>loading</find>
       <find>c2708040-2664-48a1-914f-79c7eeafa2bb</find>
       <find>reset</find>
-      <find>regular ham</find>
       <find>product-container</find>
+      <find>regular ham</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -266,12 +266,12 @@
       <workItem from="1509720911399" duration="93000" />
       <workItem from="1509721055887" duration="13809000" />
       <workItem from="1511342971996" duration="25045000" />
-      <workItem from="1512380247701" duration="47557000" />
+      <workItem from="1512380247701" duration="47688000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="95605000" />
+    <option name="totallyTimeSpent" value="95736000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -596,14 +596,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/products.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="223" column="0" lean-forward="true" selection-start-line="223" selection-start-column="0" selection-end-line="223" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/layout.jade">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="329">
@@ -612,10 +604,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/routes/products.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="223" column="0" lean-forward="true" selection-start-line="223" selection-start-column="0" selection-end-line="223" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/public/stylesheets/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="888">
-          <caret line="259" column="19" lean-forward="true" selection-start-line="259" selection-start-column="19" selection-end-line="259" selection-end-column="19" />
+        <state relative-caret-position="873">
+          <caret line="258" column="0" lean-forward="true" selection-start-line="258" selection-start-column="0" selection-end-line="258" selection-end-column="0" />
           <folding />
         </state>
       </provider>
