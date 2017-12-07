@@ -108,6 +108,8 @@ script.
 
     socket.on('allHammers', function(data){
         $("#loading").fadeOut();
+        $("#breadcrumb-container").hide();
+        $("#suggestion-products-container").hide();
         $("#product-container").hide();
         $("#hammer-list-container").fadeIn();
         $("#hammer-list-container").find( "ul" ).fadeIn();

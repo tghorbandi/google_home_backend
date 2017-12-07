@@ -211,7 +211,7 @@ router.post('/', function(req, res) {
          * Check if productnr exists in database, then find that product
          */
 
-        if (req.body.result.metadata.intentId === "00768954-4b2e-4e79-8f79-f20d5fda1818" || req.body.result.metadata.intentId === "55c24519-5439-4cbe-a0c0-2159d5c71e4e" || req.body.result.metadata.intentId === "01bca801-fd72-4b4d-ad2f-5048747b96db" || req.body.result.metadata.intentId === "cd5499b9-06e2-4fa6-a8e9-755288475d2c" || req.body.result.metadata.intentId === "08ad93bd-8f49-4cd6-be92-927af69d8435"){
+        if (req.body.result.metadata.intentId === "00768954-4b2e-4e79-8f79-f20d5fda1818" || req.body.result.metadata.intentId === "55c24519-5439-4cbe-a0c0-2159d5c71e4e" || req.body.result.metadata.intentId === "01bca801-fd72-4b4d-ad2f-5048747b96db" || req.body.result.metadata.intentId === "cd5499b9-06e2-4fa6-a8e9-755288475d2c" || req.body.result.metadata.intentId === "08ad93bd-8f49-4cd6-be92-927af69d8435" || req.body.result.metadata.intentId === "890138a2-f61a-4108-a87b-1d77cc52bda9" || req.body.result.metadata.intentId === "6c5e4679-061e-4145-8c4d-fad63a6925e6"){
 
             // claw hammer
             if(req.body.result.metadata.intentId === "01bca801-fd72-4b4d-ad2f-5048747b96db"){
