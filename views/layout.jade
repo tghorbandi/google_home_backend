@@ -37,7 +37,11 @@ script.
         $("#loading").hide();
     });
 
+    // TALKING..
     socket.on('loading', function(data){
+
+        $("#product-container").hide();
+        $("#breadcrumb-container").hide();
         $("#hammer-list-container").hide(); $("#product1").fadeOut();
         $("#suggestion-products-container").fadeOut();
         $("#op-zoek-naar").fadeOut();
@@ -104,6 +108,7 @@ script.
 
     socket.on('allHammers', function(data){
         $("#loading").fadeOut();
+        $("#product-container").hide();
         $("#hammer-list-container").fadeIn();
         $("#hammer-list-container").find( "ul" ).fadeIn();
         $("#op-zoek-naar").fadeOut();

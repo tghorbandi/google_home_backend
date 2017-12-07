@@ -257,4 +257,7 @@ h1{
     margin-top: 20px;
 }
 
+#product-container{
+    display: none;
+}
 
