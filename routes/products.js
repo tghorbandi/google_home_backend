@@ -31,7 +31,7 @@ router.post('/', function(req, res) {
 
             if(req.body.originalRequest.data.user.userId === userID){
                 return res.json({
-                    speech: "Hey, welcome back! How can I help?"
+                    speech: "Hey!, How can I help?"
                 });
             }
             else{
@@ -133,12 +133,12 @@ router.post('/', function(req, res) {
         /**
          * #Intent: Parts Curved Claw hammer
          */
-        if (req.body.result.metadata.intentId === "c2708040-2664-48a1-914f-79c7eeafa2bb"){
-            socket.emit('productName', { productName: "curved claw hammer parts"});
-            return res.json({
-                speech: "Have a look at the screen. A curved claw hammer exists of 6 different parts. That is the Claw,. Eye,. Cheek,. Neck,. Poll,. and the face."
-            });
-        }
+        // if (req.body.result.metadata.intentId === "c2708040-2664-48a1-914f-79c7eeafa2bb"){
+        //     socket.emit('productName', { productName: "curved claw hammer parts"});
+        //     return res.json({
+        //         speech: "Have a look at the screen. A curved claw hammer exists of 6 different parts. That is the Claw,. Eye,. Cheek,. Neck,. Poll,. and the face."
+        //     });
+        // }
         
         /**
          * #Intent: Bye 
@@ -220,9 +220,20 @@ router.post('/', function(req, res) {
                         productLocation: result[0].location
                     });
                     socket.emit('hammerBackground', { imgSrc: ""});
-                    return res.json({
-                        speech: "You are looking for claw hammers is that correct? / You can find claw hammers in row 4 section B"
-                    });
+
+
+                    productPlacement = "You can find this hammer" + " " + "in " + result[0].location;
+                    var newPlacement = {};
+                    var key = "speech";
+                    newPlacement[key] = productPlacement;
+
+                    console.log("productPlacement: " + productPlacement);
+
+                    return res.json(newPlacement);
+
+                    // return res.json({
+                    //     speech: "You are looking for claw hammers is that correct? / You can find claw hammers in row 4 section B"
+                    // });
                 }else{
                     return res.json({
                         speech: "I'm sorry there went something wrong with retrieving products from the database."
