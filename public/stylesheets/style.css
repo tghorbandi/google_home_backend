@@ -47,7 +47,7 @@ h1{
 }
 
 #product1img{
-	box-shadow: 8px 8px 10px #aaa;
+	/*box-shadow: 8px 8px 10px #aaa;*/
 }
 
 #GHimg{
@@ -255,6 +255,10 @@ h1{
 
 #hammer-list-container li{
     margin-top: 20px;
+}
+
+.positie2{
+    float: right;
 }
 
 
