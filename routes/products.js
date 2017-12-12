@@ -236,7 +236,7 @@ router.post('/', function(req, res) {
                     socket.emit('hammerBackground', { imgSrc: ""});
 
 
-                    productPlacement = "You can find this hammer" + " " + "in " + result[0].location;
+                    productPlacement = "You can find this hammer" + " " + "in " + result[0].location + ". Have a look at the screen, this is how the hammer looks like";
                     var newPlacement = {};
                     var key = "speech";
                     newPlacement[key] = productPlacement;

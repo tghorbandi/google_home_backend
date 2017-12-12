@@ -1,7 +1,32 @@
+@font-face {
+    font-family: "myfont";
+    src: url("Ciutadella-Light.woff2") format('woff');
+    font-weight: 100;
+}
+
+@font-face {
+    font-family: "myfont";
+    src: url("Ciutadella-Medium.woff2") format('woff');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "myfont";
+    src: url("Ciutadella-Regular.woff2") format('woff');
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: "myfont";
+    src: url("Ciutadella-SemiBold.woff2") format('woff');
+    font-weight: bold;
+}
+
+
 body {
     padding-top:20px;
     /*padding: 50px;*/
-    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif !important;
+    /*font: 14px "Lucida Grande", Helvetica, Arial, sans-serif !important;*/
     /*
         background: url('../images/background.png') no-repeat center center fixed;
         -webkit-background-size: cover;
@@ -13,6 +38,8 @@ body {
 
     /* #ffd540 */
 
+    font-family: 'myfont', Fallback, sans-serif;
+
 }
 
 a {
@@ -20,8 +47,9 @@ a {
 }
 
 h1{
-    font-weight: 800;
-    font-size: 26px;
+    font-size: 3.5em;
+    font-weight: bold;
+    line-height: 1;
 }
 
 .row{
@@ -93,12 +121,11 @@ h1{
 
 #welcome-text h1{
     font-weight: 800;
-    font-size: 26px;
 }
 
 #welcome-text h3{
     font-weight: 200;
-    font-size: 18px;
+    font-size: 1.8em;
 }
 
 #header-container{
@@ -118,9 +145,12 @@ h1{
     background: #ffd540;
 }
 
-#op-zoek-naar h2{
-    font-weight: 800;
-    font-size:24px;
+
+.try-me{
+    font-size: 2em;
+    font-weight: bold;
+    padding: 2.5rem 1rem 1rem;
+    line-height: 1;
 }
 
 .vraag-style{
@@ -151,7 +181,7 @@ h1{
     padding-top: 8px;
     padding-bottom: 0px;
     margin-bottom: 20px;
-    font-size: 13px;
+    font-size: 1.2em;
 }
 
 /*#background-image-container{*/
@@ -226,6 +256,7 @@ h1{
 
 #product h1{
     margin: 0;
+    font-size: 1.5em !important;
 }
 
 #suggestion-products-container{
@@ -252,7 +283,7 @@ h1{
 }
 
 .product-location{
-    font-size: 65px;
+    font-size: 4em;
 }
 
 #footer-container{
