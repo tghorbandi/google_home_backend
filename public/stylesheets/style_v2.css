@@ -251,6 +251,7 @@ h1{
 }
 
 #container-product{
+    display: none;
     margin: 15px;
     float: right;
     margin-top: 0;
