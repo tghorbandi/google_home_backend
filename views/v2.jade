@@ -11,30 +11,25 @@ block content
     #main-container.container-fluid
         .row
 
-            #welcome-text.col-md-5.col-sm-5
-                h1 Welcome to <br /> Multimate E-sites
-
-                h3 I am designed to help with problems. At this moment the only functionality I have is to <u>find hammers</u>. I also only understand <u>English</u>.
-                p E-sites Virtual Assistant
-
             #op-zoek-naar.col-md-3.col-sm-3
-                p.try-me Try me! <br /> Start with:
+                p.try-me Hint! to start ask:
                 .vraag-style
                     p Okay, Google, talk to E-sites
 
-
-            #welcome-image.col-md-5
-                //img(src='images/bgNew.jpg', width='600')
-
-
-
+        #welcome-text.col-md-4.col-md-offset-4.col-lg-4.col-lg-offset-4
+            object(type="image/svg+xml",data="images/microphone.svg" width='350')
+            h1 Talk to me!
 
         #loading-container.row
+
             #loading-talking.col-md-5.col-sm-5.col-md-offset-2
                 i.spinner.i.fa.fa-spinner.fa-pulse.fa-3x.fa-fw
 
             #loading-listening.col-md-5.col-sm-5.col-md-offset-2
                 h1.listening Listening..
+
+            #loading-talking2.col-md-5.col-sm-5.col-md-offset-2
+                h1.listening Talking..
 
         #product-container.row
             #image-container.col-md-6.col-sm-6

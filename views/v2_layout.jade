@@ -25,9 +25,23 @@ script.
     socket.on('loading', function(data){
 
 
-        // Hide start visuals and show loading
+        // if data 1 true =
+        // if data 2 true =
+        /*// IN DIALOG
+        // nieuwe webhook, weer talking.. en daarna weer listening..
+        socket.on('loading', function(data){ })*/
+
+        console.log(data)
+
+        if(data.talking === "true"){
+            $("#loading-talking").fadeOut('slow', function () {
+                $("#loading-talking2").fadeIn('slow');
+            });
+        }
+
+        // Hide (start) visuals and show loading
         $("#op-zoek-naar").fadeOut();
-        $('#welcome-text').fadeOut('slow', function () {
+        $('#welcome-text').fadeOut('fast', function () {
             $("#loading-container").fadeIn('slow', function () {
                 $("#loading-talking").fadeIn('slow');
                 waitForListeningTag();
@@ -35,7 +49,7 @@ script.
             });
         });
 
-        // Hide products and show loading
+        // Hide final products and show loading
         $('#product-container').fadeOut('slow', function () {
             $("#loading-container").fadeIn('slow', function () {
                 $("#loading-talking").fadeIn('slow');
@@ -45,6 +59,10 @@ script.
         });
 
     });
+
+
+
+
 
     // RESET TO BEGIN
     socket.on('reset', function(data){

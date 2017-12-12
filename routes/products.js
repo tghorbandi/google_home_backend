@@ -27,9 +27,7 @@ router.post('/', function(req, res) {
          */
         if (req.body.result.action === "input.welcome"){
 
-            // webhook begin moet talking teruggeven
-
-            socket.emit('loading', { loading: "true"});
+            socket.emit('loading', { loading: "true", talking: "true"});
 
             if(req.body.originalRequest.data.user.userId === userID){
                 return res.json({
@@ -43,7 +41,6 @@ router.post('/', function(req, res) {
                 });
 
             }
-
         }
 
         /**
@@ -270,6 +267,32 @@ router.post('/', function(req, res) {
             })
 
         }
+
+
+        /**
+         * #intent: what can you do
+         */
+        if(req.body.result.metadata.intentId === "3e807c68-aab5-47e3-b030-48fdec0bed2e") {
+
+            socket.emit('loading', { loading: "true", talking: "true"});
+
+            return res.json({
+                speech: "I can do lots of things., You can ask me for advice, or I can help you find specific products. At this moment however, I can only help with finding hammer products. So.. to fullfill my duty, I have to ask, are you looking for a hammer?",
+                 contexts: [
+                    {
+                        "name": "whatcanyoudo-followup",
+                        "parameters": {},
+                        "lifespan": 2
+                    }]
+            })
+
+        }
+
+
+
+
+
+
 
         /**
          * if dialog goes in fallback three times
