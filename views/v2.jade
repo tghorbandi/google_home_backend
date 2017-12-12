@@ -1,0 +1,56 @@
+extends v2_layout
+
+block content
+
+    #header-container.container-fluid
+        .row
+            .col-md-5
+                .multimate-logo
+                img(src='images/multimateLogo.jpg', width='150')
+
+    #main-container.container-fluid
+        .row
+
+            #welcome-text.col-md-5.col-sm-5
+                h1 Welcome to <br /> Multimate E-sites
+
+                h3 I am designed to help with problems. At this moment the only functionality I have is to <u>find hammers</u>. I also only understand <u>English</u>.
+                p E-sites Virtual Assistant
+
+            #op-zoek-naar.col-md-3.col-sm-3
+                h2 1: Try me! Start with:
+                .vraag-style
+                    p Okay, Google, talk to E-sites
+
+
+            #welcome-image.col-md-5
+                //img(src='images/bgNew.jpg', width='600')
+
+
+
+
+        #loading-container.row
+            #loading-talking.col-md-5.col-sm-5.col-md-offset-2
+                i.spinner.i.fa.fa-spinner.fa-pulse.fa-3x.fa-fw
+
+            #loading-listening.col-md-5.col-sm-5.col-md-offset-2
+                h1.listening Listening..
+
+        #product-container.row
+            #image-container.col-md-6.col-sm-6
+                img#product1img(src= image2)
+
+            #container-product.col-md-5.col-sm-5
+                #product1
+                    h1.product-name <br />
+                    p.product-description <br /><br />
+                    h1.product-location
+
+
+
+    #footer-container.container-fluid
+        .row
+            #labs-logo.col-md-3
+                //img(src='images/logonewkopie2.png', width='200')
+
+

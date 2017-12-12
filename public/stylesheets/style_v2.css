@@ -2,13 +2,13 @@ body {
     padding-top:20px;
     /*padding: 50px;*/
     font: 14px "Lucida Grande", Helvetica, Arial, sans-serif !important;
-/*
-    background: url('../images/background.png') no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-*/
+    /*
+        background: url('../images/background.png') no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    */
     background-color: #ecece8;
 
     /* #ffd540 */
@@ -16,7 +16,7 @@ body {
 }
 
 a {
-  color: #00B7FF;
+    color: #00B7FF;
 }
 
 h1{
@@ -29,34 +29,33 @@ h1{
 }
 
 #main-container{
-	/*border: 1px solid gray;*/
-    padding: 0;
-    margin: 0;
-    /*background: url(../images/bgNew.jpg) no-repeat center center fixed;*/
-    background: url(../images/helpdesk1.jpg) no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: contain;
-    height: 800px;
-    transition: background 1s linear;
+    /*!*border: 1px solid gray;*!*/
+    /*padding: 0;*/
+    /*margin: 0;*/
+    /*!*background: url(../images/bgNew.jpg) no-repeat center center fixed;*!*/
+    /*background: url(../images/helpdesk1.jpg) no-repeat center center fixed;*/
+    /*-webkit-background-size: cover;*/
+    /*-moz-background-size: cover;*/
+    /*-o-background-size: cover;*/
+    /*background-size: contain;*/
+    /*height: 800px;*/
+    /*transition: background 1s linear;*/
 }
 
 #buttons{
-	display: none;
+    display: none;
 }
 
 #product1img{
-	/*box-shadow: 8px 8px 10px #aaa;*/
+    /*box-shadow: 8px 8px 10px #aaa;*/
 }
 
 #GHimg{
-	/*float:right;*/
+    /*float:right;*/
 }
 
-#loading{
+#loading-talking{
     display: none;
-    color: white;
     width: 50%;
     height: 50%;
     overflow: auto;
@@ -67,6 +66,24 @@ h1{
     bottom: 0;
     right: 0;
 }
+
+#loading-listening{
+    display: none;
+    width: 50%;
+    height: 50%;
+    overflow: auto;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+#loading-listening h1{
+    margin-top: 150px;
+}
+
 
 #welcome-text{
     padding: 20px 20px 50px;
@@ -138,11 +155,11 @@ h1{
 }
 
 /*#background-image-container{*/
-    /*background: url(../images/bgNew.jpg) no-repeat center center fixed;*/
-    /*-webkit-background-size: cover;*/
-    /*-moz-background-size: cover;*/
-    /*-o-background-size: cover;*/
-    /*background-size: cover;*/
+/*background: url(../images/bgNew.jpg) no-repeat center center fixed;*/
+/*-webkit-background-size: cover;*/
+/*-moz-background-size: cover;*/
+/*-o-background-size: cover;*/
+/*background-size: cover;*/
 /*}*/
 
 #labs-logo{

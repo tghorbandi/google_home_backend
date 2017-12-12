@@ -27,6 +27,8 @@ router.post('/', function(req, res) {
          */
         if (req.body.result.action === "input.welcome"){
 
+            // webhook begin moet talking teruggeven
+
             socket.emit('loading', { loading: "true"});
 
             if(req.body.originalRequest.data.user.userId === userID){
@@ -39,6 +41,7 @@ router.post('/', function(req, res) {
                 return res.json({
                     speech: "Hi! I'm e-sites virtual assistant. I am designed to give advice and help about hammer products. How can I help you?"
                 });
+
             }
 
         }
@@ -62,7 +65,7 @@ router.post('/', function(req, res) {
 
                 if(result[0]){
 
-                    productPlacement = "You can find " + result[0].fullProductName + " " + "in " + result[0].location;
+                    productPlacement = "You can find " + result[0].fullProductName + " " + "in " + result[0].location + ". Have a look at the screen, this is how the hammer looks like";
                     var newPlacement = {};
                     var key = "speech";
                     newPlacement[key] = productPlacement;
