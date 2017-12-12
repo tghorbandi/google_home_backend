@@ -9,15 +9,14 @@ html
         link(href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css", rel="stylesheet", integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN", crossorigin="anonymous")
         link(rel='stylesheet', href='/stylesheets/style_v2.css')
         script(src='/javascripts/script.js')
+        script(src='/javascripts/siriWave.js')
+        script(src='/javascripts/siriWave9.js')
+        script(src='/javascripts/siriWaveGIT.js')
     body
         block content
 
 script.
     var socket = io.connect('https://tawabgooglehome.herokuapp.com/');
-
-    socket.on('productName', function(data){
-
-    });
 
 
 
@@ -25,44 +24,29 @@ script.
     socket.on('loading', function(data){
 
 
-        // if data 1 true =
-        // if data 2 true =
-        /*// IN DIALOG
-        // nieuwe webhook, weer talking.. en daarna weer listening..
-        socket.on('loading', function(data){ })*/
-
-        console.log(data)
-
         if(data.talking === "true"){
-            $("#loading-talking").fadeOut('slow', function () {
-                $("#loading-talking2").fadeIn('slow');
-            });
+
         }
 
         // Hide (start) visuals and show loading
-        $("#op-zoek-naar").fadeOut();
-        $('#welcome-text').fadeOut('fast', function () {
-            $("#loading-container").fadeIn('slow', function () {
-                $("#loading-talking").fadeIn('slow');
-                waitForListeningTag();
-
-            });
+        $('#welcome-text').fadeOut('slow', function () {
+            console.log("dfdfdf");
+                $("#container-classic").fadeIn('slow');
         });
 
         // Hide final products and show loading
         $('#product-container').fadeOut('slow', function () {
-            $("#loading-container").fadeIn('slow', function () {
-                $("#loading-talking").fadeIn('slow');
-                waitForListeningTag();
-
-            });
+            $("#loading-container").fadeIn('slow');
         });
+
 
     });
 
 
 
+    socket.on('productName', function (data) {
 
+    });
 
     // RESET TO BEGIN
     socket.on('reset', function(data){
@@ -116,13 +100,24 @@ script.
     });
 
 
-script.
+
+
+
     function waitForListeningTag() {
         setTimeout(function () {
-
             $("#loading-listening").fadeIn();
-        }, 2000);
+        }, 6000);
     }
+
+    var siriWave = new SiriWave({
+        container: document.getElementById('siri-container'),
+        width: 640,
+        height: 200,
+        speed: 0.2,
+        color: '#000'
+    });
+
+
 
 
 

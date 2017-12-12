@@ -147,6 +147,11 @@ h1{
     float: right;
 }
 
+#hint2{
+    background: #ffd540;
+    display: none;
+}
+
 
 .try-me{
     font-size: 2em;
@@ -316,4 +321,11 @@ h1{
     float: right;
 }
 
+#container-classic{
+    display: none;
+}
+
+audio, canvas, progress, video{
+    /*display: none;*/
+}
 

@@ -16,14 +16,40 @@ block content
                 .vraag-style
                     p Okay, Google, talk to E-sites
 
+
+
+
+            #hint2.col-md-3.col-sm-3
+                p.try-me Hint 2, don't know what to ask? try:
+                .vraag-style
+                    p What can you do?
+
         #welcome-text.col-md-4.col-md-offset-4.col-lg-4.col-lg-offset-4
             object(type="image/svg+xml",data="images/microphone.svg" width='350')
             h1 Talk to me!
 
+        #siri-container.col-md-12
+
+        #container-classic.col-md-12
+            script.
+                var $siri_classic = document.getElementById('container-classic');
+                var SW = new SiriWave({
+                    width: 1200,
+                    height: 100,
+                    speed: 0.02,
+                    cover: true,
+                    color: '#000',
+                    amplitude: 1,
+                    container: $siri_classic,
+                    frequency: 5,
+                    autostart: true
+                });
+
         #loading-container.row
 
-            #loading-talking.col-md-5.col-sm-5.col-md-offset-2
-                i.spinner.i.fa.fa-spinner.fa-pulse.fa-3x.fa-fw
+
+            #loading-talking.col-md-12
+                //i.spinner.i.fa.fa-spinner.fa-pulse.fa-3x.fa-fw
 
             #loading-listening.col-md-5.col-sm-5.col-md-offset-2
                 h1.listening Listening..
