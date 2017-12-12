@@ -330,3 +330,8 @@ audio, canvas, progress, video{
     /*display: none;*/
 }
 
+.product-name{
+    font-size: 2em !important;
+    font-weight: 400 !important;
+}
+

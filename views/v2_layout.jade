@@ -24,18 +24,24 @@ script.
     socket.on('loading', function(data){
 
 
+
+
         if(data.talking === "true"){
 
         }
 
         // Hide (start) visuals and show loading
         $('#welcome-text').fadeOut('slow', function () {
-            $("#container-classic").fadeIn('slow');
+            $('#op-zoek-naar').fadeOut('slow', function () {
+                $("#container-classic").fadeIn('slow');
+            });
         });
 
         // Hide final products and show loading
         $('#product-container').fadeOut('slow', function () {
-            $("#container-classic").fadeIn('slow');
+            $('#op-zoek-naar').fadeOut('slow', function () {
+                $("#container-classic").fadeIn('slow');
+            });
         });
 
 
@@ -61,18 +67,22 @@ script.
     // SHOW FINAL PRODUCT
     socket.on('productDetails', function(data){
 
-        $("#loading-container").fadeOut('slow', function () {
+        $("#container-classic").fadeOut('slow', function () {
+
+
+            $("#welcome-text").hide();
 
             $("#product1img").attr("src", data.productImageNew);
 
             $(".product-description").text(data.productDescription);
-            $("#product1 h1").text(data.productName);
+            $(".product-name").text(data.productName);
             $("#product1").show();
             $("#suggestion-products-container").show();
 
             $(".product-location").text(data.productLocation);
             $("#product-container").fadeIn();
             $("#container-product").fadeIn();
+
         });
 
     });
