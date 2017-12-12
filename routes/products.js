@@ -27,7 +27,7 @@ router.post('/', function(req, res) {
          */
         if (req.body.result.action === "input.welcome"){
 
-            socket.emit('loading', { loading: "true", talking: "true"});
+            socket.emit('loading', { loading: "true", talking: "false"});
 
             if(req.body.originalRequest.data.user.userId === userID){
                 return res.json({
