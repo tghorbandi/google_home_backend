@@ -6,6 +6,12 @@ var userID = null;
 var productPlacement;
 var fallback = 0;
 
+var intentIdArray =
+    ["00768954-4b2e-4e79-8f79-f20d5fda1818","57608d37-6414-4d26-81ee-880d5b08c81b", "42a6386d-000b-4d2e-b68a-592b3e7f9394","00768954-4b2e-4e79-8f79-f20d5fda1818", "00768954-4b2e-4e79-8f79-f20d5fda1818","00768954-4b2e-4e79-8f79-f20d5fda1818", "00768954-4b2e-4e79-8f79-f20d5fda1818","00768954-4b2e-4e79-8f79-f20d5fda1818", "00768954-4b2e-4e79-8f79-f20d5fda1818","00768954-4b2e-4e79-8f79-f20d5fda1818"
+    ];
+
+var continueNewIntent;
+
 router.post('/', function(req, res) {
 
     if (!req.body) {
@@ -211,7 +217,7 @@ router.post('/', function(req, res) {
          * Check if productnr exists in database, then find that product
          */
 
-        if (req.body.result.metadata.intentId === "00768954-4b2e-4e79-8f79-f20d5fda1818" || req.body.result.metadata.intentId === "55c24519-5439-4cbe-a0c0-2159d5c71e4e" || req.body.result.metadata.intentId === "01bca801-fd72-4b4d-ad2f-5048747b96db" || req.body.result.metadata.intentId === "cd5499b9-06e2-4fa6-a8e9-755288475d2c" || req.body.result.metadata.intentId === "08ad93bd-8f49-4cd6-be92-927af69d8435" || req.body.result.metadata.intentId === "890138a2-f61a-4108-a87b-1d77cc52bda9" || req.body.result.metadata.intentId === "6c5e4679-061e-4145-8c4d-fad63a6925e6" || req.body.result.metadata.intentId === "741b2be6-5787-49b5-9419-a98dda77e816" || req.body.result.metadata.intentId === "2adf6c5e-23de-4d5d-8670-8c0260e2dcd9" ){
+        if (req.body.result.metadata.intentId === "00768954-4b2e-4e79-8f79-f20d5fda1818" || req.body.result.metadata.intentId === "55c24519-5439-4cbe-a0c0-2159d5c71e4e" || req.body.result.metadata.intentId === "01bca801-fd72-4b4d-ad2f-5048747b96db" || req.body.result.metadata.intentId === "cd5499b9-06e2-4fa6-a8e9-755288475d2c" || req.body.result.metadata.intentId === "08ad93bd-8f49-4cd6-be92-927af69d8435" || req.body.result.metadata.intentId === "890138a2-f61a-4108-a87b-1d77cc52bda9" || req.body.result.metadata.intentId === "6c5e4679-061e-4145-8c4d-fad63a6925e6" || req.body.result.metadata.intentId === "741b2be6-5787-49b5-9419-a98dda77e816" || req.body.result.metadata.intentId === "2adf6c5e-23de-4d5d-8670-8c0260e2dcd9" || req.body.result.metadata.intentId === "57608d37-6414-4d26-81ee-880d5b08c81b" || req.body.result.metadata.intentId === "42a6386d-000b-4d2e-b68a-592b3e7f9394"){
 
             // claw hammer
             if(req.body.result.metadata.intentId === "01bca801-fd72-4b4d-ad2f-5048747b96db"){
@@ -222,13 +228,16 @@ router.post('/', function(req, res) {
                 req.body.result.metadata.intentId = "6c5e4679-061e-4145-8c4d-fad63a6925e6";
             }
 
+            continueNewIntent = req.body.result.metadata.intentId;
+
             mongoDBqueries.findProductWithIntentId(function(result) {
                 if(result){
                     socket.emit('productDetails', {
                         productName: result[0].fullProductName,
                         productDescription: result[0].description,
                         productImageNew: result[0].imgPath,
-                        productLocation: result[0].location
+                        productLocation: result[0].location,
+                        productPrice: result[0].price
                     });
                     socket.emit('hammerBackground', { imgSrc: ""});
 
@@ -252,6 +261,28 @@ router.post('/', function(req, res) {
                 }
             }, req.body.result.metadata.intentId);
         }
+
+
+
+        /**
+         * #intent: Give me more information
+         * @var continueNewIntent (bij find product intent geset)
+         * @array intentIdArray (alle intentIds met hamers)
+         */
+        if(req.body.result.metadata.intentId === ""){
+            //Give me more information about that intentID
+            // if (continueNewIntent === intentIdArray){
+            //
+            // }
+
+            //slate hammer == 1e038746-2c92-4ad1-9682-ebdb33f089f1
+        }
+
+
+
+
+
+
 
         /**
          * #intent: list of all hammers

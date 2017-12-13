@@ -69,23 +69,21 @@ script.
 
         $("#container-classic").fadeOut('slow', function () {
 
+            $("#op-zoek-naar").fadeOut('slow', function () {
+                $("#product1img").attr("src", data.productImageNew);
+                $(".product-description").text(data.productDescription);
+                $(".product-name").text(data.productName);
+                $(".product-location").text(data.productLocation);
 
-            $("#welcome-text").hide();
-
-            $("#product1img").attr("src", data.productImageNew);
-
-            $(".product-description").text(data.productDescription);
-            $(".product-name").text(data.productName);
-            $("#product1").show();
-            $("#suggestion-products-container").show();
-
-            $(".product-location").text(data.productLocation);
-            $("#product-container").fadeIn();
-            $("#container-product").fadeIn();
+                $("#product-container").fadeIn();
+                $("#container-product").fadeIn();
+            });
 
         });
 
     });
+
+    //TODO Prijs toevoegen (database)
 
 
 

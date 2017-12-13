@@ -324,6 +324,7 @@ h1{
 
 #container-classic{
     display: none;
+    margin-top: 150px;
 }
 
 audio, canvas, progress, video{
