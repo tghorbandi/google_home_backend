@@ -18,6 +18,12 @@ html
 script.
     var socket = io.connect('https://tawabgooglehome.herokuapp.com/');
 
+    var $containerClassic = $("#container-classic");
+    var $welcomeText = $("#welcome-text");
+    var $opZoekNaar = $("#op-zoek-naar");
+    var $productContainer = $("#product-container");
+    var $containerProduct = $("#container-product");
+    var $goodByeText = $("#goodbye-text");
 
 
     // TALKING..
@@ -31,16 +37,16 @@ script.
         }
 
         // Hide (start) visuals and show loading
-        $('#welcome-text').fadeOut('slow', function () {
-            $('#op-zoek-naar').fadeOut('slow', function () {
-                $("#container-classic").fadeIn('slow');
+        $welcomeText.fadeOut('slow', function () {
+            $opZoekNaar.fadeOut('slow', function () {
+                $containerClassic.fadeIn('slow');
             });
         });
 
         // Hide final products and show loading
-        $('#product-container').fadeOut('slow', function () {
-            $('#op-zoek-naar').fadeOut('slow', function () {
-                $("#container-classic").fadeIn('slow');
+        $productContainer.fadeOut('slow', function () {
+            $opZoekNaar.fadeOut('slow', function () {
+                $containerClassic.fadeIn('slow');
             });
         });
 
@@ -56,30 +62,80 @@ script.
     // RESET TO BEGIN
     socket.on('reset', function(data){
 
+        if($containerClassic.css("display") !== "none"){
+            $containerClassic.fadeOut('slow', function () {
+                $goodByeText.fadeIn('slow', function () {
+                    setTimeout(function () {
+                        $goodByeText.fadeOut('fast', function(){
+                            $opZoekNaar.fadeIn('slow', function () {
+                                $welcomeText.fadeIn();
+                            })
+                        })
+                    }, 4000);
+                });
+            });
+        }
+
+        if ($productContainer.css("display") !== "none") {
+            $productContainer.fadeOut('slow', function () {
+                $goodByeText.fadeIn('slow', function () {
+                    setTimeout(function () {
+                        $goodByeText.fadeOut('fast', function () {
+                            $opZoekNaar.fadeIn('slow', function () {
+                                $welcomeText.fadeIn();
+                            })
+                        })
+                    }, 4000);
+                });
+            });
+        }
+
 
     });
 
+
     // NO PRODUCT FOUND
     socket.on('noProduct', function (data) {
-        $("#loading").hide();
+
     });
 
     // SHOW FINAL PRODUCT
     socket.on('productDetails', function(data){
 
-        $("#container-classic").fadeOut('slow', function () {
 
-            $("#op-zoek-naar").fadeOut('slow', function () {
+
+        if ($welcomeText.css("display") !== "none") {
+            $welcomeText.fadeOut('slow', function () {
+                $opZoekNaar.fadeOut('slow', function () {
+                    $("#product1img").attr("src", data.productImageNew);
+                    //$(".product-description").text(data.productDescription);
+                    $(".product-name").text(data.productName);
+                    $(".product-location").text(data.productLocation);
+                    $(".product-price").text(data.productPrice);
+
+                    $productContainer.fadeIn();
+                    $containerProduct.fadeIn();
+                });
+            });
+        }
+
+
+        $containerClassic.fadeOut('slow', function () {
+
+            $opZoekNaar.fadeOut('slow', function () {
                 $("#product1img").attr("src", data.productImageNew);
-                $(".product-description").text(data.productDescription);
+                //$(".product-description").text(data.productDescription);
                 $(".product-name").text(data.productName);
                 $(".product-location").text(data.productLocation);
+                $(".product-price").text(data.productPrice);
 
-                $("#product-container").fadeIn();
-                $("#container-product").fadeIn();
+                $productContainer.fadeIn();
+                $containerProduct.fadeIn();
             });
 
         });
+
+
 
     });
 

@@ -231,6 +231,9 @@ router.post('/', function(req, res) {
             continueNewIntent = req.body.result.metadata.intentId;
 
             mongoDBqueries.findProductWithIntentId(function(result) {
+
+                console.log(result);
+
                 if(result){
                     socket.emit('productDetails', {
                         productName: result[0].fullProductName,
