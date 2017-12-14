@@ -45,7 +45,15 @@ router.post('/', function(req, res) {
             else{
                 userID = req.body.originalRequest.data.user.userId;
                 return res.json({
-                    speech: "Hi! I'm e-sites virtual assistant. I'm pretty fast in finding hammers, do you want me to find a hammer for you?"
+                    speech: "Hi! I'm e-sites virtual assistant. I'm pretty fast in finding hammers, do you want me to find a hammer for you?",
+                    contexts:
+                    [
+                        {
+                            "name":"defaultwelcomeintent-followup",
+                            "parameters":{},
+                            "lifespan":2
+                        }
+                    ]
                 });
 
             }
