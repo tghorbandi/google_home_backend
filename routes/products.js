@@ -43,7 +43,7 @@ router.post('/', function(req, res) {
             else{
                 userID = req.body.originalRequest.data.user.userId;
                 return res.json({
-                    speech: "Hi! I'm e-sites virtual assistant. I am designed to give advice and help about hammer products. How can I help you?"
+                    speech: "Hi! I'm e-sites virtual assistant. I am designed to find hammer products. let's start, do you know which hammer you are looking for? or do you need advice looking for the perfect type of hammer for your job."
                 });
 
             }
