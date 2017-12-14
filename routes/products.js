@@ -31,7 +31,9 @@ router.post('/', function(req, res) {
          * NOTE: userId & conversationId resets after conversation end
          * @var int userID
          */
-        if (req.body.result.action === "input.welcome"){
+        if (req.body.result.metadata.intentId === "21922877-84d4-41b8-bf83-d63062322fff"){
+
+            console.log('welcomeintent');
 
             socket.emit('loading', { loading: "true", talking: "false"});
 
