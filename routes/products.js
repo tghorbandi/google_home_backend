@@ -33,8 +33,6 @@ router.post('/', function(req, res) {
          */
         if (req.body.result.metadata.intentId === "21922877-84d4-41b8-bf83-d63062322fff"){
 
-            console.log('welcomeintent');
-
             socket.emit('loading', { loading: "true", talking: "false"});
 
             if(req.body.originalRequest.data.user.userId === userID){
@@ -45,15 +43,7 @@ router.post('/', function(req, res) {
             else{
                 userID = req.body.originalRequest.data.user.userId;
                 return res.json({
-                    speech: "Hi! I'm e-sites virtual assistant. I'm pretty fast in finding hammers, do you want me to find a hammer for you?",
-                    contextOut:
-                    [
-                        {
-                            "name":"defaultwelcomeintent-followup",
-                            "parameters":{},
-                            "lifespan":2
-                        }
-                    ]
+                    speech: "Hi! I'm e-sites virtual assistant. I'm pretty fast in finding hammers, do you want me to find a hammer for you?"
                 });
 
             }
