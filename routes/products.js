@@ -225,7 +225,7 @@ router.post('/', function(req, res) {
                                                 }
                                         };
                     newPlacement[key] = productPlacement;
-                    newPlacement["followupEvent"] = JSON.parse(followupEvent);
+                    newPlacement["followupEvent"] = followupEvent;
 
 
                     /*
