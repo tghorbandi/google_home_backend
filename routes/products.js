@@ -6,9 +6,21 @@ var userID = null;
 var productPlacement;
 var fallback = 0;
 
-var intentIdArray =
-    ["00768954-4b2e-4e79-8f79-f20d5fda1818","57608d37-6414-4d26-81ee-880d5b08c81b", "42a6386d-000b-4d2e-b68a-592b3e7f9394","00768954-4b2e-4e79-8f79-f20d5fda1818", "00768954-4b2e-4e79-8f79-f20d5fda1818","00768954-4b2e-4e79-8f79-f20d5fda1818", "00768954-4b2e-4e79-8f79-f20d5fda1818","00768954-4b2e-4e79-8f79-f20d5fda1818", "00768954-4b2e-4e79-8f79-f20d5fda1818","00768954-4b2e-4e79-8f79-f20d5fda1818"
-    ];
+
+var hammersIntentId = {
+    "Regular hammer":       "42a6386d-000b-4d2e-b68a-592b3e7f9394",
+    "Claw Hammer":          "00768954-4b2e-4e79-8f79-f20d5fda1818",
+    "Rubber Mallet":        "42a6386d-000b-4d2e-b68a-592b3e7f9394",
+    "Slate hammer":         "1e038746-2c92-4ad1-9682-ebdb33f089f1",
+    "Lump hammer":          "2adf6c5e-23de-4d5d-8670-8c0260e2dcd9",
+    "Emergency hammer":     "08ad93bd-8f49-4cd6-be92-927af69d8435",
+    "Wooden hammer":        "890138a2-f61a-4108-a87b-1d77cc52bda9",
+    "Brick hammer":         "57608d37-6414-4d26-81ee-880d5b08c81b",
+    "Prospector hammer":    "741b2be6-5787-49b5-9419-a98dda77e816",
+    "Sledge hammer":        "6c5e4679-061e-4145-8c4d-fad63a6925e6",
+};
+
+//hammersIntentId['Regular hammer'];
 
 var continueNewIntent;
 
@@ -147,7 +159,7 @@ router.post('/', function(req, res) {
         // }
         
         /**
-         * #Intent: Bye 
+         * #Intent: STOP
          * Check if user entered "end" intent.
          * Sends reset socket object to client to reset image and text
          * Returns end conversation fulfillment
@@ -168,53 +180,11 @@ router.post('/', function(req, res) {
             });
         }
 
-        /**
-         * #Intent: claw hammer
-         * change background image to hammer toolwand
-         * Check if productnr exists in database, then find that product
-         */
-        // if (req.body.result.metadata.intentId === "00768954-4b2e-4e79-8f79-f20d5fda1818"){
-        //
-        //     mongoDBqueries.findProductNr(function(result) {
-        //         console.log("MONGODB RESULT:" + JSON.stringify(result));
-        //
-        //         // console.log(result[0].fullProductName);
-        //         // console.log(result[0].imgPath);
-        //         // console.log(result[0].type);
-        //
-        //
-        //         if(result){
-        //
-        //             // Emit product name & description & image path from database.
-        //             socket.emit('productDetails', { productName: result[0].fullProductName, productDescription: result[0].description, productImageNew: result[0].imgPath, productLocation: result[0].location });
-        //
-        //             // Emit background image
-        //             socket.emit('hammerBackground', { imgSrc: ""});
-        //
-        //             // Emit product name to change image
-        //             //socket.emit('productImageNew', { productImageNew: result[0].imgPath});
-        //
-        //             // Breadcumb navbar position
-        //             //socket.emit('breadcrumb', { string: "Bahco klauwhamer 429-16"});
-        //
-        //             return res.json({
-        //                 speech: "You are looking for claw hammers is that correct? / You can find claw hammers in row 4 section B"
-        //             });
-        //
-        //         }else{
-        //             return res.json({
-        //                 speech: "I'm sorry there went something wrong with retrieving products from the database."
-        //             });
-        //         }
-        //
-        //
-        //     }, "32423");
-        //
-        // }
 
         /**
          * #Intent: claw hammer & regular hammer & advice sledge hammer yes & advice claw hammer yes
          * Check if productnr exists in database, then find that product
+         * TODO// Return yes or no followup
          */
 
         if (req.body.result.metadata.intentId === "00768954-4b2e-4e79-8f79-f20d5fda1818" || req.body.result.metadata.intentId === "55c24519-5439-4cbe-a0c0-2159d5c71e4e" || req.body.result.metadata.intentId === "01bca801-fd72-4b4d-ad2f-5048747b96db" || req.body.result.metadata.intentId === "cd5499b9-06e2-4fa6-a8e9-755288475d2c" || req.body.result.metadata.intentId === "08ad93bd-8f49-4cd6-be92-927af69d8435" || req.body.result.metadata.intentId === "890138a2-f61a-4108-a87b-1d77cc52bda9" || req.body.result.metadata.intentId === "6c5e4679-061e-4145-8c4d-fad63a6925e6" || req.body.result.metadata.intentId === "741b2be6-5787-49b5-9419-a98dda77e816" || req.body.result.metadata.intentId === "2adf6c5e-23de-4d5d-8670-8c0260e2dcd9" || req.body.result.metadata.intentId === "57608d37-6414-4d26-81ee-880d5b08c81b" || req.body.result.metadata.intentId === "42a6386d-000b-4d2e-b68a-592b3e7f9394"){
@@ -245,12 +215,28 @@ router.post('/', function(req, res) {
                     socket.emit('hammerBackground', { imgSrc: ""});
 
 
-                    productPlacement = "You can find this hammer" + " " + "in " + result[0].location + ". Have a look at the screen, this is how the hammer looks like";
+                    productPlacement = "You can find this hammer" + " " + "in " + result[0].location + ". Have a look at the screen, this is how the hammer looks like. Would you like more information about this hammer?";
                     var newPlacement = {};
                     var key = "speech";
                     newPlacement[key] = productPlacement;
 
                     console.log("productPlacement: " + productPlacement);
+
+                    /*
+
+                        {
+                                “followupEvent”: {
+                                “name”: “multipleOrdersFoundEvent”,
+                                    “data”: {
+                                    “totalOrders”: “3”,
+                                    “minOrderDate”: “2017-01-01”,
+                                    “maxOrderDate”: “2017-10-31”
+                                    }
+                            }
+                        }
+                     */
+
+                    console.log("newplacementJSON" + JSON.stringify(newPlacement));
 
                     return res.json(newPlacement);
 
@@ -275,7 +261,7 @@ router.post('/', function(req, res) {
         if(req.body.result.metadata.intentId === ""){
             //Give me more information about that intentID
             // if (continueNewIntent === intentIdArray){
-            //
+            //      continueNewIntent zelfde als inside hammersIntentId['Regular hammer'];
             // }
 
             //slate hammer == 1e038746-2c92-4ad1-9682-ebdb33f089f1
