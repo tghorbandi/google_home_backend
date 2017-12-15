@@ -242,9 +242,15 @@ router.post('/', function(req, res) {
          */
         if(req.body.result.metadata.intentId === "f9d930c2-7c24-490f-a7a2-382034905df3"){
 
-            // if (continueNewIntent == intentIdArray){
-            //
-            // }
+            for (var id in hammersIntentId) {
+                if (!hammersIntentId.hasOwnProperty(id)) continue;
+                if (obj[id] === continueNewIntent) {
+                    console.log("objutesttt" + obj[id]);
+                    // new var maken
+                    // return res json die var, met more description over product, dus
+                    // opnieuw mongodb zoeken op intentId
+                }
+            }
 
             return res.json({
                 speech: "More info about hammers comming soon.."
