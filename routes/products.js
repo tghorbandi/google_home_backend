@@ -244,8 +244,8 @@ router.post('/', function(req, res) {
 
             for (var id in hammersIntentId) {
                 if (!hammersIntentId.hasOwnProperty(id)) continue;
-                if (obj[id] === continueNewIntent) {
-                    console.log("objutesttt" + obj[id]);
+                if (hammersIntentId[id] === continueNewIntent) {
+                    console.log("objutesttt" + hammersIntentId[id]);
                     // new var maken
                     // return res json die var, met more description over product, dus
                     // opnieuw mongodb zoeken op intentId
@@ -257,11 +257,6 @@ router.post('/', function(req, res) {
             });
 
         }
-
-
-
-
-
 
 
         /**
