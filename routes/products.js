@@ -218,7 +218,9 @@ router.post('/', function(req, res) {
                     productPlacement = "You can find this hammer" + " " + "in " + result[0].location + ". Have a look at the screen, this is how the hammer looks like. Would you like more information about this hammer?";
                     var newPlacement = {};
                     var key = "speech";
+                    var followupEvent = "followupEvent";
                     newPlacement[key] = productPlacement;
+                    newPlacement["followupEvent"] = 1;
 
                     console.log("productPlacement: " + productPlacement);
 
@@ -226,17 +228,15 @@ router.post('/', function(req, res) {
 
                         {
                                 “followupEvent”: {
-                                “name”: “multipleOrdersFoundEvent”,
+                                “name”: “yes-moreinfo-intent”,
                                     “data”: {
-                                    “totalOrders”: “3”,
-                                    “minOrderDate”: “2017-01-01”,
-                                    “maxOrderDate”: “2017-10-31”
+                                        “hammer”: “x”,
                                     }
                             }
                         }
                      */
 
-                    console.log("newplacementJSON" + JSON.stringify(newPlacement));
+                    console.log("newplacementJSON " + JSON.stringify(newPlacement));
 
                     return res.json(newPlacement);
 
