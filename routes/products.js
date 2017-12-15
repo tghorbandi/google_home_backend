@@ -218,11 +218,15 @@ router.post('/', function(req, res) {
                     productPlacement = "You can find this hammer" + " " + "in " + result[0].location + ". Have a look at the screen, this is how the hammer looks like. Would you like more information about this hammer?";
                     var newPlacement = {};
                     var key = "speech";
-                    var followupEvent = "followupEvent";
+                    var followupEvent = {
+                                            "name": "yes-moreinfo-intent”",
+                                                "data": {
+                                                    "hammer": "x",
+                                                }
+                                        };
                     newPlacement[key] = productPlacement;
-                    newPlacement["followupEvent"] = 1;
+                    newPlacement["followupEvent"] = JSON.stringify(followupEvent);
 
-                    console.log("productPlacement: " + productPlacement);
 
                     /*
 
