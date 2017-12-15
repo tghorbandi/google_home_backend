@@ -179,7 +179,6 @@ router.post('/', function(req, res) {
             });
         }
 
-
         /**
          * #Intent: claw hammer & regular hammer & advice sledge hammer yes & advice claw hammer yes
          * Check if productnr exists in database, then find that product
@@ -236,7 +235,6 @@ router.post('/', function(req, res) {
         }
 
 
-
         /**
          * #intent: More info hammers (YES)
          * @var continueNewIntent (bij find product intent geset)
@@ -272,22 +270,6 @@ router.post('/', function(req, res) {
 
         }
 
-
-        /**
-         * #intent: More info hammers (YES)
-         *
-         */
-        if(req.body.result.metadata.intentId === "b8cb95aa-19a9-4d44-8350-fd580f41b332"){
-
-
-            console.log("inside@@@@@@@2222222");
-
-            req.body.result.metadata.intentId = "42a6386d-000b-4d2e-b68a-592b3e7f9394";
-
-            return res.json({
-                speech: "test webhook"
-            });
-        }
 
 
         /**
