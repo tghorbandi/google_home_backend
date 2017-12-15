@@ -236,25 +236,37 @@ router.post('/', function(req, res) {
 
 
         /**
-         * #intent: More info hammers
+         * #intent: More info hammers (YES)
          * @var continueNewIntent (bij find product intent geset)
          * @array intentIdArray (alle intentIds met hamers)
          */
         if(req.body.result.metadata.intentId === "f9d930c2-7c24-490f-a7a2-382034905df3"){
 
             for (var id in hammersIntentId) {
-                if (!hammersIntentId.hasOwnProperty(id)) continue;
-                if (hammersIntentId[id] === continueNewIntent) {
-                    console.log("objutesttt" + hammersIntentId[id]);
-                    // new var maken
-                    // return res json die var, met more description over product, dus
-                    // opnieuw mongodb zoeken op intentId
-                }
-            }
+                try{
+                    if (!hammersIntentId.hasOwnProperty(id)) continue;
+                    if (hammersIntentId[id] === continueNewIntent) {
 
-            return res.json({
-                speech: "More info about hammers comming soon.."
-            });
+                        mongoDBqueries.findProductWithIntentId(function(result) {
+
+                            productDescription = result[0].description + ". " + "That's all i know about this hammer. Are you interested in finding another hammer?";
+                            var obj = {};
+                            var key = "speech";
+                            obj[key] = productDescription;
+
+                            return res.json(obj);
+
+                        }, hammersIntentId[id]);
+
+                    }
+                } catch(err) {
+                    console.log("ERROR: " + err);
+                    return res.json({
+                        speech: "I'm sorry, something went wrong with retrieving more information about this product. Try saying the hammer name again."
+                    });
+                }
+
+            }
 
         }
 
