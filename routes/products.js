@@ -5,7 +5,7 @@ var socket;
 var userID = null;
 var productPlacement;
 var fallback = 0;
-
+var continueNewIntent;
 
 var hammersIntentId = {
     "Regular hammer":       "42a6386d-000b-4d2e-b68a-592b3e7f9394",
@@ -22,7 +22,6 @@ var hammersIntentId = {
 
 //hammersIntentId['Regular hammer'];
 
-var continueNewIntent;
 
 router.post('/', function(req, res) {
 
@@ -184,7 +183,7 @@ router.post('/', function(req, res) {
         /**
          * #Intent: claw hammer & regular hammer & advice sledge hammer yes & advice claw hammer yes
          * Check if productnr exists in database, then find that product
-         * TODO// Return yes or no followup
+         * contextOut ("yes-more-info-hammers) = New intent
          */
 
         if (req.body.result.metadata.intentId === "00768954-4b2e-4e79-8f79-f20d5fda1818" || req.body.result.metadata.intentId === "55c24519-5439-4cbe-a0c0-2159d5c71e4e" || req.body.result.metadata.intentId === "01bca801-fd72-4b4d-ad2f-5048747b96db" || req.body.result.metadata.intentId === "cd5499b9-06e2-4fa6-a8e9-755288475d2c" || req.body.result.metadata.intentId === "08ad93bd-8f49-4cd6-be92-927af69d8435" || req.body.result.metadata.intentId === "890138a2-f61a-4108-a87b-1d77cc52bda9" || req.body.result.metadata.intentId === "6c5e4679-061e-4145-8c4d-fad63a6925e6" || req.body.result.metadata.intentId === "741b2be6-5787-49b5-9419-a98dda77e816" || req.body.result.metadata.intentId === "2adf6c5e-23de-4d5d-8670-8c0260e2dcd9" || req.body.result.metadata.intentId === "57608d37-6414-4d26-81ee-880d5b08c81b" || req.body.result.metadata.intentId === "42a6386d-000b-4d2e-b68a-592b3e7f9394"){
@@ -221,15 +220,11 @@ router.post('/', function(req, res) {
                     var contextOut = [{"name":"yes-more-info-hammers", "lifespan":1}];
                     newPlacement[key] = productPlacement;
                     newPlacement["contextOut"] = contextOut;
-                    
 
                     console.log("newplacementJSON " + JSON.stringify(newPlacement));
 
                     return res.json(newPlacement);
 
-                    // return res.json({
-                    //     speech: "You are looking for claw hammers is that correct? / You can find claw hammers in row 4 section B"
-                    // });
                 }else{
                     return res.json({
                         speech: "I'm sorry there went something wrong with retrieving products from the database."
@@ -241,17 +236,20 @@ router.post('/', function(req, res) {
 
 
         /**
-         * #intent: Give me more information
+         * #intent: More info hammers
          * @var continueNewIntent (bij find product intent geset)
          * @array intentIdArray (alle intentIds met hamers)
          */
-        if(req.body.result.metadata.intentId === ""){
-            //Give me more information about that intentID
-            // if (continueNewIntent === intentIdArray){
-            //      continueNewIntent zelfde als inside hammersIntentId['Regular hammer'];
+        if(req.body.result.metadata.intentId === "f9d930c2-7c24-490f-a7a2-382034905df3"){
+
+            // if (continueNewIntent == intentIdArray){
+            //
             // }
 
-            //slate hammer == 1e038746-2c92-4ad1-9682-ebdb33f089f1
+            return res.json({
+                speech: "More info about hammers comming soon.."
+            });
+
         }
 
 
