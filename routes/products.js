@@ -202,7 +202,7 @@ router.post('/', function(req, res) {
 
             mongoDBqueries.findProductWithIntentId(function(result) {
 
-                console.log(result);
+                //console.log(result);
 
                 if(result){
                     socket.emit('productDetails', {
@@ -225,7 +225,7 @@ router.post('/', function(req, res) {
                                                 }
                                         };
                     newPlacement[key] = productPlacement;
-                    newPlacement["followupEvent"] = JSON.stringify(followupEvent);
+                    newPlacement["followupEvent"] = JSON.parse(followupEvent);
 
 
                     /*
