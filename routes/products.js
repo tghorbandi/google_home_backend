@@ -198,7 +198,7 @@ router.post('/', function(req, res) {
             }
             // rubber mallet, help find hammer
             if(req.body.result.metadata.intentId === "b8cb95aa-19a9-4d44-8350-fd580f41b332"){
-                req.body.result.metadata.intentId = "42a6386d-000b-4d2e-b68a-592b3e7f9394"''
+                req.body.result.metadata.intentId = "42a6386d-000b-4d2e-b68a-592b3e7f9394";
             }
 
             continueNewIntent = req.body.result.metadata.intentId;
