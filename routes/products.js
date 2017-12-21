@@ -47,6 +47,7 @@ router.post('/', function(req, res) {
             socket.emit('loading', { loading: "true", talking: "false"});
 
             if(req.body.originalRequest.data.user.userId === userID){
+                userID = "";
                 return res.json({
                     speech: "Hey! Welcome back, are you still looking for a hammer?"
                 });
@@ -54,7 +55,7 @@ router.post('/', function(req, res) {
             else{
                 userID = req.body.originalRequest.data.user.userId;
                 return res.json({
-                    speech: "Hi! I'm e-sites virtual assistant. I'm pretty good in finding hammers, do you want me to find a hammer for you?"
+                    speech: "Hi! I'm e-sites virtual assistant. I am specialized in finding different kind of hammers. Would you like me to find a hammer for you?"
                 });
 
             }
