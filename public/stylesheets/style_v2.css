@@ -354,4 +354,11 @@ audio, canvas, progress, video{
     display: none;
 }
 
+#all-hammers{
+    display: none;
+    text-align: center;
+    font-size: 28px;
+    line-height: 50px;
+}
+
 

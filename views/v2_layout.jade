@@ -24,13 +24,14 @@ script.
     var $productContainer = $("#product-container");
     var $containerProduct = $("#container-product");
     var $goodByeText = $("#goodbye-text");
+    var $allHammers = $("#all-hammers");
 
 
     // TALKING..
     socket.on('loading', function(data){
 
 
-
+        $allHammers.fadeOut();
 
         if(data.talking === "true"){
 
@@ -68,6 +69,7 @@ script.
                     setTimeout(function () {
                         $goodByeText.fadeOut('fast', function(){
                             $opZoekNaar.fadeIn('slow', function () {
+                                $allHammers.fadeOut();
                                 $welcomeText.fadeIn();
                             })
                         })
@@ -82,6 +84,7 @@ script.
                     setTimeout(function () {
                         $goodByeText.fadeOut('fast', function () {
                             $opZoekNaar.fadeIn('slow', function () {
+                                $allHammers.fadeOut();
                                 $welcomeText.fadeIn();
                             })
                         })
@@ -153,7 +156,13 @@ script.
 
     socket.on('allHammers', function(data){
 
-        $("#loading").fadeOut();
+        $welcomeText.fadeOut('slow', function () {
+            $opZoekNaar.fadeOut('slow', function () {
+                $containerClassic.fadeOut('fast');
+                $allHammers.fadeIn();
+            });
+        });
+
 
     });
 

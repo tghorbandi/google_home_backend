@@ -319,6 +319,16 @@ router.post('/', function(req, res) {
 
 
 
+        /**
+         * #intent: More info
+         */
+        if (req.body.result.metadata.intentId === "11151e8e-6e17-4217-a7f1-a2135b01d32b"){
+            socket.emit('allHammers', { showList: "true" });
+        }
+
+
+
+
 
 
 
