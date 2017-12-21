@@ -55,7 +55,7 @@ router.post('/', function(req, res) {
             else{
                 userID = req.body.originalRequest.data.user.userId;
                 return res.json({
-                    speech: "Hi! I'm e-sites virtual assistant. I am specialized in finding specific type of hammers. This means that I can only find hammers if you tell me the name of the hammer. If you really do not know the name of the hammer you are looking for, I can try and guess which hammer you need by asking for some questions. Also, If you need advice what to say, just ask me for more information. I will be glad to show you a couple examples. For now, I assume you want me to find a hammer. is that correct?"
+                    speech: "Hi! I'm e-sites virtual assistant. I am specialized in finding specific type of hammers. This means that I can only find hammers if you tell me the name of the hammer. If you really do not know the name of the hammer you are looking for, I can try and guess which hammer you need by asking for some questions. Also, If you need advice what to say, just ask me for more information. For now, I assume you want me to find a hammer. is that correct?"
                 });
 
             }
