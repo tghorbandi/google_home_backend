@@ -48,7 +48,7 @@ router.post('/', function(req, res) {
 
             if(req.body.originalRequest.data.user.userId === userID){
                 return res.json({
-                    speech: "Hey!, How can I help?"
+                    speech: "Hey! Welcome back, are you still looking for a hammer?"
                 });
             }
             else{
