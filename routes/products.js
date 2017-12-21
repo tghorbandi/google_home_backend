@@ -55,7 +55,7 @@ router.post('/', function(req, res) {
             else{
                 userID = req.body.originalRequest.data.user.userId;
                 return res.json({
-                    speech: "Hi! I'm e-sites virtual assistant. I am specialized in finding different kinds of hammers. Would you like me to find a hammer for you?"
+                    speech: "Hi! I'm e-sites virtual assistant. I am specialized in finding different kind of hammers. Would you like me to find a hammer for you?"
                 });
 
             }
@@ -80,7 +80,7 @@ router.post('/', function(req, res) {
 
                 if(result[0]){
 
-                    productPlacement = "You can find " + result[0].fullProductName + " " + "in " + result[0].location + ". " + "., Now have a look at the screen, this is how the hammer looks like. Would you like more information about this product?";
+                    productPlacement = "Have a look on the screen. This is how the hammer looks like. You can find this hammer in " + result[0].fullProductName + " " + "in " + result[0].location + ". ";
                     var newPlacement = {};
                     var key = "speech";
                     newPlacement[key] = productPlacement;
@@ -221,7 +221,7 @@ router.post('/', function(req, res) {
                     socket.emit('hammerBackground', { imgSrc: ""});
 
 
-                    productPlacement = "You can find this hammer" + " " + "in " + result[0].location + ". Have a look at the screen, this is how the hammer looks like. Would you like more information about this hammer?";
+                    productPlacement = "Have a look on the screen. This is how the hammer looks like. You can find this hammer" + " " + "in " + result[0].location + ". Would you like more information about this hammer?";
                     var newPlacement = {};
                     var key = "speech";
                     var contextOut = [{"name":"yes-more-info-hammers", "lifespan":1}];
@@ -248,6 +248,8 @@ router.post('/', function(req, res) {
          * @array intentIdArray (alle intentIds met hamers)
          */
         if(req.body.result.metadata.intentId === "f9d930c2-7c24-490f-a7a2-382034905df3"){
+
+            console.log("MORE INFO INTENT!!");
 
             for (var id in hammersIntentId) {
                 try{
