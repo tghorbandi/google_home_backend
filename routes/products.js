@@ -251,6 +251,7 @@ router.post('/', function(req, res) {
 
             console.log("MORE INFO INTENT!!");
 
+            // check continueNewIntent foreach id in hammersIntentId array
             for (var id in hammersIntentId) {
                 try{
                     if (!hammersIntentId.hasOwnProperty(id)) continue;
