@@ -8,7 +8,7 @@ var fallback = 0;
 var continueNewIntent;
 
 var hammersIntentId = {
-    "Regular hammer":       "42a6386d-000b-4d2e-b68a-592b3e7f9394",
+    "Regular hammer":       "55c24519-5439-4cbe-a0c0-2159d5c71e4e",
     "Claw Hammer":          "00768954-4b2e-4e79-8f79-f20d5fda1818",
     "Rubber Mallet":        "42a6386d-000b-4d2e-b68a-592b3e7f9394",
     "Slate hammer":         "1e038746-2c92-4ad1-9682-ebdb33f089f1",
