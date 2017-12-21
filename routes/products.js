@@ -55,7 +55,7 @@ router.post('/', function(req, res) {
             else{
                 userID = req.body.originalRequest.data.user.userId;
                 return res.json({
-                    speech: "Hi! I'm e-sites virtual assistant. I am specialized in finding different kind of hammers. Would you like me to find a hammer for you?"
+                    speech: "Hi! I'm e-sites virtual assistant. I am specialized in finding different kinds of hammers. Would you like me to find a hammer for you?"
                 });
 
             }
@@ -80,7 +80,7 @@ router.post('/', function(req, res) {
 
                 if(result[0]){
 
-                    productPlacement = "You can find " + result[0].fullProductName + " " + "in " + result[0].location + ". " + " Have a look at the screen, this is how the hammer looks like. would you like more information about this product?";
+                    productPlacement = "You can find " + result[0].fullProductName + " " + "in " + result[0].location + ". " + "., Now have a look at the screen, this is how the hammer looks like. Would you like more information about this product?";
                     var newPlacement = {};
                     var key = "speech";
                     newPlacement[key] = productPlacement;
