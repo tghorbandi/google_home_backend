@@ -80,7 +80,7 @@ router.post('/', function(req, res) {
 
                 if(result[0]){
 
-                    productPlacement = "Have a look on the screen. This is how the hammer looks like. You can find this hammer in " + result[0].fullProductName + " " + "in " + result[0].location + ". ";
+                    productPlacement = "Based on what you said, I have found this hammer. Have a look on the screen. This is how the hammer looks like. You can find this hammer in " + result[0].fullProductName + " " + "in " + result[0].location + ". ";
                     var newPlacement = {};
                     var key = "speech";
                     newPlacement[key] = productPlacement;
@@ -227,7 +227,7 @@ router.post('/', function(req, res) {
                     socket.emit('hammerBackground', { imgSrc: ""});
 
 
-                    productPlacement = "This is how the hammer looks like. Have a look on the screen. You can find this hammer" + " " + "in " + result[0].location + "." + " " + ". Would you like more information about this hammer?";
+                    productPlacement = "Based on what you said, I have found a hammer. Have a look on the screen. This is how the hammer looks like. You can find this hammer" + " " + "in " + result[0].location + "." + " " + ". Would you like more information about this hammer?";
                     var newPlacement = {};
                     var key = "speech";
                     var contextOut = [{"name":"yes-more-info-hammers", "lifespan":1}];
