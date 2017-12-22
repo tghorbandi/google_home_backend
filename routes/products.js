@@ -332,8 +332,13 @@ router.post('/', function(req, res) {
             socket.emit('allHammers', { showList: "true" });
         }
 
-
-
+        /**
+         * #intent: more info hammers - no
+         */
+        if (req.body.result.metadata.intentId === "ff75b860-3d4c-45c9-b56d-55c6a62331f8"){
+            // Reset UI client
+            socket.emit('reset', { reset: "true"});
+        }
 
 
 
