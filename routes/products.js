@@ -102,6 +102,12 @@ router.post('/', function(req, res) {
          }
 
 
+
+
+        if (req.body.result.metadata.intentId === "2cbc1bb9-8d90-4d28-8522-2f11e8161fd9") {
+            socket.emit('loading', { loading: "true", talking: "false"});
+        }
+
         /**
          * #Intent: Project intent
          * If user says something like: Rebuilding, look at the parameter and value
