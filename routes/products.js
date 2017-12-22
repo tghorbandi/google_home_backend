@@ -47,7 +47,7 @@ router.post('/', function(req, res) {
             socket.emit('loading', { loading: "true", talking: "false"});
 
             if(req.body.originalRequest.data.user.userId === userID){
-                userID = "";
+                //userID = "";
                 return res.json({
                     speech: "Hey! Welcome back, are you still looking for a hammer?"
                 });
@@ -347,7 +347,7 @@ router.post('/', function(req, res) {
 
             }else{
                 return res.json({
-                    speech: "I'm sorry, something went terribly wrong, I'm going to contact a human colleague.. please wait."
+                    speech: "I'm sorry, something went wrong, please say restart to start over."
                 });
             }
         }

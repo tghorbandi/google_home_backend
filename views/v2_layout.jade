@@ -110,6 +110,8 @@ script.
         if ($welcomeText.css("display") !== "none") {
             $welcomeText.fadeOut('slow', function () {
                 $opZoekNaar.fadeOut('slow', function () {
+
+                    $allHammers.hide();
                     $("#product1img").attr("src", data.productImageNew);
                     //$(".product-description").text(data.productDescription);
                     $(".product-name").text(data.productName);
@@ -126,6 +128,9 @@ script.
         $containerClassic.fadeOut('slow', function () {
 
             $opZoekNaar.fadeOut('slow', function () {
+
+                $allHammers.hide();
+                
                 $("#product1img").attr("src", data.productImageNew);
                 //$(".product-description").text(data.productDescription);
                 $(".product-name").text(data.productName);
