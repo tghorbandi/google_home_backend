@@ -323,8 +323,6 @@ router.post('/', function(req, res) {
         }
 
 
-
-
         /**
          * #intent: More info
          */
@@ -335,12 +333,10 @@ router.post('/', function(req, res) {
         /**
          * #intent: more info hammers - no
          */
-        if (req.body.result.metadata.intentId === "ff75b860-3d4c-45c9-b56d-55c6a62331f8"){
+        if (req.body.result.metadata.intentId === "ff75b860-3d4c-45c9-b56d-55c6a62331f8" || req.body.result.metadata.intentId === "7f3ee049-17d5-4bb8-8c59-d7fd4f9ddf85" ){
             // Reset UI client
             socket.emit('reset', { reset: "true"});
         }
-
-
 
 
         /**
@@ -363,13 +359,9 @@ router.post('/', function(req, res) {
             }
         }
 
-        /**
-         * save input query into mongoDB for research
-         * @var string productName
-         */
-        // var productName = req.body.result.resolvedQuery;
-        // console.log("ResolvedQuery: " + productName);
-        //mongoDBqueries.insertQuery(function(result){}, productName);
+
+        function
+
 
 
         /**
