@@ -360,25 +360,10 @@ router.post('/', function(req, res) {
         }
 
 
-        function
+        // function intentId(intentIDD){
+        //
+        // }
 
-
-
-        /**
-         * Check if context parameter is empty
-         * Check if context parameter contains product thats inside database
-         * Get context parameter of json request
-         * @var string productType
-         * @var string productType2
-         */
-        // var productType =  req.body.result.contexts[0].parameters;
-        // console.log(JSON.stringify(productType)); 
-
-        // var obj = productType;
-        // var productType2 =  obj[Object.keys(obj)[1]];
-        // console.log("ProductType2: " + productType2);
-
-        // socket.emit('productName', { productName: productType2});
 
     }
 
