@@ -333,10 +333,11 @@ router.post('/', function(req, res) {
         /**
          * #intent: more info hammers - no
          */
-        if (req.body.result.metadata.intentId === "ff75b860-3d4c-45c9-b56d-55c6a62331f8" || req.body.result.metadata.intentId === "7f3ee049-17d5-4bb8-8c59-d7fd4f9ddf85" ){
-            // Reset UI client
-            socket.emit('reset', { reset: "true"});
+        if (req.body.result.metadata.intentId === "0274b602-b6ab-4a98-9eef-580341e2734e" ){
+            socket.emit('loading', { loading: "true", talking: "true"});
         }
+
+        //req.body.result.metadata.intentId === "ff75b860-3d4c-45c9-b56d-55c6a62331f8" || 
 
 
         /**
