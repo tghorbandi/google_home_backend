@@ -55,7 +55,7 @@ router.post('/', function(req, res) {
             else{
                 userID = req.body.originalRequest.data.user.userId;
                 return res.json({
-                    speech: "Hi! I'm e-sites virtual assistant. I am specialized in finding specific type of hammers. This means that I can only find hammers if you tell me the name of the hammer. If you really do not know the name of the hammer you are looking for, I can try and guess which hammer you need by asking for some questions. Also, If you need advice what to say, just ask me for more information. For now, I assume you want me to find a hammer. is that correct?"
+                    speech: "Hi! I'm e-sites virtual assistant. I am specialized in finding specific type of hammers. If you do not know the name of the hammer you are looking for, I can try and guess which hammer you need by asking what you are going to use the hammer for. Also, If you need advice what to say, just ask me for more information. let's start. Would you like to find a hammer?"
                 });
 
             }
@@ -337,7 +337,7 @@ router.post('/', function(req, res) {
             socket.emit('loading', { loading: "true", talking: "true"});
         }
 
-        //req.body.result.metadata.intentId === "ff75b860-3d4c-45c9-b56d-55c6a62331f8" || 
+        //req.body.result.metadata.intentId === "ff75b860-3d4c-45c9-b56d-55c6a62331f8" ||
 
 
         /**
@@ -359,11 +359,6 @@ router.post('/', function(req, res) {
                 });
             }
         }
-
-
-        // function intentId(intentIDD){
-        //
-        // }
 
 
     }
