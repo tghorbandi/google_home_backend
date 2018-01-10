@@ -35,15 +35,16 @@ router.post('/', function(req, res) {
         console.log(JSON.stringify(req.body));
 
         //if inputs is not empty
-        var userQueryInput = req.body.originalRequest.data.inputs[0].rawInputs[0];
 
-        if(Object.keys(userQueryInput).length === 0 && userQueryInput.constructor === Object){
-            console.log('EMPTYYY');
-        }else{
-            console.log('NOT EMPTYY');
-            userQuery = JSON.stringify(req.body.originalRequest.data.inputs[0].rawInputs[0].query);
-            console.log(userQuery);
-        }
+        // var userQueryInput = req.body.originalRequest.data.inputs[0].rawInputs[0];
+        //
+        // if(Object.keys(userQueryInput).length === 0 && userQueryInput.constructor === Object){
+        //     console.log('EMPTYYY');
+        // }else{
+        //     console.log('NOT EMPTYY');
+        //     userQuery = JSON.stringify(req.body.originalRequest.data.inputs[0].rawInputs[0].query);
+        //     console.log(userQuery);
+        // }
 
 
 
