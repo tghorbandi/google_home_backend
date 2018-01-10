@@ -30,8 +30,8 @@
           <file leaf-file-name="products.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/routes/products.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="513">
-                  <caret line="123" column="73" lean-forward="true" selection-start-line="123" selection-start-column="73" selection-end-line="123" selection-end-column="73" />
+                <state relative-caret-position="292">
+                  <caret line="38" column="95" lean-forward="true" selection-start-line="38" selection-start-column="95" selection-end-line="38" selection-end-column="95" />
                   <folding />
                 </state>
               </provider>
@@ -335,12 +335,12 @@
       <workItem from="1512380247701" duration="73713000" />
       <workItem from="1513157645328" duration="30044000" />
       <workItem from="1513931448589" duration="8897000" />
-      <workItem from="1515575401296" duration="10264000" />
+      <workItem from="1515575401296" duration="10555000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="170966000" />
+    <option name="totallyTimeSpent" value="171257000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -742,8 +742,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/products.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="123" column="73" lean-forward="true" selection-start-line="123" selection-start-column="73" selection-end-line="123" selection-end-column="73" />
+        <state relative-caret-position="292">
+          <caret line="38" column="95" lean-forward="true" selection-start-line="38" selection-start-column="95" selection-end-line="38" selection-end-column="95" />
           <folding />
         </state>
       </provider>

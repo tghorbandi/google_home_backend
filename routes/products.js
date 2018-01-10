@@ -34,7 +34,9 @@ router.post('/', function(req, res) {
 
         console.log(JSON.stringify(req.body));
 
-        console.log(JSON.stringify(req.body.originalRequest.data.inputs[0].rawInputs[0].query));
+        //console.log(JSON.stringify(req.body.originalRequest.data.inputs[0].rawInputs[0].query));
+
+        userQuery = JSON.stringify(req.body.originalRequest.data.inputs[0].rawInputs[0].query);
 
         /**
          * #intent: Welcome Intent
@@ -49,9 +51,8 @@ router.post('/', function(req, res) {
 
             socket.emit('loading', { loading: "true", talking: "false"});
 
-            //userQuery = JSON.stringify(req.body.originalRequest.data.inputs[0].rawInputs[0].query);
-
-            //socket.emit('query', {query: userQuery});
+            socket.emit('query', {query: userQuery});
+            console.log("testttWELCOMEINTENT" + userQuery);
 
             if(req.body.originalRequest.data.user.userId === userID){
                 //userID = "";
