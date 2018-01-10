@@ -34,9 +34,11 @@ router.post('/', function(req, res) {
 
         console.log(JSON.stringify(req.body));
 
-        //console.log(JSON.stringify(req.body.originalRequest.data.inputs[0].rawInputs[0].query));
-
+        /**
+         * Send user query to client
+         */
         userQuery = JSON.stringify(req.body.originalRequest.data.inputs[0].rawInputs[0].query);
+        socket.emit('query', {query: userQuery});
 
         /**
          * #intent: Welcome Intent
@@ -50,9 +52,6 @@ router.post('/', function(req, res) {
         if (req.body.result.metadata.intentId === "21922877-84d4-41b8-bf83-d63062322fff"){
 
             socket.emit('loading', { loading: "true", talking: "false"});
-
-            socket.emit('query', {query: userQuery});
-            console.log("testttWELCOMEINTENT" + userQuery);
 
             if(req.body.originalRequest.data.user.userId === userID){
                 //userID = "";
@@ -118,9 +117,6 @@ router.post('/', function(req, res) {
          * #Intent: Default Welcome Intent - yes
          */
         if (req.body.result.metadata.intentId === "2cbc1bb9-8d90-4d28-8522-2f11e8161fd9") {
-
-            //userQuery = JSON.stringify(req.body.originalRequest.data.inputs[0].rawInputs[0].query);
-            //socket.emit('query', {query: userQuery});
 
             socket.emit('loading', { loading: "true", talking: "false"});
         }
