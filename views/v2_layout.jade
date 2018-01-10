@@ -26,6 +26,10 @@ script.
     var $goodByeText = $("#goodbye-text");
     var $allHammers = $("#all-hammers");
 
+    socket.on('query', function(data){
+       console.log(data.query);
+    });
+
 
     // TALKING..
     socket.on('loading', function(data){

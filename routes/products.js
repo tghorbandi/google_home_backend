@@ -34,20 +34,6 @@ router.post('/', function(req, res) {
 
         console.log(JSON.stringify(req.body));
 
-        //if inputs is not empty
-
-        var userQueryInput = req.body.originalRequest.data.inputs[0].rawInputs[0].query;
-
-
-        if(Object.keys(userQueryInput).length === 0 && userQueryInput.constructor === Object){
-            console.log('EMPTYYY');
-        }else{
-            console.log('NOT EMPTYY');
-            userQuery = JSON.stringify(req.body.originalRequest.data.inputs[0].rawInputs[0].query);
-            console.log(userQuery);
-        }
-
-
 
         /**
          * #intent: Welcome Intent
@@ -61,6 +47,8 @@ router.post('/', function(req, res) {
         if (req.body.result.metadata.intentId === "21922877-84d4-41b8-bf83-d63062322fff"){
 
             socket.emit('loading', { loading: "true", talking: "false"});
+
+            userQuery = JSON.stringify(req.body.originalRequest.data.inputs[0].rawInputs[0].query);
 
             socket.emit('query', {query: userQuery});
 
@@ -129,7 +117,8 @@ router.post('/', function(req, res) {
          */
         if (req.body.result.metadata.intentId === "2cbc1bb9-8d90-4d28-8522-2f11e8161fd9") {
 
-            console.log(JSON.stringify(req.body.originalRequest.data.inputs[0].rawInputs[0].query));
+            userQuery = JSON.stringify(req.body.originalRequest.data.inputs[0].rawInputs[0].query);
+            socket.emit('query', {query: userQuery});
 
             socket.emit('loading', { loading: "true", talking: "false"});
         }
