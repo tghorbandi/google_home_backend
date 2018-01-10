@@ -46,6 +46,9 @@ router.post('/', function(req, res) {
 
             socket.emit('loading', { loading: "true", talking: "false"});
 
+            // console.log what user says.
+            console.log(req.body.originalRequest.data.inputs.rawInputs.query);
+
             if(req.body.originalRequest.data.user.userId === userID){
                 //userID = "";
                 return res.json({
@@ -60,6 +63,16 @@ router.post('/', function(req, res) {
 
             }
         }
+
+        /**
+         * #Intent: Default Welcome Intent - yes
+         */
+
+        if (req.body.result.metadata.intentId === "4acf6291-ec3e-4219-942d-4587b59bc893") {
+
+            console.log(req.body.originalRequest.data.inputs.rawInputs.query);
+        }
+
 
         /**
          * #Intent: Searching Yes Custom
