@@ -47,7 +47,7 @@ router.post('/', function(req, res) {
             socket.emit('loading', { loading: "true", talking: "false"});
 
             // console.log what user says.
-            console.log(req.body.originalRequest.data.inputs.rawInputs.query);
+            console.log(JSON.stringify(req.body.originalRequest.data));
 
             if(req.body.originalRequest.data.user.userId === userID){
                 //userID = "";
