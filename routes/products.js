@@ -36,8 +36,8 @@ router.post('/', function(req, res) {
 
         //if inputs is not empty
 
-        // var userQueryInput = req.body.originalRequest.data.inputs[0].rawInputs[0];
-        //
+        var userQueryInput = req.body.originalRequest.data.inputs[0].rawInputs[0];
+
         // if(Object.keys(userQueryInput).length === 0 && userQueryInput.constructor === Object){
         //     console.log('EMPTYYY');
         // }else{
