@@ -114,7 +114,7 @@ router.post('/', function(req, res) {
          */
         if (req.body.result.metadata.intentId === "2cbc1bb9-8d90-4d28-8522-2f11e8161fd9") {
 
-            console.log(JSON.stringify(req.body.originalRequest.data));
+            console.log(JSON.stringify(req.body.originalRequest.data.inputs[0].rawInputs[0].query));
 
             socket.emit('loading', { loading: "true", talking: "false"});
         }
@@ -357,6 +357,8 @@ router.post('/', function(req, res) {
          * outgoing context meegeven om weer naar welcome intent te gaan.
          */
         if(req.body.result.metadata.intentId === "224ab83a-266e-4868-8ca4-856d3ea9b669"){
+
+            console.log(JSON.stringify(req.body.originalRequest.data.inputs[0].rawInputs[0].query));
 
             console.log("FALLBACKKKK!!!!");
 
