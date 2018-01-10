@@ -6,6 +6,7 @@ var userID = null;
 var productPlacement;
 var fallback = 0;
 var continueNewIntent;
+var userQuery;
 
 var hammersIntentId = {
     "Regular hammer":       "55c24519-5439-4cbe-a0c0-2159d5c71e4e",
@@ -34,11 +35,16 @@ router.post('/', function(req, res) {
         console.log(JSON.stringify(req.body));
 
 
+        userQuery = JSON.stringify(req.body.originalRequest.data.inputs[0].rawInputs[0].query);
+        console.log(userQuery);
+
+
         /**
          * #intent: Welcome Intent
          * Let clientside know that it has to show loading icon
          * Check  for a welcome intent
          * If the same user is still talking, give another welcome message (should not happen, keep user in application)
+         * Send user input to client
          * NOTE: userId & conversationId resets after conversation end
          * @var int userID
          */
@@ -46,8 +52,7 @@ router.post('/', function(req, res) {
 
             socket.emit('loading', { loading: "true", talking: "false"});
 
-            // console.log what user says.
-            console.log(JSON.stringify(req.body.originalRequest.data.inputs[0].rawInputs[0].query));
+            socket.emit('query', {query: userQuery});
 
             if(req.body.originalRequest.data.user.userId === userID){
                 //userID = "";
