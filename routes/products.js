@@ -64,14 +64,7 @@ router.post('/', function(req, res) {
             }
         }
 
-        /**
-         * #Intent: Default Welcome Intent - yes
-         */
 
-        if (req.body.result.metadata.intentId === "4acf6291-ec3e-4219-942d-4587b59bc893") {
-
-            console.log(req.body.originalRequest.data.inputs.rawInputs.query);
-        }
 
 
         /**
@@ -116,8 +109,13 @@ router.post('/', function(req, res) {
 
 
 
-
+        /**
+         * #Intent: Default Welcome Intent - yes
+         */
         if (req.body.result.metadata.intentId === "2cbc1bb9-8d90-4d28-8522-2f11e8161fd9") {
+
+            console.log(req.body.originalRequest.data.inputs.rawInputs.query);
+
             socket.emit('loading', { loading: "true", talking: "false"});
         }
 

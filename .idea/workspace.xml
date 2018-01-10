@@ -27,21 +27,21 @@
     <splitter split-orientation="horizontal" split-proportion="0.54016066">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="products.js" pinned="false" current-in-tab="false">
+          <file leaf-file-name="products.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/routes/products.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="299">
-                  <caret line="74" column="0" lean-forward="true" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
+                <state relative-caret-position="633">
+                  <caret line="119" column="9" lean-forward="true" selection-start-line="119" selection-start-column="9" selection-end-line="119" selection-end-column="9" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="v2_layout.jade" pinned="false" current-in-tab="true">
+          <file leaf-file-name="v2_layout.jade" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/views/v2_layout.jade">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="443">
-                  <caret line="136" column="43" lean-forward="true" selection-start-line="136" selection-start-column="43" selection-end-line="136" selection-end-column="43" />
+                <state relative-caret-position="821">
+                  <caret line="139" column="11" lean-forward="true" selection-start-line="139" selection-start-column="11" selection-end-line="139" selection-end-column="11" />
                   <folding />
                 </state>
               </provider>
@@ -84,7 +84,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>product</find>
       <find>suggestion</find>
       <find>productLoca</find>
       <find>welcome</find>
@@ -114,6 +113,7 @@
       <find>loading</find>
       <find>welcome intent</find>
       <find>893</find>
+      <find>2cbc1bb9-8d90-4d28-8522-2f11e8161fd9</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -143,8 +143,8 @@
         <option value="$PROJECT_DIR$/public/stylesheets/style_v2.css" />
         <option value="$PROJECT_DIR$/views/v2_layout.jade" />
         <option value="$PROJECT_DIR$/routes/dialogflowJSON.json" />
-        <option value="$PROJECT_DIR$/routes/products.js" />
         <option value="$PROJECT_DIR$/views/v2.jade" />
+        <option value="$PROJECT_DIR$/routes/products.js" />
       </list>
     </option>
   </component>
@@ -290,12 +290,12 @@
       <workItem from="1512380247701" duration="73713000" />
       <workItem from="1513157645328" duration="30044000" />
       <workItem from="1513931448589" duration="8897000" />
-      <workItem from="1515575401296" duration="4942000" />
+      <workItem from="1515575401296" duration="5383000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="165644000" />
+    <option name="totallyTimeSpent" value="166085000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -669,14 +669,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/products.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="74" column="0" lean-forward="true" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/dialogflowJSON.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
@@ -685,18 +677,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/v2_layout.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="443">
-          <caret line="136" column="43" lean-forward="true" selection-start-line="136" selection-start-column="43" selection-end-line="136" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/v2.jade">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="540">
           <caret line="35" column="26" lean-forward="true" selection-start-line="35" selection-start-column="26" selection-end-line="35" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/v2_layout.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="821">
+          <caret line="139" column="11" lean-forward="true" selection-start-line="139" selection-start-column="11" selection-end-line="139" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/products.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="633">
+          <caret line="119" column="9" lean-forward="true" selection-start-line="119" selection-start-column="9" selection-end-line="119" selection-end-column="9" />
           <folding />
         </state>
       </provider>
