@@ -31,7 +31,7 @@ router.post('/', function(req, res) {
 
     } else{
 
-        console.log("body: " + JSON.stringify(req.body));
+        console.log(JSON.stringify(req.body));
 
 
         /**
@@ -114,7 +114,7 @@ router.post('/', function(req, res) {
          */
         if (req.body.result.metadata.intentId === "2cbc1bb9-8d90-4d28-8522-2f11e8161fd9") {
 
-            console.log(req.body.originalRequest.data.inputs.rawInputs.query);
+            console.log(JSON.stringify(req.body.originalRequest.data));
 
             socket.emit('loading', { loading: "true", talking: "false"});
         }
