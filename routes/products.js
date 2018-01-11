@@ -365,8 +365,6 @@ router.post('/', function(req, res) {
          */
         if(req.body.result.metadata.intentId === "224ab83a-266e-4868-8ca4-856d3ea9b669"){
 
-            console.log(JSON.stringify(req.body.originalRequest.data.inputs[0].rawInputs[0].query));
-
             console.log("FALLBACKKKK!!!!");
 
             if(fallback < 3){
