@@ -34,6 +34,11 @@ router.post('/', function(req, res) {
 
         console.log(JSON.stringify(req.body));
 
+        console.log(JSON.stringify(req.body.result.contexts[0]));
+
+        console.log("intentName: " + JSON.stringify(req.body.result.metadata.intentName));
+
+
         /**
          * Send user query to client
          */
