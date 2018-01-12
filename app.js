@@ -37,6 +37,9 @@ io.on( "connection", function( socket ){
     //   console.log(data);
     // });
 
+    var address = socket.handshake.address;
+    console.log('New connection from ' + address.address + ':' + address.port);
+
     socket.on('test', function(data){
       console.log(data);
     })
