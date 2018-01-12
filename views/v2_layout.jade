@@ -27,8 +27,8 @@ script.
     var $allHammers = $("#all-hammers");
 
     socket.on('query', function(data){
-       console.log(data.query);
-        $("#favIconUser").show();
+       //console.log(data.query);
+        $("#favIconUser").css("display", "block");
         $("#user-query-p").text(data.query);
     });
 
