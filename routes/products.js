@@ -365,11 +365,18 @@ router.post('/', function(req, res) {
 
         if(req.body.result.metadata.intentId === "62bb5fd6-ea75-4c95-bbf2-8ca04cd26864"){
 
+            console.log('newIntent');
+
             if (fallback < 2){
                 fallback++;
             }else{
                 return res.json({
-                    speech: "I am sorry, I do not recognize that. An employee has been contacted. Please wait.",
+                    speech: "I do not recognize that, please wait while I am getting help of an employee.",
+                    data: {
+                        google: {
+                            expect_user_response: false,
+                        }
+                    }
                 });
             }
 
