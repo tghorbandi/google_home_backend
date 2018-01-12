@@ -367,11 +367,11 @@ router.post('/', function(req, res) {
 
             console.log('newIntent');
 
-            if (fallback < 2){
+            if (1 >= fallback){
                 fallback++;
             }else{
                 return res.json({
-                    speech: "I do not recognize that, please wait while I am getting help of an employee.",
+                    speech: "I do not recognize that. Please wait while I am getting help of an employee.",
                     data: {
                         google: {
                             expect_user_response: false,
