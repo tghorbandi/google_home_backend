@@ -399,6 +399,8 @@ router.post('/', function(req, res) {
                 //Send info to client that inform employees are coming
                 socket.emit('reset', { reset: "true"});
 
+                // socket.emit('help', { help: "true"});
+
                 return res.json({
                     speech: "I do not recognize that. Please wait while I am getting help of an employee.",
                     data: {

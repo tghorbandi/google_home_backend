@@ -390,6 +390,10 @@ audio, canvas, progress, video{
     display: none;
 }
 
+#getting-help{
+    display: none;
+}
+
 #all-hammers{
     display: none;
     text-align: center;
