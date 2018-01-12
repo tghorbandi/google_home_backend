@@ -367,8 +367,11 @@ router.post('/', function(req, res) {
 
             console.log('newIntent');
 
-            if (1 >= fallback){
+            if (fallback < 1){
                 fallback++;
+                return res.json({
+                    speech: "I am sorry, I could not find a hammer for that. Tell me again what you are going to use the hammer for."
+                });
             }else{
                 return res.json({
                     speech: "I do not recognize that. Please wait while I am getting help of an employee.",
@@ -405,9 +408,9 @@ router.post('/', function(req, res) {
                     }]
             });
 
-            if (fallback == 2){
+            if (fallback === 2){
                 return res.json({
-                    speech: "I am sorry, I could not find that hammer. Do you want a list of hammers you can choose from?",
+                    speech: "I am sorry, I could not find that hammer. Do you want a list of hammers you can choose from?"
                 });
             }
 
