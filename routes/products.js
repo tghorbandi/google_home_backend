@@ -359,6 +359,27 @@ router.post('/', function(req, res) {
 
 
         /**
+         * #intent: Default Welcome Intent - yes - no - fallback
+         * If user says unknown usage multiple times.
+         */
+
+        if(req.body.result.metadata.intentId === "62bb5fd6-ea75-4c95-bbf2-8ca04cd26864"){
+
+            if (fallback < 2){
+                fallback++;
+            }else{
+                return res.json({
+                    speech: "I am sorry, I do not recognize that. An employee has been contacted. Please wait.",
+                });
+            }
+
+        }
+
+
+
+
+        /**
+         * #intemt: Default fallback
          * if dialog goes in fallback three times
          * @var int fallback
          * outgoing context meegeven om weer naar welcome intent te gaan.
