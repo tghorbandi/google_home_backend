@@ -30,7 +30,7 @@
           <file leaf-file-name="products.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/routes/products.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="261">
+                <state relative-caret-position="331">
                   <caret line="399" column="53" lean-forward="true" selection-start-line="399" selection-start-column="53" selection-end-line="399" selection-end-column="53" />
                   <folding />
                 </state>
@@ -54,8 +54,8 @@
           <file leaf-file-name="v2.jade" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/views/v2.jade">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="309">
-                  <caret line="40" column="9" lean-forward="false" selection-start-line="40" selection-start-column="9" selection-end-line="40" selection-end-column="21" />
+                <state relative-caret-position="324">
+                  <caret line="40" column="71" lean-forward="true" selection-start-line="40" selection-start-column="71" selection-end-line="40" selection-end-column="71" />
                   <folding />
                 </state>
               </provider>
@@ -64,8 +64,8 @@
           <file leaf-file-name="style_v2.css" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/public/stylesheets/style_v2.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="238">
-                  <caret line="380" column="0" lean-forward="true" selection-start-line="380" selection-start-column="0" selection-end-line="380" selection-end-column="0" />
+                <state relative-caret-position="280">
+                  <caret line="381" column="1" lean-forward="true" selection-start-line="381" selection-start-column="1" selection-end-line="381" selection-end-column="1" />
                   <folding />
                 </state>
               </provider>
@@ -345,12 +345,12 @@
       <workItem from="1512380247701" duration="73713000" />
       <workItem from="1513157645328" duration="30044000" />
       <workItem from="1513931448589" duration="8897000" />
-      <workItem from="1515575401296" duration="26890000" />
+      <workItem from="1515575401296" duration="26949000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="187592000" />
+    <option name="totallyTimeSpent" value="187651000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -694,14 +694,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/dialogflowJSON.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="21" lean-forward="false" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bin/www">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="840">
@@ -736,16 +728,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/stylesheets/style_v2.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="380" column="0" lean-forward="true" selection-start-line="380" selection-start-column="0" selection-end-line="380" selection-end-column="0" />
+        <state relative-caret-position="280">
+          <caret line="381" column="1" lean-forward="true" selection-start-line="381" selection-start-column="1" selection-end-line="381" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/dialogflowJSON.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="21" lean-forward="false" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/v2.jade">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
-          <caret line="40" column="9" lean-forward="false" selection-start-line="40" selection-start-column="9" selection-end-line="40" selection-end-column="21" />
+        <state relative-caret-position="324">
+          <caret line="40" column="71" lean-forward="true" selection-start-line="40" selection-start-column="71" selection-end-line="40" selection-end-column="71" />
           <folding />
         </state>
       </provider>
@@ -760,7 +760,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/products.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
+        <state relative-caret-position="331">
           <caret line="399" column="53" lean-forward="true" selection-start-line="399" selection-start-column="53" selection-end-line="399" selection-end-column="53" />
           <folding />
         </state>
