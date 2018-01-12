@@ -367,13 +367,29 @@ router.post('/', function(req, res) {
 
             console.log("FALLBACKKKK!!!!");
 
+            return res.json({
+                speech: "Sorry, I didn't get that. What hammer type are you looking for?",
+                contexts: [
+                    {
+                        "name": "first-fallback",
+                        "parameters": {},
+                        "lifespan": 1
+                    }]
+            });
+
+            if (fallback == 2){
+                return res.json({
+                    speech: "I am sorry, I could not find that hammer. Do you want a list of hammers you can choose from?",
+                });
+            }
+
             if(fallback < 3){
 
                 fallback++;
 
             }else{
                 return res.json({
-                    speech: "I'm sorry, something went wrong, please say restart to start over."
+                    speech: "Sorry, I could not answer your question. An employee is being called and will be here shortly."
                 });
             }
         }
