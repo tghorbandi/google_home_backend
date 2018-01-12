@@ -7,7 +7,6 @@ var productPlacement;
 var fallback = 0;
 var continueNewIntent;
 var userQuery;
-var sameUser = 0;
 
 var hammersIntentId = {
     "Regular hammer":       "55c24519-5439-4cbe-a0c0-2159d5c71e4e",
@@ -58,19 +57,6 @@ router.post('/', function(req, res) {
         if (req.body.result.metadata.intentId === "21922877-84d4-41b8-bf83-d63062322fff"){
 
             socket.emit('loading', { loading: "true", talking: "false"});
-
-            // if(sameUser < 1){
-            //      sameUser++;
-                    // //This code will only execute once
-                    // return res.json({
-                    //     speech: "Hi! I'm e-sites virtual assistant. I am specialized in finding specific type of hammers. If you do not know the name of the hammer you are looking for, I can try and guess which hammer you need by asking what you are going to use the hammer for. Also, If you need advice what to say, just ask me for more information. let's start. Would you like to find a hammer?"
-                    // });
-            // }else{
-            //         return res.json({
-            //             speech: "Hey! Welcome back, are you still looking for a hammer?"
-            //         });
-            // }
-
 
             if(req.body.originalRequest.data.user.userId === userID){
                 //userID = "";

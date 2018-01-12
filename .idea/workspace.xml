@@ -27,17 +27,17 @@
     <splitter split-orientation="horizontal" split-proportion="0.54016066">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="products.js" pinned="false" current-in-tab="true">
+          <file leaf-file-name="products.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/routes/products.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="358">
-                  <caret line="83" column="213" lean-forward="false" selection-start-line="83" selection-start-column="213" selection-end-line="83" selection-end-column="213" />
+                <state relative-caret-position="418">
+                  <caret line="374" column="18" lean-forward="true" selection-start-line="374" selection-start-column="18" selection-end-line="374" selection-end-column="18" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
+          <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="276">
@@ -153,8 +153,8 @@
         <option value="$PROJECT_DIR$/public/stylesheets/style_v2.css" />
         <option value="$PROJECT_DIR$/views/v2_layout.jade" />
         <option value="$PROJECT_DIR$/views/v2.jade" />
-        <option value="$PROJECT_DIR$/routes/products.js" />
         <option value="$PROJECT_DIR$/app.js" />
+        <option value="$PROJECT_DIR$/routes/products.js" />
       </list>
     </option>
   </component>
@@ -345,12 +345,12 @@
       <workItem from="1512380247701" duration="73713000" />
       <workItem from="1513157645328" duration="30044000" />
       <workItem from="1513931448589" duration="8897000" />
-      <workItem from="1515575401296" duration="24928000" />
+      <workItem from="1515575401296" duration="25106000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="185630000" />
+    <option name="totallyTimeSpent" value="185808000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -749,18 +749,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app.js">
+    <entry file="file://$PROJECT_DIR$/routes/products.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="40" column="79" lean-forward="true" selection-start-line="40" selection-start-column="79" selection-end-line="40" selection-end-column="79" />
+        <state relative-caret-position="418">
+          <caret line="374" column="18" lean-forward="true" selection-start-line="374" selection-start-column="18" selection-end-line="374" selection-end-column="18" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/products.js">
+    <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="358">
-          <caret line="83" column="213" lean-forward="false" selection-start-line="83" selection-start-column="213" selection-end-line="83" selection-end-column="213" />
+        <state relative-caret-position="276">
+          <caret line="40" column="79" lean-forward="true" selection-start-line="40" selection-start-column="79" selection-end-line="40" selection-end-column="79" />
           <folding />
         </state>
       </provider>
