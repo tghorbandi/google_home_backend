@@ -79,6 +79,7 @@ script.
                             $opZoekNaar.fadeIn('slow', function () {
                                 $allHammers.fadeOut();
                                 $welcomeText.fadeIn();
+                                $("#user-query-p").text('...');
                             })
                         })
                     }, 4000);
@@ -94,6 +95,7 @@ script.
                             $opZoekNaar.fadeIn('slow', function () {
                                 $allHammers.fadeOut();
                                 $welcomeText.fadeIn();
+                                $("#user-query-p").text('...');
                             })
                         })
                     }, 4000);
@@ -106,6 +108,8 @@ script.
 
     // Getting help
     socket.on('help', function (data) {
+
+        console.log('ON SOCKET HELP@@@');
 
         if ($containerClassic.css("display") !== "none") {
             $containerClassic.fadeOut('slow', function () {
