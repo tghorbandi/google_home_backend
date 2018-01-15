@@ -33,17 +33,39 @@ router.post('/', function(req, res) {
     } else{
 
         console.log(JSON.stringify(req.body));
-
         console.log(JSON.stringify(req.body.result.contexts[0]));
-
         console.log("intentName: " + JSON.stringify(req.body.result.metadata.intentName));
-
 
         /**
          * Send user query to client
          */
         userQuery = JSON.stringify(req.body.originalRequest.data.inputs[0].rawInputs[0].query);
         socket.emit('query', {query: userQuery});
+
+
+        function compareIntentId (id) {
+            var intents = {
+                '21922877-84d4-41b8-bf83-d63062322fff': function () {
+                    return res.json({
+                        speech: "werkt!!"
+                    });
+                },
+                's1': function () {
+                    alert('Do code from intent s1');
+                    return 'Pepsi';
+                },
+                's2': function () {
+                    alert('Do code from intent s2');
+                    return 'Lemonade';
+                }
+            };
+            return intents[id]();
+        }
+
+        compareIntentId(req.body.result.metadata.intentId);
+
+
+
 
         /**
          * #intent: Welcome Intent
@@ -54,7 +76,7 @@ router.post('/', function(req, res) {
          * NOTE: userId & conversationId resets after conversation end
          * @var int userID
          */
-        if (req.body.result.metadata.intentId === "21922877-84d4-41b8-bf83-d63062322fff"){
+        /*if (req.body.result.metadata.intentId === "21922877-84d4-41b8-bf83-d63062322fff"){
 
             socket.emit('loading', { loading: "true", talking: "false"});
 
@@ -93,7 +115,7 @@ router.post('/', function(req, res) {
                 });
 
             }
-        }
+        }*/
 
 
 
