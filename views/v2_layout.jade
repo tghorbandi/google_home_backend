@@ -109,8 +109,6 @@ script.
     // Getting help
     socket.on('help', function (data) {
 
-        console.log('ON SOCKET HELP@@@');
-
         if ($containerClassic.css("display") !== "none") {
             $containerClassic.fadeOut('slow', function () {
                 $gettingHelpText.fadeIn('slow', function () {
@@ -119,6 +117,7 @@ script.
                             $opZoekNaar.fadeIn('slow', function () {
                                 $allHammers.fadeOut();
                                 $welcomeText.fadeIn();
+                                $("#user-query-p").text('...');
                             })
                         })
                     }, 10000);
@@ -134,6 +133,7 @@ script.
                             $opZoekNaar.fadeIn('slow', function () {
                                 $allHammers.fadeOut();
                                 $welcomeText.fadeIn();
+                                $("#user-query-p").text('...');
                             })
                         })
                     }, 10000);
