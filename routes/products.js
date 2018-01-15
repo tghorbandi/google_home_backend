@@ -59,6 +59,20 @@ router.post('/', function(req, res) {
                     return 'Lemonade';
                 }
             };
+            if (typeof intents[id] !== 'function') {
+                /**
+                 * intentId does not match any intents in Dialogflow
+                 */
+                return res.json({
+                    speech: "Something went wrong with the server.",
+                    data: {
+                        google: {
+                            expect_user_response: false,
+                        }
+                    },
+                    contextOut: [],
+                });
+            }
             return intents[id]();
         }
 
