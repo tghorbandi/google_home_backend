@@ -165,27 +165,137 @@ router.post('/', function(req, res) {
                 },
                 /**
                  *
-                 *
+                 * #intent: More info hammers (YES)
                  *
                  */
-                '': function () {
+                'f9d930c2-7c24-490f-a7a2-382034905df3': function () {
+                    // check continueNewIntent foreach id in hammersIntentId array
+                    for (var id in hammersIntentId) {
+                        try{
+                            if (!hammersIntentId.hasOwnProperty(id)) continue;
+                            if (hammersIntentId[id] === continueNewIntent) {
 
+                                mongoDBqueries.findProductWithIntentId(function(result) {
+
+                                    productDescription = result[0].description + ". " + "That's all i know about this hammer. Are you interested in finding another hammer?";
+                                    var obj = {};
+                                    var key = "speech";
+                                    obj[key] = productDescription;
+
+                                    return res.json(obj);
+
+                                }, hammersIntentId[id]);
+
+                            }
+                        } catch(err) {
+                            console.log("ERROR: " + err);
+                            return res.json({
+                                speech: "I'm sorry, something went wrong with retrieving more information about this product. Try saying the hammer name again."
+                            });
+                        }
+
+                    }
                 },
                 /**
                  *
-                 *
+                 * #intent: list of all hammers
                  *
                  */
-                '': function () {
+                'b7bfba95-4293-4d32-a206-751e48f10b15': function () {
+                    socket.emit('allHammers', { showList: "true" });
 
+                    return res.json({
+                        speech: "Here is a list of all hammers that I can help you with. When you need information about a specific hammer on the list. just tell me the hammer name, and i will know what to do."
+
+                    })
                 },
                 /**
                  *
-                 *
+                 * #intent: What can you do
                  *
                  */
-                '': function () {
+                '3e807c68-aab5-47e3-b030-48fdec0bed2e': function () {
+                    socket.emit('loading', { loading: "true", talking: "true"});
 
+                    return res.json({
+                        speech: "I can do lots of things., You can ask me for advice, or I can help you find specific products. At this moment however, I can only help with finding hammer products. So.. to fullfill my duty, I have to ask, are you looking for a hammer?",
+                        contexts: [
+                            {
+                                "name": "whatcanyoudo-followup",
+                                "parameters": {},
+                                "lifespan": 2
+                            }]
+                    });
+                },
+                /**
+                 *
+                 * #Intent: more info hammers - no
+                 *
+                 */
+                '0274b602-b6ab-4a98-9eef-580341e2734e': function () {
+                    socket.emit('loading', { loading: "true", talking: "true"});
+                },
+                /**
+                 *
+                 * #Intent: Default Welcome Intent - yes - no - fallback
+                 *
+                 */
+                '62bb5fd6-ea75-4c95-bbf2-8ca04cd26864': function () {
+                    console.log('newIntent');
+
+                    if (fallback < 1){
+                        fallback++;
+                        return res.json({
+                            speech: "I am sorry, I could not find a hammer for that. Tell me again what you are going to use the hammer for."
+                        });
+                    }else{
+
+                        //Send info to client that inform employees are coming
+                        socket.emit('help', { help: "true"});
+
+                        return res.json({
+                            speech: "I do not recognize that. Please wait while I am getting help of an employee.",
+                            data: {
+                                google: {
+                                    expect_user_response: false,
+                                }
+                            }
+                        });
+                    }
+                },
+                /**
+                 *
+                 * #Intent: Default fallback
+                 *
+                 */
+                '224ab83a-266e-4868-8ca4-856d3ea9b669': function () {
+                    console.log("FALLBACKKKK!!!!");
+
+                    return res.json({
+                        speech: "Sorry, I didn't get that. What hammer type are you looking for?",
+                        contexts: [
+                            {
+                                "name": "first-fallback",
+                                "parameters": {},
+                                "lifespan": 1
+                            }]
+                    });
+
+                    if (fallback === 2){
+                        return res.json({
+                            speech: "I am sorry, I could not find that hammer. Do you want a list of hammers you can choose from?"
+                        });
+                    }
+
+                    if(fallback < 3){
+
+                        fallback++;
+
+                    }else{
+                        return res.json({
+                            speech: "Sorry, I could not answer your question. An employee is being called and will be here shortly."
+                        });
+                    }
                 },
                 /**
                  *
@@ -219,12 +329,11 @@ router.post('/', function(req, res) {
 
         /**
          * #Intent: claw hammer & regular hammer & advice sledge hammer yes & advice claw hammer yes
-         * Check if productnr exists in database, then find that product
+         * Check if product number exists in database, then find that product
          * contextOut ("yes-more-info-hammers) = New intent
          */
 
         if (req.body.result.metadata.intentId === "00768954-4b2e-4e79-8f79-f20d5fda1818" || req.body.result.metadata.intentId === "55c24519-5439-4cbe-a0c0-2159d5c71e4e" || req.body.result.metadata.intentId === "01bca801-fd72-4b4d-ad2f-5048747b96db" || req.body.result.metadata.intentId === "cd5499b9-06e2-4fa6-a8e9-755288475d2c" || req.body.result.metadata.intentId === "08ad93bd-8f49-4cd6-be92-927af69d8435" || req.body.result.metadata.intentId === "890138a2-f61a-4108-a87b-1d77cc52bda9" || req.body.result.metadata.intentId === "6c5e4679-061e-4145-8c4d-fad63a6925e6" || req.body.result.metadata.intentId === "741b2be6-5787-49b5-9419-a98dda77e816" || req.body.result.metadata.intentId === "2adf6c5e-23de-4d5d-8670-8c0260e2dcd9" || req.body.result.metadata.intentId === "57608d37-6414-4d26-81ee-880d5b08c81b" || req.body.result.metadata.intentId === "42a6386d-000b-4d2e-b68a-592b3e7f9394" || req.body.result.metadata.intentId === "b8cb95aa-19a9-4d44-8350-fd580f41b332" || req.body.result.metadata.intentId === "1e038746-2c92-4ad1-9682-ebdb33f089f1"){
-
 
 
             // claw hammer
@@ -276,169 +385,11 @@ router.post('/', function(req, res) {
             }, req.body.result.metadata.intentId);
         }
 
-
-
-        /**
-         * #intent: More info hammers (YES)
-         * @var continueNewIntent (bij find product intent geset)
-         * @array intentIdArray (alle intentIds met hamers)
-         */
-        if(req.body.result.metadata.intentId === "f9d930c2-7c24-490f-a7a2-382034905df3"){
-
-            console.log("MORE INFO INTENT!!");
-
-            // check continueNewIntent foreach id in hammersIntentId array
-            for (var id in hammersIntentId) {
-                try{
-                    if (!hammersIntentId.hasOwnProperty(id)) continue;
-                    if (hammersIntentId[id] === continueNewIntent) {
-
-                        mongoDBqueries.findProductWithIntentId(function(result) {
-
-                            productDescription = result[0].description + ". " + "That's all i know about this hammer. Are you interested in finding another hammer?";
-                            var obj = {};
-                            var key = "speech";
-                            obj[key] = productDescription;
-
-                            return res.json(obj);
-
-                        }, hammersIntentId[id]);
-
-                    }
-                } catch(err) {
-                    console.log("ERROR: " + err);
-                    return res.json({
-                        speech: "I'm sorry, something went wrong with retrieving more information about this product. Try saying the hammer name again."
-                    });
-                }
-
-            }
-
-        }
-
-
-        /**
-         * #intent: list of all hammers
-         * outgoing context meegeven om weer naar welcome intent te gaan.
-         */
-        if(req.body.result.metadata.intentId === "b7bfba95-4293-4d32-a206-751e48f10b15") {
-
-            socket.emit('allHammers', { showList: "true" });
-
-            return res.json({
-                speech: "Here is a list of all hammers that I can help you with. When you need information about a specific hammer on the list. just tell me the hammer name, and i will know what to do."
-
-            })
-
-        }
-
-
-        /**
-         * #intent: what can you do
-         */
-        if(req.body.result.metadata.intentId === "3e807c68-aab5-47e3-b030-48fdec0bed2e") {
-
-            socket.emit('loading', { loading: "true", talking: "true"});
-
-            return res.json({
-                speech: "I can do lots of things., You can ask me for advice, or I can help you find specific products. At this moment however, I can only help with finding hammer products. So.. to fullfill my duty, I have to ask, are you looking for a hammer?",
-                 contexts: [
-                    {
-                        "name": "whatcanyoudo-followup",
-                        "parameters": {},
-                        "lifespan": 2
-                    }]
-            })
-
-        }
-
-
         /**
          * #intent: More info
          */
         if (req.body.result.metadata.intentId === "11151e8e-6e17-4217-a7f1-a2135b01d32b"){
             socket.emit('allHammers', { showList: "true" });
-        }
-
-        /**
-         * #intent: more info hammers - no
-         */
-        if (req.body.result.metadata.intentId === "0274b602-b6ab-4a98-9eef-580341e2734e" ){
-            socket.emit('loading', { loading: "true", talking: "true"});
-        }
-
-        //req.body.result.metadata.intentId === "ff75b860-3d4c-45c9-b56d-55c6a62331f8" ||
-
-
-        /**
-         * #intent: Default Welcome Intent - yes - no - fallback
-         * If user says unknown usage multiple times.
-         */
-
-        if(req.body.result.metadata.intentId === "62bb5fd6-ea75-4c95-bbf2-8ca04cd26864"){
-
-            console.log('newIntent');
-
-            if (fallback < 1){
-                fallback++;
-                return res.json({
-                    speech: "I am sorry, I could not find a hammer for that. Tell me again what you are going to use the hammer for."
-                });
-            }else{
-
-                //Send info to client that inform employees are coming
-                socket.emit('help', { help: "true"});
-
-                return res.json({
-                    speech: "I do not recognize that. Please wait while I am getting help of an employee.",
-                    data: {
-                        google: {
-                            expect_user_response: false,
-                        }
-                    }
-                });
-            }
-
-        }
-
-
-
-
-        /**
-         * #intemt: Default fallback
-         * if dialog goes in fallback three times
-         * @var int fallback
-         * outgoing context meegeven om weer naar welcome intent te gaan.
-         */
-        if(req.body.result.metadata.intentId === "224ab83a-266e-4868-8ca4-856d3ea9b669"){
-
-            console.log("FALLBACKKKK!!!!");
-
-            return res.json({
-                speech: "Sorry, I didn't get that. What hammer type are you looking for?",
-                contexts: [
-                    {
-                        "name": "first-fallback",
-                        "parameters": {},
-                        "lifespan": 1
-                    }]
-            });
-
-            if (fallback === 2){
-                return res.json({
-                    speech: "I am sorry, I could not find that hammer. Do you want a list of hammers you can choose from?"
-                });
-            }
-
-            if(fallback < 3){
-
-                fallback++;
-
-            }else{
-                return res.json({
-                    speech: "Sorry, I could not answer your question. An employee is being called and will be here shortly."
-                });
-            }
         }
 
 
