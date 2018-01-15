@@ -110,6 +110,39 @@ router.post('/', function(req, res) {
                  */
                 '2cbc1bb9-8d90-4d28-8522-2f11e8161fd9': function () {
                     socket.emit('loading', { loading: "true", talking: "false"});
+                },
+                /**
+                 *
+                 * #Intent: Project intent
+                 *
+                 */
+                'd351acb0-19f2-4e20-8dc3-b5b337dfb101': function () {
+                    //curved claw hammer inhoud
+                    if(Object.values(req.body.result.parameters)[0]){
+
+                        socket.emit('productName', { productName: "curved claw hammer"});
+                        return res.json({
+                            speech: "For that specific type of job, you will need a curved claw hammer. You can easily remove nails with its curved claw"
+                        });
+                    }
+
+                    // sledge hammer inhoud
+                    if(Object.values(req.body.result.parameters)[1]){
+                        console.log('sledge hammer inhoud!!');
+                        socket.emit('productName', { productName: "sledge hammer"});
+                        return res.json({
+                            speech: "For those jobs, you will need sledge hammers. These are big hammers designed to destroy objects."
+                        });
+                    }
+
+                    //toolmaker hammer inhoud
+                    if(Object.values(req.body.result.parameters)[2]){
+                        console.log('Toolmaker hammer inhoud!!');
+                        socket.emit('productName', { productName: "toolmaker hammer"});
+                        return res.json({
+                            speech: "For that work, you will need a toolmaker hammer. These are hammers with a magnifying glass on top."
+                        });
+                    }
                 }
             };
             if (typeof intents[id] !== 'function') {
@@ -131,53 +164,6 @@ router.post('/', function(req, res) {
 
         compareIntentId(req.body.result.metadata.intentId);
 
-
-
-        /**
-         * #Intent: Project intent
-         * If user says something like: Rebuilding, look at the parameter and value
-         * @var curved claw hammer = req.body.result.parameters)[0]
-         * @var sledge hammer = req.body.result.parameters)[1]
-         */
-        if (req.body.result.metadata.intentId === "d351acb0-19f2-4e20-8dc3-b5b337dfb101"){
-
-            // console.log(JSON.stringify(req.body.result.parameters));
-            // console.log(Object.values(req.body.result.parameters)[0]);
-            // console.log(Object.values(req.body.result.parameters)[1]);
-
-            //curved claw hammer inhoud
-            if(Object.values(req.body.result.parameters)[0]){
-
-                socket.emit('productName', { productName: "curved claw hammer"});
-                return res.json({
-                    speech: "For that specific type of job, you will need a curved claw hammer. You can easily remove nails with its curved claw"
-                });
-            }
-
-            // sledge hammer inhoud
-            if(Object.values(req.body.result.parameters)[1]){
-                console.log('sledge hammer inhoud!!');
-                socket.emit('productName', { productName: "sledge hammer"});
-                return res.json({
-                    speech: "For those jobs, you will need sledge hammers. These are big hammers designed to destroy objects."
-                });
-            }
-
-            //toolmaker hammer inhoud
-            if(Object.values(req.body.result.parameters)[2]){
-                console.log('Toolmaker hammer inhoud!!');
-                socket.emit('productName', { productName: "toolmaker hammer"});
-                return res.json({
-                    speech: "For that work, you will need a toolmaker hammer. These are hammers with a magnifying glass on top."
-                });
-            }
-
-            //No project found
-            // socket.emit('noProduct', { data: "no product found"});
-            // return res.json({
-            //     speech: "I didn't understand that, can you rephrase the project you are working on?"
-            // });
-        }
 
         /**
          * #Intent: Parts Curved Claw hammer
