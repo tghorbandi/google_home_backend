@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var mongoDBqueries = require('../controllers/mongoDB');
 var socket;
+var userID = null;
 var productPlacement;
 var fallback = 0;
 var continueNewIntent;
@@ -36,8 +37,6 @@ router.post('/', function(req, res) {
         console.log(JSON.stringify(req.body.result.contexts[0]));
         console.log("intentName: " + JSON.stringify(req.body.result.metadata.intentName));
 
-
-
         /**
          * Send user query to client
          */
@@ -46,92 +45,108 @@ router.post('/', function(req, res) {
 
 
 
-        function compareIntentId (id) {
-            var intents = {
-                '21922877-84d4-41b8-bf83-d63062322fff': function () {
-                    /**
-                     *
-                     * #Intent: Welcome Intent
-                     *
-                     */
-                    socket.emit('loading', { loading: "true", talking: "false"});
+        /**
+         * #intent: Welcome Intent
+         * Let clientside know that it has to show loading icon
+         * Check  for a welcome intent
+         * If the same user is still talking, give another welcome message (should not happen, keep user in application)
+         * Send user input to client
+         * NOTE: userId & conversationId resets after conversation end
+         * @var int userID
+         */
+        /*if (req.body.result.metadata.intentId === "21922877-84d4-41b8-bf83-d63062322fff"){
 
-                    if(sameUser < 1){
-                        sameUser++;
-                        //This code will only execute once
-                        return res.json({
-                            speech: "Hi! I'm e-sites virtual assistant. I am specialized in finding specific type of hammers. If you do not know the name of the hammer you are looking for, I can try and guess which hammer you need by asking what you are going to use the hammer for. Also, If you need advice what to say, just ask me for more information. let's start. Would you like to find a hammer?"
-                        });
-                    }else{
-                        return res.json({
-                            speech: "Hey! Welcome back, are you still looking for a hammer?"
-                        });
-                    }
-                },
-                'd9689d6d-aa9c-4470-b2dc-a72fa1f6bc9f': function () {
-                    /**
-                     *
-                     * #Intent: Searching Yes Custom
-                     *
-                     */
-                    var input = req.body.result.resolvedQuery;
-                    //console.log("ResolvedQuery: " + input);
-                    var inputArray = input.split(" ");
-                    //console.log(inputArray);
+            socket.emit('loading', { loading: "true", talking: "false"});
 
-                    mongoDBqueries.findSpecificType(function(result){
-                        console.log("MONGODB RESULT:" + JSON.stringify(result));
+            if(sameUser < 1){
 
-                        if(result[0]){
+                 sameUser++;
 
-                            productPlacement = "Based on what you said, I have found this hammer. Have a look on the screen. This is how the hammer looks like. You can find this hammer in " + result[0].fullProductName + " " + "in " + result[0].location + ". ";
-                            var newPlacement = {};
-                            var key = "speech";
-                            newPlacement[key] = productPlacement;
+            //This code will only execute once
 
-                            console.log("productPlacement: " + productPlacement);
+            return res.json({
 
-                            socket.emit('productName', { productName: result[0].fullProductName});
+                speech: "Hi! I'm e-sites virtual assistant. I am specialized in finding specific type of hammers. If you do not know the name of the hammer you are looking for, I can try and guess which hammer you need by asking what you are going to use the hammer for. Also, If you need advice what to say, just ask me for more information. let's start. Would you like to find a hammer?"
 
-                            return res.json(newPlacement);
+            });
 
-                        }else{
-                            socket.emit('noProduct', { data: "no product found"});
-                            return res.json({
-                                speech: "I'm sorry, I couldn't find that. Try specifying the type of product you are looking for."
-                            });
-                        }
-                    }, inputArray);
-                },
-                /**
-                 *
-                 * #Intent: Searching Yes Custom
-                 *
-                 */
-                '2cbc1bb9-8d90-4d28-8522-2f11e8161fd9': function () {
-                    socket.emit('loading', { loading: "true", talking: "false"});
-                }
-            };
-            if (typeof intents[id] !== 'function') {
-                /**
-                 * #Intent: Default Welcome Intent - yes
-                 */
+            }else{
+
+                    return res.json({
+
+                        speech: "Hey! Welcome back, are you still looking for a hammer?"
+
+                    });
+
+            }
+
+            if(req.body.originalRequest.data.user.userId === userID){
+                //userID = "";
                 return res.json({
-                    speech: "Something went wrong with the server.",
-                    data: {
-                        google: {
-                            expect_user_response: false,
-                        }
-                    },
-                    contextOut: [],
+                    speech: "Hey! Welcome back, are you still looking for a hammer?"
                 });
             }
-            return intents[id]();
+            else{
+                userID = req.body.originalRequest.data.user.userId;
+                return res.json({
+                    speech: "Hi! I'm e-sites virtual assistant. I am specialized in finding specific type of hammers. If you do not know the name of the hammer you are looking for, I can try and guess which hammer you need by asking what you are going to use the hammer for. Also, If you need advice what to say, just ask me for more information. let's start. Would you like to find a hammer?"
+                });
+
+            }
+        }*/
+
+
+
+
+        /**
+         * #Intent: Searching Yes Custom
+         * In this statement, check if user input has a value that is the same as in the database.
+         * Check if user entered "searching - yes - custom" intent.
+         * Change resolved query string into an array, then use that array as a variable to check the database,
+         */
+        if (req.body.result.metadata.intentId === "d9689d6d-aa9c-4470-b2dc-a72fa1f6bc9f"){
+
+            var input = req.body.result.resolvedQuery;
+            //console.log("ResolvedQuery: " + input);
+            var inputArray = input.split(" ");
+            //console.log(inputArray);
+
+            mongoDBqueries.findSpecificType(function(result){
+                console.log("MONGODB RESULT:" + JSON.stringify(result));
+                //console.log(result[0].type);
+
+                if(result[0]){
+
+                    productPlacement = "Based on what you said, I have found this hammer. Have a look on the screen. This is how the hammer looks like. You can find this hammer in " + result[0].fullProductName + " " + "in " + result[0].location + ". ";
+                    var newPlacement = {};
+                    var key = "speech";
+                    newPlacement[key] = productPlacement;
+
+                    console.log("productPlacement: " + productPlacement);
+
+                    socket.emit('productName', { productName: result[0].fullProductName});
+
+                    return res.json(newPlacement);
+
+                }else{
+                    socket.emit('noProduct', { data: "no product found"});
+                    return res.json({
+                        speech: "I'm sorry, I couldn't find that. Try specifying the type of product you are looking for."
+                    });
+                }
+            }, inputArray);
+
         }
 
-        compareIntentId(req.body.result.metadata.intentId);
 
 
+        /**
+         * #Intent: Default Welcome Intent - yes
+         */
+        if (req.body.result.metadata.intentId === "2cbc1bb9-8d90-4d28-8522-2f11e8161fd9") {
+
+            socket.emit('loading', { loading: "true", talking: "false"});
+        }
 
         /**
          * #Intent: Project intent
@@ -188,7 +203,7 @@ router.post('/', function(req, res) {
         //         speech: "Have a look at the screen. A curved claw hammer exists of 6 different parts. That is the Claw,. Eye,. Cheek,. Neck,. Poll,. and the face."
         //     });
         // }
-        
+
         /**
          * #Intent: STOP
          * Check if user entered "end" intent.
@@ -337,7 +352,7 @@ router.post('/', function(req, res) {
 
             return res.json({
                 speech: "I can do lots of things., You can ask me for advice, or I can help you find specific products. At this moment however, I can only help with finding hammer products. So.. to fullfill my duty, I have to ask, are you looking for a hammer?",
-                 contexts: [
+                contexts: [
                     {
                         "name": "whatcanyoudo-followup",
                         "parameters": {},
