@@ -143,6 +143,57 @@ router.post('/', function(req, res) {
                             speech: "For that work, you will need a toolmaker hammer. These are hammers with a magnifying glass on top."
                         });
                     }
+                },
+                /**
+                 *
+                 * #Intent: STOP
+                 *
+                 */
+                '50e7d411-c5da-497e-8a34-5eae79e0a744': function () {
+                    // Reset UI client
+                    socket.emit('reset', { reset: "true"});
+
+                    return res.json({
+                        speech: "Okay, Bye",
+                        data: {
+                            google: {
+                                expect_user_response: false,
+                            }
+                        },
+                        contextOut: [],
+                    });
+                },
+                /**
+                 *
+                 *
+                 *
+                 */
+                '': function () {
+
+                },
+                /**
+                 *
+                 *
+                 *
+                 */
+                '': function () {
+
+                },
+                /**
+                 *
+                 *
+                 *
+                 */
+                '': function () {
+
+                },
+                /**
+                 *
+                 *
+                 *
+                 */
+                '': function () {
+
                 }
             };
             if (typeof intents[id] !== 'function') {
@@ -164,38 +215,6 @@ router.post('/', function(req, res) {
 
         compareIntentId(req.body.result.metadata.intentId);
 
-
-        /**
-         * #Intent: Parts Curved Claw hammer
-         */
-        // if (req.body.result.metadata.intentId === "c2708040-2664-48a1-914f-79c7eeafa2bb"){
-        //     socket.emit('productName', { productName: "curved claw hammer parts"});
-        //     return res.json({
-        //         speech: "Have a look at the screen. A curved claw hammer exists of 6 different parts. That is the Claw,. Eye,. Cheek,. Neck,. Poll,. and the face."
-        //     });
-        // }
-        
-        /**
-         * #Intent: STOP
-         * Check if user entered "end" intent.
-         * Sends reset socket object to client to reset image and text
-         * Returns end conversation fulfillment
-         */
-        if (req.body.result.metadata.intentId === "50e7d411-c5da-497e-8a34-5eae79e0a744"){
-
-            // Reset UI client
-            socket.emit('reset', { reset: "true"});
-
-            return res.json({
-                speech: "Okay, Bye",
-                data: {
-                    google: {
-                        expect_user_response: false,
-                    }
-                },
-                contextOut: [],
-            });
-        }
 
 
         /**
