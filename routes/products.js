@@ -186,6 +186,15 @@ router.post('/', function(req, res) {
 
                                 mongoDBqueries.findProductWithIntentId(function(result) {
 
+                                    socket.emit('productDetails', {
+                                        productName: result[0].fullProductName,
+                                        productDescription: result[0].description,
+                                        productImageNew: result[0].imgPath,
+                                        productLocation: result[0].location,
+                                        productPrice: result[0].price,
+                                        productFloorplan: result[0].plattegrondIMG
+                                    });
+
                                     productDescription = result[0].description + ". " + "That's all i know about this hammer. Are you interested in finding another hammer?";
                                     var obj = {};
                                     var key = "speech";
@@ -371,7 +380,6 @@ router.post('/', function(req, res) {
 
                     socket.emit('productDetails', {
                         productName: result[0].fullProductName,
-                        productDescription: result[0].description,
                         productImageNew: result[0].imgPath,
                         productLocation: result[0].location,
                         productPrice: result[0].price,
