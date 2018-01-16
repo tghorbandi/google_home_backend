@@ -110,6 +110,15 @@ router.post('/', function(req, res) {
                  */
                 '2cbc1bb9-8d90-4d28-8522-2f11e8161fd9': function () {
                     socket.emit('loading', { loading: "true", talking: "false"});
+                    return res.json({
+                        speech: "Aright. Do you know which type of hammer you are looking for?",
+                        contexts: [
+                            {
+                                "name": "DefaultWelcomeIntent-yes-followup",
+                                "parameters": {},
+                                "lifespan": 2
+                            }]
+                    });
                 },
                 /**
                  *
@@ -306,90 +315,89 @@ router.post('/', function(req, res) {
 
                 }
             };
-            // DEFAULT CASE
-            if (typeof intents[id] !== 'function') {
-
-
-                /**
-                 * #Intent: claw hammer & regular hammer & advice sledge hammer yes & advice claw hammer yes
-                 * Check if product number exists in database, then find that product
-                 * contextOut ("yes-more-info-hammers) = New intent
-                 */
-
-                if (req.body.result.metadata.intentId === "00768954-4b2e-4e79-8f79-f20d5fda1818" || req.body.result.metadata.intentId === "55c24519-5439-4cbe-a0c0-2159d5c71e4e" || req.body.result.metadata.intentId === "01bca801-fd72-4b4d-ad2f-5048747b96db" || req.body.result.metadata.intentId === "cd5499b9-06e2-4fa6-a8e9-755288475d2c" || req.body.result.metadata.intentId === "08ad93bd-8f49-4cd6-be92-927af69d8435" || req.body.result.metadata.intentId === "890138a2-f61a-4108-a87b-1d77cc52bda9" || req.body.result.metadata.intentId === "6c5e4679-061e-4145-8c4d-fad63a6925e6" || req.body.result.metadata.intentId === "741b2be6-5787-49b5-9419-a98dda77e816" || req.body.result.metadata.intentId === "2adf6c5e-23de-4d5d-8670-8c0260e2dcd9" || req.body.result.metadata.intentId === "57608d37-6414-4d26-81ee-880d5b08c81b" || req.body.result.metadata.intentId === "42a6386d-000b-4d2e-b68a-592b3e7f9394" || req.body.result.metadata.intentId === "b8cb95aa-19a9-4d44-8350-fd580f41b332" || req.body.result.metadata.intentId === "1e038746-2c92-4ad1-9682-ebdb33f089f1"){
-
-
-                    // claw hammer
-                    if(req.body.result.metadata.intentId === "01bca801-fd72-4b4d-ad2f-5048747b96db"){
-                        req.body.result.metadata.intentId = "00768954-4b2e-4e79-8f79-f20d5fda1818";
-                    }
-                    // sledge hammer
-                    if(req.body.result.metadata.intentId === "cd5499b9-06e2-4fa6-a8e9-755288475d2c"){
-                        req.body.result.metadata.intentId = "6c5e4679-061e-4145-8c4d-fad63a6925e6";
-                    }
-                    // rubber mallet, help find hammer
-                    if(req.body.result.metadata.intentId === "b8cb95aa-19a9-4d44-8350-fd580f41b332"){
-                        req.body.result.metadata.intentId = "42a6386d-000b-4d2e-b68a-592b3e7f9394";
-                    }
-
-                    continueNewIntent = req.body.result.metadata.intentId;
-
-                    mongoDBqueries.findProductWithIntentId(function(result) {
-
-                        console.log("findProductWithIntentId: " + result);
-
-                        if(result){
-                            socket.emit('productDetails', {
-                                productName: result[0].fullProductName,
-                                productDescription: result[0].description,
-                                productImageNew: result[0].imgPath,
-                                productLocation: result[0].location,
-                                productPrice: result[0].price,
-                                productFloorplan: result[0].plattegrondIMG
-                            });
-                            socket.emit('hammerBackground', { imgSrc: ""});
-
-
-                            productPlacement = "Based on what you said, I have found a hammer. Have a look on the screen. This is how the hammer looks like. You can find this hammer" + " " + "in " + result[0].location + "." + " " + ". Would you like more information about this hammer?";
-                            var newPlacement = {};
-                            var key = "speech";
-                            var contextOut = [{"name":"yes-more-info-hammers", "lifespan":1}];
-                            newPlacement[key] = productPlacement;
-                            newPlacement["contextOut"] = contextOut;
-
-                            console.log("newplacementJSON " + JSON.stringify(newPlacement));
-
-                            return res.json(newPlacement);
-
-                        }
-                        // else{
-                        //     return res.json({
-                        //         speech: "I'm sorry there went something wrong with retrieving products from the database."
-                        //     });
-                        // }
-                    }, req.body.result.metadata.intentId);
-                }else{
-                    /**
-                     * #Intent: Default Welcome Intent - yes
-                     */
-                    socket.emit('reset', { reset: "true"});
-                    return res.json({
-                        speech: "Something went wrong with the server.",
-                        data: {
-                            google: {
-                                expect_user_response: false,
-                            }
-                        },
-                        contextOut: [],
-                    });
-                }
-            }
+            // // DEFAULT CASE
+            // if (typeof intents[id] !== 'function') {
+            //
+            //         /**
+            //          * #Intent: Default Welcome Intent - yes
+            //          */
+            //         socket.emit('reset', { reset: "true"});
+            //         return res.json({
+            //             speech: "Something went wrong with the server.",
+            //             data: {
+            //                 google: {
+            //                     expect_user_response: false,
+            //                 }
+            //             },
+            //             contextOut: [],
+            //         });
+            //
+            // }
             return intents[id]();
         }
 
         compareIntentId(req.body.result.metadata.intentId);
 
 
+        /**
+         * #Intent: claw hammer & regular hammer & advice sledge hammer yes & advice claw hammer yes
+         * Check if product number exists in database, then find that product
+         * contextOut ("yes-more-info-hammers) = New intent
+         */
+
+        if (req.body.result.metadata.intentId === "00768954-4b2e-4e79-8f79-f20d5fda1818" || req.body.result.metadata.intentId === "55c24519-5439-4cbe-a0c0-2159d5c71e4e" || req.body.result.metadata.intentId === "01bca801-fd72-4b4d-ad2f-5048747b96db" || req.body.result.metadata.intentId === "cd5499b9-06e2-4fa6-a8e9-755288475d2c" || req.body.result.metadata.intentId === "08ad93bd-8f49-4cd6-be92-927af69d8435" || req.body.result.metadata.intentId === "890138a2-f61a-4108-a87b-1d77cc52bda9" || req.body.result.metadata.intentId === "6c5e4679-061e-4145-8c4d-fad63a6925e6" || req.body.result.metadata.intentId === "741b2be6-5787-49b5-9419-a98dda77e816" || req.body.result.metadata.intentId === "2adf6c5e-23de-4d5d-8670-8c0260e2dcd9" || req.body.result.metadata.intentId === "57608d37-6414-4d26-81ee-880d5b08c81b" || req.body.result.metadata.intentId === "42a6386d-000b-4d2e-b68a-592b3e7f9394" || req.body.result.metadata.intentId === "b8cb95aa-19a9-4d44-8350-fd580f41b332" || req.body.result.metadata.intentId === "1e038746-2c92-4ad1-9682-ebdb33f089f1"){
+
+
+            // claw hammer
+            if(req.body.result.metadata.intentId === "01bca801-fd72-4b4d-ad2f-5048747b96db"){
+                req.body.result.metadata.intentId = "00768954-4b2e-4e79-8f79-f20d5fda1818";
+            }
+            // sledge hammer
+            if(req.body.result.metadata.intentId === "cd5499b9-06e2-4fa6-a8e9-755288475d2c"){
+                req.body.result.metadata.intentId = "6c5e4679-061e-4145-8c4d-fad63a6925e6";
+            }
+            // rubber mallet, help find hammer
+            if(req.body.result.metadata.intentId === "b8cb95aa-19a9-4d44-8350-fd580f41b332"){
+                req.body.result.metadata.intentId = "42a6386d-000b-4d2e-b68a-592b3e7f9394";
+            }
+
+            continueNewIntent = req.body.result.metadata.intentId;
+
+            mongoDBqueries.findProductWithIntentId(function(result) {
+
+                console.log("findProductWithIntentId: " + result);
+
+                if(result){
+                    socket.emit('productDetails', {
+                        productName: result[0].fullProductName,
+                        productDescription: result[0].description,
+                        productImageNew: result[0].imgPath,
+                        productLocation: result[0].location,
+                        productPrice: result[0].price,
+                        productFloorplan: result[0].plattegrondIMG
+                    });
+                    socket.emit('hammerBackground', { imgSrc: ""});
+
+
+                    productPlacement = "Based on what you said, I have found a hammer. Have a look on the screen. This is how the hammer looks like. You can find this hammer" + " " + "in " + result[0].location + "." + " " + ". Would you like more information about this hammer?";
+                    var newPlacement = {};
+                    var key = "speech";
+                    var contextOut = [{"name":"yes-more-info-hammers", "lifespan":1}];
+                    newPlacement[key] = productPlacement;
+                    newPlacement["contextOut"] = contextOut;
+
+                    console.log("newplacementJSON " + JSON.stringify(newPlacement));
+
+                    return res.json(newPlacement);
+
+                }
+                // else{
+                //     return res.json({
+                //         speech: "I'm sorry there went something wrong with retrieving products from the database."
+                //     });
+                // }
+            }, req.body.result.metadata.intentId);
+        }
 
 
         /**
