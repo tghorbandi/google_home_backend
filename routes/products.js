@@ -389,11 +389,7 @@ router.post('/', function(req, res) {
 
                     console.log("newplacementJSON " + JSON.stringify(newPlacement));
 
-                    //return res.json(newPlacement);
-
-                    return res.json({
-                        speech: "Doe het"
-                    });
+                    return res.json(newPlacement);
 
                 }
                 // else{
