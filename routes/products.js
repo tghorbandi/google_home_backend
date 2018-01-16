@@ -390,7 +390,7 @@ router.post('/', function(req, res) {
 
                     console.log("newplacementJSON " + JSON.stringify(newPlacement));
 
-                    return res.json(newPlacement);
+                    res.json(newPlacement);
 
                 }
                 // else{
