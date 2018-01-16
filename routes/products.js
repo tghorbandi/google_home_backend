@@ -371,6 +371,7 @@ router.post('/', function(req, res) {
                     /**
                      * #Intent: Default Welcome Intent - yes
                      */
+                    socket.emit('reset', { reset: "true"});
                     return res.json({
                         speech: "Something went wrong with the server.",
                         data: {
