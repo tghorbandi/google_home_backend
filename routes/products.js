@@ -200,6 +200,10 @@ router.post('/', function(req, res) {
                                     var key = "speech";
                                     obj[key] = productDescription;
 
+                                    // var contextOut = [{"name":"yes-more-info-hammers", "lifespan":1}];
+                                    // obj["contextOut"] = contextOut;
+
+
                                     return res.json(obj);
 
                                 }, hammersIntentId[id]);
@@ -325,6 +329,24 @@ router.post('/', function(req, res) {
 
                     return res.json({
                         speech: "Okay, then we're done. I hope i helped you with the information. Goodbye",
+                        data: {
+                            google: {
+                                expect_user_response: false,
+                            }
+                        },
+                        contextOut: [],
+                    });
+                },
+                /**
+                 *
+                 * #Intent: no idea - no
+                 *
+                 */
+                '653c4469-2312-4995-9eb8-a45dc9902bba': function () {
+                    socket.emit('reset', { reset: "true"});
+
+                    return res.json({
+                        speech: "Then I won't be able to help you unfortunately. You can try me again when you know the name of the hammer you are looking for. Goodbye",
                         data: {
                             google: {
                                 expect_user_response: false,
