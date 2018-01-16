@@ -305,15 +305,12 @@ router.post('/', function(req, res) {
                             speech: "Sorry, I could not answer your question. An employee is being called and will be here shortly."
                         });
                     }
-                },
+                }
                 /**
                  *
                  *
                  *
                  */
-                '': function () {
-
-                }
             };
             // // DEFAULT CASE
             // if (typeof intents[id] !== 'function') {
@@ -390,7 +387,7 @@ router.post('/', function(req, res) {
 
                     console.log("newplacementJSON " + JSON.stringify(newPlacement));
 
-                    res.json(newPlacement);
+                    return res.json(newPlacement);
 
                 }
                 // else{
