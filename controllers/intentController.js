@@ -1,4 +1,4 @@
-var compareIntentId = function(id) {
+var compareIntentIdOLD = function(id) {
     var intents = {
         'intent0': function () {
             alert('Do code from intent s0');

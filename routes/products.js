@@ -364,9 +364,8 @@ router.post('/', function(req, res) {
 
             mongoDBqueries.findProductWithIntentId(function(result) {
 
-                console.log("findProductWithIntentId: " + result);
-
                 if(result){
+
                     socket.emit('productDetails', {
                         productName: result[0].fullProductName,
                         productDescription: result[0].description,
@@ -387,7 +386,11 @@ router.post('/', function(req, res) {
 
                     console.log("newplacementJSON " + JSON.stringify(newPlacement));
 
-                    return res.json(newPlacement);
+                    //return res.json(newPlacement);
+
+                    return res.json({
+                        speech: "Doe het"
+                    });
 
                 }
                 // else{
