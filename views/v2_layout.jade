@@ -166,6 +166,9 @@ script.
                     $(".product-location").text(data.productLocation);
                     $(".product-price").text(data.productPrice);
 
+                    console.log(data.productFloorplan);
+                    $("#floorplan1").attr("src", data.productFloorplan);
+
                     $productContainer.fadeIn();
                     $containerProduct.fadeIn();
                 });
@@ -180,6 +183,9 @@ script.
                 $(".product-name").text(data.productName);
                 $(".product-location").text(data.productLocation);
                 $(".product-price").text(data.productPrice);
+
+                console.log(data.productFloorplan);
+                $("#floorplan1").attr("src", data.productFloorplan);
 
                 $productContainer.fadeIn();
                 $containerProduct.fadeIn();

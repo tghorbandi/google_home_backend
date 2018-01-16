@@ -353,7 +353,7 @@ router.post('/', function(req, res) {
 
             mongoDBqueries.findProductWithIntentId(function(result) {
 
-                //console.log(result);
+                console.log("findProductWithIntentId: " + result);
 
                 if(result){
                     socket.emit('productDetails', {
@@ -361,7 +361,8 @@ router.post('/', function(req, res) {
                         productDescription: result[0].description,
                         productImageNew: result[0].imgPath,
                         productLocation: result[0].location,
-                        productPrice: result[0].price
+                        productPrice: result[0].price,
+                        productFloorplan: result[0].plattegrondIMG
                     });
                     socket.emit('hammerBackground', { imgSrc: ""});
 
