@@ -314,12 +314,25 @@ router.post('/', function(req, res) {
                             speech: "Sorry, I could not answer your question. An employee is being called and will be here shortly."
                         });
                     }
-                }
+                },
                 /**
                  *
-                 *
+                 * #Intent: more info hammers - no
                  *
                  */
+                'ff75b860-3d4c-45c9-b56d-55c6a62331f8': function () {
+                    socket.emit('reset', { reset: "true"});
+
+                    return res.json({
+                        speech: "Okay, then we're done. I hope i helped you with the information. Goodbye",
+                        data: {
+                            google: {
+                                expect_user_response: false,
+                            }
+                        },
+                        contextOut: [],
+                    });
+                }
             };
             // DEFAULT CASE
             if (typeof intents[id] !== 'function') {
