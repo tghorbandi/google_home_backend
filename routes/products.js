@@ -336,7 +336,7 @@ router.post('/', function(req, res) {
             return intents[id]();
         }
 
-        compareIntentId(req.body.result.metadata.intentId);
+
 
 
         /**
@@ -408,6 +408,8 @@ router.post('/', function(req, res) {
         if (req.body.result.metadata.intentId === "11151e8e-6e17-4217-a7f1-a2135b01d32b"){
             socket.emit('allHammers', { showList: "true" });
         }
+
+        compareIntentId(req.body.result.metadata.intentId);
 
 
     }
