@@ -361,11 +361,12 @@ router.post('/', function(req, res) {
 
                             return res.json(newPlacement);
 
-                        }else{
-                            return res.json({
-                                speech: "I'm sorry there went something wrong with retrieving products from the database."
-                            });
                         }
+                        // else{
+                        //     return res.json({
+                        //         speech: "I'm sorry there went something wrong with retrieving products from the database."
+                        //     });
+                        // }
                     }, req.body.result.metadata.intentId);
                 }else{
                     /**
