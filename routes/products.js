@@ -355,6 +355,24 @@ router.post('/', function(req, res) {
                         },
                         contextOut: [],
                     });
+                },
+                /**
+                 *
+                 * #Intent: thank you - no
+                 *
+                 */
+                '31d70ba4-2aa3-443f-a06b-d75575d8e64f': function (){
+                    socket.emit('reset', { reset: "true"});
+
+                    return res.json({
+                        speech: "Okay, I'm glad i could help. goodbye!",
+                        data: {
+                            google: {
+                                expect_user_response: false,
+                            }
+                        },
+                        contextOut: [],
+                    });
                 }
             };
             // DEFAULT CASE

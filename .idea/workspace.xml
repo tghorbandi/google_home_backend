@@ -24,14 +24,14 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.54362416">
+    <splitter split-orientation="horizontal" split-proportion="0.5428101">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="products.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/routes/products.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="428">
-                  <caret line="66" column="88" lean-forward="true" selection-start-line="66" selection-start-column="88" selection-end-line="66" selection-end-column="88" />
+                <state relative-caret-position="391">
+                  <caret line="360" column="42" lean-forward="true" selection-start-line="360" selection-start-column="42" selection-end-line="360" selection-end-column="42" />
                   <folding />
                 </state>
               </provider>
@@ -94,8 +94,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>image-container</find>
-      <find>floorpl</find>
       <find>product-loca</find>
       <find>container-pro</find>
       <find>span</find>
@@ -124,6 +122,8 @@
       <find>ff75b860-3d4c-45c9-b56d-55c6a62331f8</find>
       <find>reset</find>
       <find>9f866377-4d2f-4d55-a4b7-c0112757290e</find>
+      <find>98e3c916-350f-4cdc-85f6-ad9eba1e0385</find>
+      <find>31d70ba4-2aa3-443f-a06b-d75575d8e64f</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -347,12 +347,12 @@
       <workItem from="1512380247701" duration="73713000" />
       <workItem from="1513157645328" duration="30044000" />
       <workItem from="1513931448589" duration="8897000" />
-      <workItem from="1515575401296" duration="46256000" />
+      <workItem from="1515575401296" duration="47126000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="206958000" />
+    <option name="totallyTimeSpent" value="207828000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -761,8 +761,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/products.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="428">
-          <caret line="66" column="88" lean-forward="true" selection-start-line="66" selection-start-column="88" selection-end-line="66" selection-end-column="88" />
+        <state relative-caret-position="391">
+          <caret line="360" column="42" lean-forward="true" selection-start-line="360" selection-start-column="42" selection-end-line="360" selection-end-column="42" />
           <folding />
         </state>
       </provider>
