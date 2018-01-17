@@ -64,7 +64,7 @@ router.post('/', function(req, res) {
                         });
                     }else{
                         return res.json({
-                            speech: "Hey! Welcome back, are you still looking for a hammer?"
+                            speech: "Hey! Welcome back, Do you want to lookup a hammer?"
                         });
                     }
                 },
@@ -265,6 +265,7 @@ router.post('/', function(req, res) {
                 '62bb5fd6-ea75-4c95-bbf2-8ca04cd26864': function () {
                     console.log('newIntent');
 
+                    // LETOP!! Indien server niet wordt gerestart wordt dit niet vernieuwd!!!
                     if (fallback < 1){
                         fallback++;
                         return res.json({
